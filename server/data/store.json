@@ -1,0 +1,807 @@
+{
+  "users": [
+    {
+      "id": "usr-admin-01",
+      "name": "M.O.B Admin",
+      "email": "admin@mobekiventures.com",
+      "phone": "08108725967",
+      "passwordHash": "$2b$10$Qt7eGHOVRZRuyL6jmW.HHe.6XmdvqKVjy6cZZEDWOmyOt1uUt20V2",
+      "role": "SUPERADMIN",
+      "createdAt": "2026-09-23T19:14:13.673Z",
+      "updatedAt": "2026-09-23T19:14:13.673Z"
+    }
+  ],
+  "addresses": [],
+  "categories": [
+    {
+      "id": "cat-handles",
+      "slug": "handles",
+      "name": "Handles",
+      "image": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop&q=80",
+      "description": "Modern cabinet bar handles, profile pulls, T-bars, and luxury wardrobe handles.",
+      "displayOrder": 1,
+      "active": true,
+      "createdAt": "2026-09-23T19:14:09.966Z",
+      "updatedAt": "2026-09-23T19:14:09.966Z"
+    },
+    {
+      "id": "cat-knobs",
+      "slug": "knobs",
+      "name": "Knobs",
+      "image": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400&h=300&fit=crop&q=80",
+      "description": "Brass, matte black, crystal, and stainless steel drawer and dresser knobs.",
+      "displayOrder": 2,
+      "active": true,
+      "createdAt": "2026-09-23T19:14:09.966Z",
+      "updatedAt": "2026-09-23T19:14:09.966Z"
+    },
+    {
+      "id": "cat-hinges",
+      "slug": "hinges",
+      "name": "Hinges",
+      "image": "https://images.unsplash.com/photo-1538688525198-9b88f6f53126?w=400&h=300&fit=crop&q=80",
+      "description": "Hydraulic soft-close cabinet hinges, concealed 3D hinges, and heavy-duty pivot hinges.",
+      "displayOrder": 3,
+      "active": true,
+      "createdAt": "2026-09-23T19:14:09.966Z",
+      "updatedAt": "2026-09-23T19:14:09.966Z"
+    },
+    {
+      "id": "cat-locks",
+      "slug": "locks",
+      "name": "Locks",
+      "image": "https://images.unsplash.com/photo-1558002038-1055907df827?w=400&h=300&fit=crop&q=80",
+      "description": "Drawer locks, wardrobe cam locks, digital keypad locks, and central locking bars.",
+      "displayOrder": 4,
+      "active": true,
+      "createdAt": "2026-09-23T19:14:09.966Z",
+      "updatedAt": "2026-09-23T19:14:09.966Z"
+    },
+    {
+      "id": "cat-fittings",
+      "slug": "furniture-fittings",
+      "name": "Furniture Fittings",
+      "image": "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=400&h=300&fit=crop&q=80",
+      "description": "Telescopic drawer slides, soft-close undermount runners, gas springs, and shelf pins.",
+      "displayOrder": 5,
+      "active": true,
+      "createdAt": "2026-09-23T19:14:09.966Z",
+      "updatedAt": "2026-09-23T19:14:09.966Z"
+    },
+    {
+      "id": "cat-accessories",
+      "slug": "other-accessories",
+      "name": "Other Accessories",
+      "image": "https://images.unsplash.com/photo-1507089947368-19c1da9775ae?w=400&h=300&fit=crop&q=80",
+      "description": "Heavy duty caster wheels, adjustable sofa legs, cable grommets, and wardrobe accessories.",
+      "displayOrder": 6,
+      "active": true,
+      "createdAt": "2026-09-23T19:14:09.966Z",
+      "updatedAt": "2026-09-23T19:14:09.966Z"
+    }
+  ],
+  "products": [
+    {
+      "id": "prod-1",
+      "slug": "brushed-brass-t-bar-handle-160mm",
+      "name": "Brushed Brass T-Bar Cabinet Handle (160mm Hole Center)",
+      "sku": "MOB-HND-001",
+      "categoryId": "cat-handles",
+      "categoryName": "Handles",
+      "description": "Heavy-duty solid brass T-Bar pull handle. Ideal for modern kitchen cabinets, wardrobes, and luxury interior joinery. Electroplated rust-proof gold finish designed for high durability.",
+      "price": 3800,
+      "images": [
+        "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=600&fit=crop&q=80",
+        "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=600&h=600&fit=crop&q=80"
+      ],
+      "stockQuantity": 241,
+      "lowStockThreshold": 15,
+      "specs": [
+        {
+          "label": "Material",
+          "value": "Solid Brass / Zinc Alloy"
+        },
+        {
+          "label": "Hole Center Distance",
+          "value": "160mm"
+        },
+        {
+          "label": "Total Length",
+          "value": "220mm"
+        },
+        {
+          "label": "Finish",
+          "value": "Brushed Satin Gold"
+        },
+        {
+          "label": "Screws Included",
+          "value": "M4 x 25mm Included"
+        }
+      ],
+      "active": true,
+      "featured": true,
+      "retailEnabled": true,
+      "wholesaleEnabled": true,
+      "createdAt": "2026-09-23T19:14:09.966Z",
+      "updatedAt": "2026-09-23T20:14:14.796Z",
+      "priceKobo": 380000,
+      "reservedQuantity": 2
+    },
+    {
+      "id": "prod-2",
+      "slug": "hydraulic-soft-close-concealed-hinge-pair",
+      "name": "Hydraulic Soft-Close Clip-On Concealed Hinge (Full Overlay, Pair)",
+      "sku": "MOB-HNG-002",
+      "categoryId": "cat-hinges",
+      "categoryName": "Hinges",
+      "description": "Grade-A 3D adjustable hydraulic damping soft-close cabinet hinge. Eliminates cabinet door slamming with smooth pneumatic piston. Clip-on base plate for rapid installation.",
+      "price": 2200,
+      "images": [
+        "https://images.unsplash.com/photo-1538688525198-9b88f6f53126?w=600&h=600&fit=crop&q=80"
+      ],
+      "stockQuantity": 420,
+      "lowStockThreshold": 40,
+      "specs": [
+        {
+          "label": "Opening Angle",
+          "value": "105° / 110°"
+        },
+        {
+          "label": "Cup Diameter",
+          "value": "35mm"
+        },
+        {
+          "label": "Door Thickness",
+          "value": "14mm - 22mm"
+        },
+        {
+          "label": "Mechanism",
+          "value": "Integrated Hydraulic Cylinder"
+        },
+        {
+          "label": "Adjustment",
+          "value": "3D Cam Depth & Height Adjustable"
+        }
+      ],
+      "active": true,
+      "featured": true,
+      "retailEnabled": true,
+      "wholesaleEnabled": true,
+      "createdAt": "2026-09-23T19:14:09.966Z",
+      "updatedAt": "2026-09-23T19:14:09.966Z",
+      "priceKobo": 220000,
+      "reservedQuantity": 0
+    },
+    {
+      "id": "prod-3",
+      "slug": "heavy-duty-ball-bearing-drawer-slides-18-inch",
+      "name": "Heavy Duty 3-Fold Full Extension Ball Bearing Drawer Slides 18\"",
+      "sku": "MOB-SLD-003",
+      "categoryId": "cat-fittings",
+      "categoryName": "Furniture Fittings",
+      "description": "Industrial-grade cold-rolled steel drawer slides with solid double-row steel ball bearings for ultra-smooth glide. 45kg load rated per pair.",
+      "price": 4500,
+      "images": [
+        "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=600&h=600&fit=crop&q=80"
+      ],
+      "stockQuantity": 88,
+      "lowStockThreshold": 10,
+      "specs": [
+        {
+          "label": "Slide Length",
+          "value": "18 inches (450mm)"
+        },
+        {
+          "label": "Weight Capacity",
+          "value": "45 KG per pair"
+        },
+        {
+          "label": "Extension Type",
+          "value": "Full 3-Fold Extension"
+        },
+        {
+          "label": "Material",
+          "value": "Cold Rolled Steel (Zinc Coated)"
+        }
+      ],
+      "active": true,
+      "featured": true,
+      "retailEnabled": true,
+      "wholesaleEnabled": true,
+      "createdAt": "2026-09-23T19:14:09.966Z",
+      "updatedAt": "2026-09-23T19:14:09.966Z",
+      "priceKobo": 450000,
+      "reservedQuantity": 0
+    },
+    {
+      "id": "prod-4",
+      "slug": "matte-black-aluminum-edge-profile-handle-200mm",
+      "name": "Matte Black Aluminum Edge Profile Lip Handle (200mm)",
+      "sku": "MOB-HND-004",
+      "categoryId": "cat-handles",
+      "categoryName": "Handles",
+      "description": "Ultra-minimalist rear-mounted lip pull handle. Conceals seamlessly along drawer and cupboard edges for clean handleless aesthetics.",
+      "price": 3100,
+      "images": [
+        "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=600&h=600&fit=crop&q=80"
+      ],
+      "stockQuantity": 210,
+      "lowStockThreshold": 25,
+      "specs": [
+        {
+          "label": "Mounting Style",
+          "value": "Rear Screwed Edge Mount"
+        },
+        {
+          "label": "Length",
+          "value": "200mm"
+        },
+        {
+          "label": "Finish",
+          "value": "Anodized Matte Black"
+        },
+        {
+          "label": "Material",
+          "value": "Aviation-Grade Aluminum"
+        }
+      ],
+      "active": true,
+      "featured": true,
+      "retailEnabled": true,
+      "wholesaleEnabled": true,
+      "createdAt": "2026-09-23T19:14:09.966Z",
+      "updatedAt": "2026-09-23T19:14:09.966Z",
+      "priceKobo": 310000,
+      "reservedQuantity": 0
+    },
+    {
+      "id": "prod-5",
+      "slug": "brass-cylinder-drawer-security-lock-22mm",
+      "name": "Brass Cylinder Heavy-Duty Drawer Security Cam Lock (22mm)",
+      "sku": "MOB-LCK-005",
+      "categoryId": "cat-locks",
+      "categoryName": "Locks",
+      "description": "Precision brass barrel drawer lock supplied with 2 laser-cut brass keys and steel rosette bezel. Standard fitting for office desks, cash drawers, and bedside units.",
+      "price": 2600,
+      "images": [
+        "https://images.unsplash.com/photo-1558002038-1055907df827?w=600&h=600&fit=crop&q=80"
+      ],
+      "stockQuantity": 180,
+      "lowStockThreshold": 20,
+      "specs": [
+        {
+          "label": "Cylinder Length",
+          "value": "22mm"
+        },
+        {
+          "label": "Cylinder Diameter",
+          "value": "19mm"
+        },
+        {
+          "label": "Keys",
+          "value": "2 Brass Keys (Different Keyed)"
+        },
+        {
+          "label": "Material",
+          "value": "Solid Brass Core / Zinc Housing"
+        }
+      ],
+      "active": true,
+      "featured": true,
+      "retailEnabled": true,
+      "wholesaleEnabled": true,
+      "createdAt": "2026-09-23T19:14:09.966Z",
+      "updatedAt": "2026-09-23T19:14:09.966Z",
+      "priceKobo": 260000,
+      "reservedQuantity": 0
+    },
+    {
+      "id": "prod-6",
+      "slug": "heavy-duty-swivel-caster-wheel-with-brake-75mm",
+      "name": "Heavy Duty 3\" (75mm) Industrial Swivel Caster Wheel with Total Brake",
+      "sku": "MOB-ACC-006",
+      "categoryId": "cat-accessories",
+      "categoryName": "Other Accessories",
+      "description": "Non-marking polyurethane rubber caster wheels with 360-degree ball bearing swivel and dual-lock brake system. Supports up to 100kg per wheel.",
+      "price": 3500,
+      "images": [
+        "https://images.unsplash.com/photo-1507089947368-19c1da9775ae?w=600&h=600&fit=crop&q=80"
+      ],
+      "stockQuantity": 95,
+      "lowStockThreshold": 12,
+      "specs": [
+        {
+          "label": "Wheel Diameter",
+          "value": "75mm (3 Inch)"
+        },
+        {
+          "label": "Load Capacity",
+          "value": "100 KG per wheel"
+        },
+        {
+          "label": "Brake Type",
+          "value": "Total Lock (Wheel + Swivel)"
+        },
+        {
+          "label": "Material",
+          "value": "Steel Bracket + Polyurethane"
+        }
+      ],
+      "active": true,
+      "featured": true,
+      "retailEnabled": true,
+      "wholesaleEnabled": true,
+      "createdAt": "2026-09-23T19:14:09.966Z",
+      "updatedAt": "2026-09-23T19:14:09.966Z",
+      "priceKobo": 350000,
+      "reservedQuantity": 0
+    }
+  ],
+  "orders": [
+    {
+      "id": "ord-19525298-0a23-474e-83a5-d35ba5c18782",
+      "orderNumber": "MOB-2026-7942",
+      "trackingToken": "16de975bef6f1b81c9160b53a71aa179",
+      "customerName": "Chidi Okafor",
+      "customerEmail": "chidi@example.com",
+      "customerPhone": "08031234567",
+      "deliveryZone": "LAGOS",
+      "deliveryState": "Lagos",
+      "deliveryCity": "Ikeja",
+      "deliveryAddress": "24 Allen Avenue, Ikeja, Lagos",
+      "subtotalKobo": 760000,
+      "discountKobo": 0,
+      "deliveryFeeKobo": 200000,
+      "totalKobo": 960000,
+      "paymentMethod": "BANK_TRANSFER",
+      "paymentStatus": "PENDING",
+      "orderStatus": "PENDING_PAYMENT",
+      "reservationExpiresAt": "2026-09-23T20:27:10.034Z",
+      "items": [
+        {
+          "productId": "prod-1",
+          "productName": "Brushed Brass T-Bar Cabinet Handle (160mm Hole Center)",
+          "sku": "MOB-HND-001",
+          "unitPriceKobo": 380000,
+          "quantity": 2
+        }
+      ],
+      "trackingNotes": [
+        {
+          "timestamp": "2026-09-23T19:57:10.034Z",
+          "status": "PENDING_PAYMENT",
+          "note": "Order created, awaiting payment confirmation."
+        }
+      ],
+      "idempotencyKey": "test-idem-1790193430030",
+      "createdAt": "2026-09-23T19:57:10.034Z",
+      "updatedAt": "2026-09-23T19:57:10.034Z"
+    },
+    {
+      "id": "ord-31ad03f2-2a32-4d85-9900-e16e01db00c6",
+      "orderNumber": "MOB-2026-9331",
+      "trackingToken": "fbbca866a6e593cb65803e2df409a409",
+      "customerName": "Chidi Okafor",
+      "customerEmail": "chidi@example.com",
+      "customerPhone": "08031234567",
+      "deliveryZone": "LAGOS",
+      "deliveryState": "Lagos",
+      "deliveryCity": "Ikeja",
+      "deliveryAddress": "24 Allen Avenue, Ikeja, Lagos",
+      "subtotalKobo": 760000,
+      "discountKobo": 0,
+      "deliveryFeeKobo": 200000,
+      "totalKobo": 960000,
+      "paymentMethod": "BANK_TRANSFER",
+      "paymentStatus": "PAID",
+      "orderStatus": "CONFIRMED",
+      "reservationExpiresAt": "2026-09-23T20:27:36.960Z",
+      "items": [
+        {
+          "productId": "prod-1",
+          "productName": "Brushed Brass T-Bar Cabinet Handle (160mm Hole Center)",
+          "sku": "MOB-HND-001",
+          "unitPriceKobo": 380000,
+          "quantity": 2
+        }
+      ],
+      "trackingNotes": [
+        {
+          "timestamp": "2026-09-23T19:57:36.960Z",
+          "status": "PENDING_PAYMENT",
+          "note": "Order created, awaiting payment confirmation."
+        },
+        {
+          "timestamp": "2026-09-23T19:57:36.969Z",
+          "status": "CONFIRMED",
+          "note": "Bank transfer payment confirmed by admin@mobekiventures.com (Bank Ref: GTB-TX-1790193456966)"
+        }
+      ],
+      "idempotencyKey": "test-idem-1790193456955",
+      "createdAt": "2026-09-23T19:57:36.960Z",
+      "updatedAt": "2026-09-23T19:57:36.969Z"
+    },
+    {
+      "id": "ord-bc981e64-14b5-4733-8f09-8117a8606a0c",
+      "orderNumber": "MOB-2026-6009",
+      "trackingToken": "f8cfdc612df71ed7ff405907c3328cf2",
+      "customerName": "Chidi Okafor",
+      "customerEmail": "chidi@example.com",
+      "customerPhone": "08031234567",
+      "deliveryZone": "LAGOS",
+      "deliveryState": "Lagos",
+      "deliveryCity": "Ikeja",
+      "deliveryAddress": "24 Allen Avenue, Ikeja, Lagos",
+      "subtotalKobo": 760000,
+      "discountKobo": 0,
+      "deliveryFeeKobo": 200000,
+      "totalKobo": 960000,
+      "paymentMethod": "BANK_TRANSFER",
+      "paymentStatus": "PAID",
+      "orderStatus": "CONFIRMED",
+      "reservationExpiresAt": "2026-09-23T20:44:14.779Z",
+      "items": [
+        {
+          "productId": "prod-1",
+          "productName": "Brushed Brass T-Bar Cabinet Handle (160mm Hole Center)",
+          "sku": "MOB-HND-001",
+          "unitPriceKobo": 380000,
+          "quantity": 2
+        }
+      ],
+      "trackingNotes": [
+        {
+          "timestamp": "2026-09-23T20:14:14.779Z",
+          "status": "PENDING_PAYMENT",
+          "note": "Order created, awaiting payment confirmation."
+        },
+        {
+          "timestamp": "2026-09-23T20:14:14.788Z",
+          "status": "CONFIRMED",
+          "note": "Bank transfer payment confirmed by admin@mobekiventures.com (Bank Ref: GTB-TX-1790194454785)"
+        }
+      ],
+      "idempotencyKey": "test-idem-1790194454771",
+      "createdAt": "2026-09-23T20:14:14.779Z",
+      "updatedAt": "2026-09-23T20:14:14.788Z"
+    }
+  ],
+  "movements": [
+    {
+      "id": "mov-d77abe5e-6da0-4c19-99ec-a5528040a9bf",
+      "productId": "prod-1",
+      "productName": "Brushed Brass T-Bar Cabinet Handle (160mm Hole Center)",
+      "sku": "MOB-HND-001",
+      "type": "RESTOCK",
+      "quantityChange": 50,
+      "previousStock": 191,
+      "newStock": 241,
+      "reason": "Direct shipment arrival from factory container #408",
+      "performedBy": "admin@mobekiventures.com",
+      "createdAt": "2026-09-23T20:14:14.797Z"
+    },
+    {
+      "id": "mov-8a07eede-5bba-4faf-b5fd-8ce6d3406eec",
+      "productId": "prod-1",
+      "productName": "Brushed Brass T-Bar Cabinet Handle (160mm Hole Center)",
+      "sku": "MOB-HND-001",
+      "type": "SALE",
+      "quantityChange": -2,
+      "previousStock": 193,
+      "newStock": 191,
+      "referenceType": "ORDER",
+      "referenceId": "MOB-2026-6009",
+      "reason": "Confirmed customer sale on order MOB-2026-6009",
+      "createdAt": "2026-09-23T20:14:14.790Z"
+    },
+    {
+      "id": "mov-38b82e42-1121-4fee-bad6-721f53cb2134",
+      "productId": "prod-1",
+      "productName": "Brushed Brass T-Bar Cabinet Handle (160mm Hole Center)",
+      "sku": "MOB-HND-001",
+      "type": "RESTOCK",
+      "quantityChange": 50,
+      "previousStock": 143,
+      "newStock": 193,
+      "reason": "Direct shipment arrival from factory container #408",
+      "performedBy": "admin@mobekiventures.com",
+      "createdAt": "2026-09-23T19:57:36.978Z"
+    },
+    {
+      "id": "mov-2bc70c6b-5115-45b1-aa0a-21d0ebce6199",
+      "productId": "prod-1",
+      "productName": "Brushed Brass T-Bar Cabinet Handle (160mm Hole Center)",
+      "sku": "MOB-HND-001",
+      "type": "SALE",
+      "quantityChange": -2,
+      "previousStock": 145,
+      "newStock": 143,
+      "referenceType": "ORDER",
+      "referenceId": "MOB-2026-9331",
+      "reason": "Confirmed customer sale on order MOB-2026-9331",
+      "createdAt": "2026-09-23T19:57:36.970Z"
+    },
+    {
+      "id": "tx-init-prod-1",
+      "productId": "prod-1",
+      "productName": "Brushed Brass T-Bar Cabinet Handle (160mm Hole Center)",
+      "sku": "MOB-HND-001",
+      "type": "RESTOCK",
+      "quantityChange": 145,
+      "previousStock": 0,
+      "newStock": 145,
+      "reason": "Initial Mushin Showroom Stock Loading",
+      "createdAt": "2026-09-23T19:14:13.673Z"
+    },
+    {
+      "id": "tx-init-prod-2",
+      "productId": "prod-2",
+      "productName": "Hydraulic Soft-Close Clip-On Concealed Hinge (Full Overlay, Pair)",
+      "sku": "MOB-HNG-002",
+      "type": "RESTOCK",
+      "quantityChange": 420,
+      "previousStock": 0,
+      "newStock": 420,
+      "reason": "Initial Mushin Showroom Stock Loading",
+      "createdAt": "2026-09-23T19:14:13.673Z"
+    },
+    {
+      "id": "tx-init-prod-3",
+      "productId": "prod-3",
+      "productName": "Heavy Duty 3-Fold Full Extension Ball Bearing Drawer Slides 18\"",
+      "sku": "MOB-SLD-003",
+      "type": "RESTOCK",
+      "quantityChange": 88,
+      "previousStock": 0,
+      "newStock": 88,
+      "reason": "Initial Mushin Showroom Stock Loading",
+      "createdAt": "2026-09-23T19:14:13.673Z"
+    },
+    {
+      "id": "tx-init-prod-4",
+      "productId": "prod-4",
+      "productName": "Matte Black Aluminum Edge Profile Lip Handle (200mm)",
+      "sku": "MOB-HND-004",
+      "type": "RESTOCK",
+      "quantityChange": 210,
+      "previousStock": 0,
+      "newStock": 210,
+      "reason": "Initial Mushin Showroom Stock Loading",
+      "createdAt": "2026-09-23T19:14:13.673Z"
+    },
+    {
+      "id": "tx-init-prod-5",
+      "productId": "prod-5",
+      "productName": "Brass Cylinder Heavy-Duty Drawer Security Cam Lock (22mm)",
+      "sku": "MOB-LCK-005",
+      "type": "RESTOCK",
+      "quantityChange": 180,
+      "previousStock": 0,
+      "newStock": 180,
+      "reason": "Initial Mushin Showroom Stock Loading",
+      "createdAt": "2026-09-23T19:14:13.673Z"
+    },
+    {
+      "id": "tx-init-prod-6",
+      "productId": "prod-6",
+      "productName": "Heavy Duty 3\" (75mm) Industrial Swivel Caster Wheel with Total Brake",
+      "sku": "MOB-ACC-006",
+      "type": "RESTOCK",
+      "quantityChange": 95,
+      "previousStock": 0,
+      "newStock": 95,
+      "reason": "Initial Mushin Showroom Stock Loading",
+      "createdAt": "2026-09-23T19:14:13.673Z"
+    }
+  ],
+  "payments": [
+    {
+      "id": "pay-d21967ff-4c0c-41bb-8114-203ee95eee41",
+      "orderId": "ord-31ad03f2-2a32-4d85-9900-e16e01db00c6",
+      "provider": "BANK_TRANSFER",
+      "providerReference": "GTB-TX-1790193456966",
+      "method": "BANK_TRANSFER",
+      "amountKobo": 960000,
+      "currency": "NGN",
+      "status": "PAID",
+      "verificationMethod": "MANUAL_BANK_AUDIT",
+      "verifiedBy": "admin@mobekiventures.com",
+      "verifiedAt": "2026-09-23T19:57:36.968Z",
+      "paidAt": "2026-09-23T19:57:36.968Z",
+      "createdAt": "2026-09-23T19:57:36.968Z",
+      "updatedAt": "2026-09-23T19:57:36.968Z"
+    },
+    {
+      "id": "pay-93df55a1-c670-4566-97a5-17531afdf8a7",
+      "orderId": "ord-bc981e64-14b5-4733-8f09-8117a8606a0c",
+      "provider": "BANK_TRANSFER",
+      "providerReference": "GTB-TX-1790194454785",
+      "method": "BANK_TRANSFER",
+      "amountKobo": 960000,
+      "currency": "NGN",
+      "status": "PAID",
+      "verificationMethod": "MANUAL_BANK_AUDIT",
+      "verifiedBy": "admin@mobekiventures.com",
+      "verifiedAt": "2026-09-23T20:14:14.787Z",
+      "paidAt": "2026-09-23T20:14:14.787Z",
+      "createdAt": "2026-09-23T20:14:14.787Z",
+      "updatedAt": "2026-09-23T20:14:14.787Z"
+    }
+  ],
+  "auditLogs": [
+    {
+      "id": "log-cf6e5ed1-38b0-4290-925b-1775c3f66b5e",
+      "adminId": "usr-admin-01",
+      "adminEmail": "admin@mobekiventures.com",
+      "action": "ADJUST_INVENTORY",
+      "entityType": "INVENTORY",
+      "entityId": "prod-1",
+      "afterState": {
+        "productId": "prod-1",
+        "type": "RESTOCK",
+        "quantityChange": 50,
+        "reason": "Direct shipment arrival from factory container #408"
+      },
+      "createdAt": "2026-09-23T20:14:14.798Z"
+    },
+    {
+      "id": "log-c28a2695-b970-48c1-a20a-35a0aa87f97f",
+      "adminId": "usr-admin-01",
+      "adminEmail": "admin@mobekiventures.com",
+      "action": "VERIFY_BANK_TRANSFER",
+      "entityType": "PAYMENT",
+      "entityId": "ord-bc981e64-14b5-4733-8f09-8117a8606a0c",
+      "afterState": {
+        "bankReference": "GTB-TX-1790194454785",
+        "verifiedNotes": "Confirmed credit in M.O.B GTBank Corporate account"
+      },
+      "createdAt": "2026-09-23T20:14:14.791Z"
+    },
+    {
+      "id": "log-7ca6f5f9-9ddc-4357-94ad-c12a2909d597",
+      "adminId": "usr-admin-01",
+      "adminEmail": "admin@mobekiventures.com",
+      "action": "ADJUST_INVENTORY",
+      "entityType": "INVENTORY",
+      "entityId": "prod-1",
+      "afterState": {
+        "productId": "prod-1",
+        "type": "RESTOCK",
+        "quantityChange": 50,
+        "reason": "Direct shipment arrival from factory container #408"
+      },
+      "createdAt": "2026-09-23T19:57:36.978Z"
+    },
+    {
+      "id": "log-23d379d0-be51-4fa9-9c10-32867096fb66",
+      "adminId": "usr-admin-01",
+      "adminEmail": "admin@mobekiventures.com",
+      "action": "VERIFY_BANK_TRANSFER",
+      "entityType": "PAYMENT",
+      "entityId": "ord-31ad03f2-2a32-4d85-9900-e16e01db00c6",
+      "afterState": {
+        "bankReference": "GTB-TX-1790193456966",
+        "verifiedNotes": "Confirmed credit in M.O.B GTBank Corporate account"
+      },
+      "createdAt": "2026-09-23T19:57:36.970Z"
+    }
+  ],
+  "settings": {
+    "id": "default",
+    "storeName": "M.O.B EKI VENTURES",
+    "tagline": "Quality Furniture Accessories & Architectural Hardware",
+    "address": "2, Amu Street, Mushin Market, Lagos, Nigeria",
+    "openingHours": "Mon - Sat: 8:00 AM - 5:00 PM (Closed Sundays)",
+    "phone1": "08108725967",
+    "phone2": "08025262598",
+    "phone3": "08028077200",
+    "whatsapp": "+2348108725967",
+    "email": "muhazoladejo48@gmail.com",
+    "deliveryLagos": 2500,
+    "deliverySouthWest": 4000,
+    "deliveryNationwide": 6000,
+    "bankName": "Guaranty Trust Bank (GTBank)",
+    "bankAccountName": "M.O.B EKI VENTURES",
+    "bankAccountNumber": "0123456789",
+    "aboutText": "M.O.B EKI VENTURES is an established physical Nigerian enterprise situated at 2, Amu Street in the commercial hub of Mushin Market, Lagos. Founded by Mulikat & Mutiu Oladejo and managed alongside Oladejo Muhaz Olayiwola, we specialize in the direct importation, wholesale distribution, and retail supply of premium furniture hardware, cabinet handles, hydraulic soft-close hinges, drawer runners, and security fittings across all 36 states of Nigeria.",
+    "announcementText": "Nationwide Delivery Available Across Nigeria • Store Pickup at Mushin Market, Lagos",
+    "createdAt": "2026-09-23T19:14:09.966Z",
+    "updatedAt": "2026-09-23T19:14:09.966Z"
+  },
+  "team": [
+    {
+      "id": "team-1",
+      "name": "Mulikat & Mutiu Oladejo",
+      "position": "Founders & Managing Directors / CEOs",
+      "bio": "Pioneered M.O.B EKI VENTURES in Mushin Market with decades of hardware expertise, establishing trusted partnerships with international manufacturers.",
+      "image": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&h=400&fit=crop&q=80",
+      "displayOrder": 1,
+      "active": true
+    },
+    {
+      "id": "team-2",
+      "name": "Oladejo Muhaz Olayiwola",
+      "position": "General Manager & Social Media Lead",
+      "bio": "Oversees showroom inventory operations, corporate bulk order deliveries across Nigeria, customer relations, and digital sales inquiries.",
+      "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&q=80",
+      "displayOrder": 2,
+      "active": true
+    }
+  ],
+  "deliveryZones": [
+    {
+      "id": "LAGOS",
+      "name": "Lagos State (Standard)",
+      "states": [
+        "Lagos"
+      ],
+      "feeKobo": 200000,
+      "estimatedDays": "1–2 business days",
+      "active": true
+    },
+    {
+      "id": "SOUTH_WEST",
+      "name": "South West Nigeria (Ogun, Oyo, Osun, Ondo, Ekiti)",
+      "states": [
+        "Ogun",
+        "Oyo",
+        "Osun",
+        "Ondo",
+        "Ekiti"
+      ],
+      "feeKobo": 400000,
+      "estimatedDays": "2–3 business days",
+      "active": true
+    },
+    {
+      "id": "NATIONWIDE",
+      "name": "Nationwide Courier (Other 30 States + FCT Abuja)",
+      "states": [
+        "Abia",
+        "Adamawa",
+        "Akwa Ibom",
+        "Anambra",
+        "Bauchi",
+        "Bayelsa",
+        "Benue",
+        "Borno",
+        "Cross River",
+        "Delta",
+        "Ebonyi",
+        "Edo",
+        "Enugu",
+        "FCT Abuja",
+        "Gombe",
+        "Imo",
+        "Jigawa",
+        "Kaduna",
+        "Kano",
+        "Katsina",
+        "Kebbi",
+        "Kogi",
+        "Kwara",
+        "Nasarawa",
+        "Niger",
+        "Plateau",
+        "Rivers",
+        "Sokoto",
+        "Taraba",
+        "Yobe",
+        "Zamfara"
+      ],
+      "feeKobo": 600000,
+      "estimatedDays": "3–5 business days",
+      "active": true
+    },
+    {
+      "id": "PICKUP",
+      "name": "Direct Store Pickup (Mushin Showroom)",
+      "states": [
+        "Lagos"
+      ],
+      "feeKobo": 0,
+      "estimatedDays": "Available same-day during opening hours",
+      "active": true
+    }
+  ]
+}

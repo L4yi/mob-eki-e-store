@@ -1,0 +1,428 @@
+import {
+  Category,
+  Product,
+  BusinessSettings,
+  TeamMember,
+  User,
+  DeliveryZoneConfig,
+} from '../types';
+import bcrypt from 'bcryptjs';
+
+export const initialCategories: Category[] = [
+  {
+    id: 'cat-handles',
+    slug: 'handles',
+    name: 'Handles',
+    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop&q=80',
+    description: 'Modern cabinet bar handles, profile pulls, T-bars, and luxury wardrobe handles.',
+    displayOrder: 1,
+    active: true,
+    createdAt: new Date().toISOString(),
+    updatedAt: new Date().toISOString(),
+  },
+  {
+    id: 'cat-knobs',
+    slug: 'knobs',
+    name: 'Knobs',
+    image: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400&h=300&fit=crop&q=80',
+    description: 'Brass, matte black, crystal, and stainless steel drawer and dresser knobs.',
+    displayOrder: 2,
+    active: true,
+    createdAt: new Date().toISOString(),
+    updatedAt: new Date().toISOString(),
+  },
+  {
+    id: 'cat-hinges',
+    slug: 'hinges',
+    name: 'Hinges',
+    image: 'https://images.unsplash.com/photo-1538688525198-9b88f6f53126?w=400&h=300&fit=crop&q=80',
+    description: 'Hydraulic soft-close cabinet hinges, concealed 3D hinges, and heavy-duty pivot hinges.',
+    displayOrder: 3,
+    active: true,
+    createdAt: new Date().toISOString(),
+    updatedAt: new Date().toISOString(),
+  },
+  {
+    id: 'cat-locks',
+    slug: 'locks',
+    name: 'Locks',
+    image: 'https://images.unsplash.com/photo-1558002038-1055907df827?w=400&h=300&fit=crop&q=80',
+    description: 'Drawer locks, wardrobe cam locks, digital keypad locks, and central locking bars.',
+    displayOrder: 4,
+    active: true,
+    createdAt: new Date().toISOString(),
+    updatedAt: new Date().toISOString(),
+  },
+  {
+    id: 'cat-fittings',
+    slug: 'fittings',
+    name: 'Furniture Fittings',
+    image: 'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=400&h=300&fit=crop&q=80',
+    description: 'Telescopic drawer slides, soft-close undermount runners, gas springs, and shelf pins.',
+    displayOrder: 5,
+    active: true,
+    createdAt: new Date().toISOString(),
+    updatedAt: new Date().toISOString(),
+  },
+  {
+    id: 'cat-accessories',
+    slug: 'accessories',
+    name: 'Other Accessories',
+    image: 'https://images.unsplash.com/photo-1507089947368-19c1da9775ae?w=400&h=300&fit=crop&q=80',
+    description: 'Heavy duty caster wheels, adjustable sofa legs, cable grommets, and wardrobe accessories.',
+    displayOrder: 6,
+    active: true,
+    createdAt: new Date().toISOString(),
+    updatedAt: new Date().toISOString(),
+  },
+];
+
+export const initialProducts: Product[] = [
+  {
+    id: 'p1',
+    slug: 'satin-nickel-bar-handle',
+    name: 'Satin Nickel Bar Handle',
+    sku: 'MOB-HND-001',
+    categoryId: 'cat-handles',
+    categoryName: 'Handles',
+    categorySlug: 'handles',
+    description: 'A clean, modern bar handle finished in satin nickel. Suitable for kitchen cabinets, wardrobes, and furniture drawers.',
+    priceKobo: 280000, // ₦2,800
+    wholesaleEnabled: true,
+    retailEnabled: true,
+    wholesaleMinQty: 20,
+    wholesalePriceKobo: 240000, // ₦2,400
+    images: [
+      'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=700&h=700&fit=crop&auto=format',
+      'https://images.unsplash.com/photo-1614252235316-8c857d38b5f4?w=700&h=700&fit=crop&auto=format',
+    ],
+    stockQuantity: 150,
+    reservedQuantity: 0,
+    lowStockThreshold: 15,
+    specs: [
+      { label: 'Finish', value: 'Satin Nickel' },
+      { label: 'Length', value: '128mm' },
+      { label: 'Material', value: 'Zinc Alloy' },
+      { label: 'Hole Spacing', value: '96mm' },
+    ],
+    active: true,
+    featured: true,
+    createdAt: new Date().toISOString(),
+    updatedAt: new Date().toISOString(),
+  },
+  {
+    id: 'p2',
+    slug: 'matte-black-square-knob',
+    name: 'Matte Black Square Knob',
+    sku: 'MOB-KNB-002',
+    categoryId: 'cat-knobs',
+    categoryName: 'Knobs',
+    categorySlug: 'knobs',
+    description: 'Minimal square cabinet knob with a durable matte black finish. Ideal for modern kitchen and bedroom furniture.',
+    priceKobo: 150000, // ₦1,500
+    wholesaleEnabled: true,
+    retailEnabled: true,
+    wholesaleMinQty: 30,
+    wholesalePriceKobo: 125000, // ₦1,250
+    images: [
+      'https://images.unsplash.com/photo-1614252235316-8c857d38b5f4?w=700&h=700&fit=crop&auto=format',
+    ],
+    stockQuantity: 220,
+    reservedQuantity: 0,
+    lowStockThreshold: 20,
+    specs: [
+      { label: 'Finish', value: 'Matte Black' },
+      { label: 'Size', value: '30mm × 30mm' },
+      { label: 'Material', value: 'Zinc Alloy' },
+      { label: 'Screw Thread', value: 'M4' },
+    ],
+    active: true,
+    featured: true,
+    createdAt: new Date().toISOString(),
+    updatedAt: new Date().toISOString(),
+  },
+  {
+    id: 'p3',
+    slug: 'concealed-soft-close-hinge',
+    name: 'Concealed Soft-Close Hinge',
+    sku: 'MOB-HNG-003',
+    categoryId: 'cat-hinges',
+    categoryName: 'Hinges',
+    categorySlug: 'hinges',
+    description: 'Full overlay concealed hinge with integrated soft-close mechanism. Easy to install with 35mm cup hole drilling.',
+    priceKobo: 320000, // ₦3,200
+    wholesaleEnabled: true,
+    retailEnabled: true,
+    wholesaleMinQty: 25,
+    wholesalePriceKobo: 270000, // ₦2,700
+    images: [
+      'https://images.unsplash.com/photo-1581539250439-c96689b516dd?w=700&h=700&fit=crop&auto=format',
+    ],
+    stockQuantity: 8,
+    reservedQuantity: 0,
+    lowStockThreshold: 10,
+    specs: [
+      { label: 'Type', value: 'Full Overlay' },
+      { label: 'Cup Hole', value: '35mm' },
+      { label: 'Opening Angle', value: '110°' },
+      { label: 'Close Type', value: 'Soft-Close' },
+    ],
+    active: true,
+    featured: true,
+    createdAt: new Date().toISOString(),
+    updatedAt: new Date().toISOString(),
+  },
+  {
+    id: 'p4',
+    slug: 'cylinder-cam-lock',
+    name: 'Cylinder Cam Lock',
+    sku: 'MOB-LCK-004',
+    categoryId: 'cat-locks',
+    categoryName: 'Locks',
+    categorySlug: 'locks',
+    description: 'Standard cylinder cam lock for cabinets, drawers, and display cases. Supplied with two keys.',
+    priceKobo: 210000, // ₦2,100
+    wholesaleEnabled: true,
+    retailEnabled: true,
+    wholesaleMinQty: 20,
+    wholesalePriceKobo: 180000, // ₦1,800
+    images: [
+      'https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=700&h=700&fit=crop&auto=format',
+    ],
+    stockQuantity: 100,
+    reservedQuantity: 0,
+    lowStockThreshold: 10,
+    specs: [
+      { label: 'Diameter', value: '16mm' },
+      { label: 'Length', value: '25mm' },
+      { label: 'Material', value: 'Zinc Alloy' },
+      { label: 'Keys', value: '2 supplied' },
+    ],
+    active: true,
+    featured: true,
+    createdAt: new Date().toISOString(),
+    updatedAt: new Date().toISOString(),
+  },
+  {
+    id: 'p5',
+    slug: 'brushed-gold-arch-handle',
+    name: 'Brushed Gold Arch Handle',
+    sku: 'MOB-HND-005',
+    categoryId: 'cat-handles',
+    categoryName: 'Handles',
+    categorySlug: 'handles',
+    description: 'Elegant arch-form handle in brushed gold. A statement piece for wardrobe doors and kitchen cabinets.',
+    priceKobo: 390000, // ₦3,900
+    wholesaleEnabled: true,
+    retailEnabled: true,
+    wholesaleMinQty: 15,
+    wholesalePriceKobo: 340000, // ₦3,400
+    images: [
+      'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=700&h=700&fit=crop&auto=format',
+    ],
+    stockQuantity: 75,
+    reservedQuantity: 0,
+    lowStockThreshold: 10,
+    specs: [
+      { label: 'Finish', value: 'Brushed Gold' },
+      { label: 'Length', value: '160mm' },
+      { label: 'Material', value: 'Zinc Alloy' },
+      { label: 'Hole Spacing', value: '128mm' },
+    ],
+    active: true,
+    featured: false,
+    createdAt: new Date().toISOString(),
+    updatedAt: new Date().toISOString(),
+  },
+  {
+    id: 'p6',
+    slug: 'drawer-slide-full-extension',
+    name: 'Drawer Slide — Full Extension',
+    sku: 'MOB-FIT-006',
+    categoryId: 'cat-fittings',
+    categoryName: 'Furniture Fittings',
+    categorySlug: 'fittings',
+    description: 'Ball-bearing drawer slide with full extension and smooth quiet operation. Suitable for kitchen and office drawers.',
+    priceKobo: 450000, // ₦4,500
+    wholesaleEnabled: true,
+    retailEnabled: true,
+    wholesaleMinQty: 10,
+    wholesalePriceKobo: 390000, // ₦3,900
+    images: [
+      'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=700&h=700&fit=crop&auto=format',
+    ],
+    stockQuantity: 0, // Out of stock
+    reservedQuantity: 0,
+    lowStockThreshold: 10,
+    specs: [
+      { label: 'Length', value: '450mm' },
+      { label: 'Load Capacity', value: '45kg' },
+      { label: 'Extension', value: 'Full Extension' },
+      { label: 'Material', value: 'Cold-Rolled Steel' },
+    ],
+    active: true,
+    featured: false,
+    createdAt: new Date().toISOString(),
+    updatedAt: new Date().toISOString(),
+  },
+  {
+    id: 'p7',
+    slug: 'round-ceramic-knob',
+    name: 'Round Ceramic Knob',
+    sku: 'MOB-KNB-007',
+    categoryId: 'cat-knobs',
+    categoryName: 'Knobs',
+    categorySlug: 'knobs',
+    description: 'Classic round ceramic knob with subtle texture. Available in white. Suits traditional and transitional interiors.',
+    priceKobo: 120000, // ₦1,200
+    wholesaleEnabled: true,
+    retailEnabled: true,
+    wholesaleMinQty: 30,
+    wholesalePriceKobo: 95000, // ₦950
+    images: [
+      'https://images.unsplash.com/photo-1614252235316-8c857d38b5f4?w=700&h=700&fit=crop&auto=format',
+    ],
+    stockQuantity: 180,
+    reservedQuantity: 0,
+    lowStockThreshold: 15,
+    specs: [
+      { label: 'Finish', value: 'White Ceramic' },
+      { label: 'Diameter', value: '38mm' },
+      { label: 'Material', value: 'Ceramic + Metal Base' },
+      { label: 'Screw Thread', value: 'M4' },
+    ],
+    active: true,
+    featured: false,
+    createdAt: new Date().toISOString(),
+    updatedAt: new Date().toISOString(),
+  },
+  {
+    id: 'p8',
+    slug: 'heavy-duty-butt-hinge',
+    name: 'Heavy-Duty Butt Hinge',
+    sku: 'MOB-HNG-008',
+    categoryId: 'cat-hinges',
+    categoryName: 'Hinges',
+    categorySlug: 'hinges',
+    description: 'Durable stainless steel butt hinge for doors and heavy cabinet applications.',
+    priceKobo: 180000, // ₦1,800
+    wholesaleEnabled: true,
+    retailEnabled: true,
+    wholesaleMinQty: 25,
+    wholesalePriceKobo: 150000, // ₦1,500
+    images: [
+      'https://images.unsplash.com/photo-1581539250439-c96689b516dd?w=700&h=700&fit=crop&auto=format',
+    ],
+    stockQuantity: 140,
+    reservedQuantity: 0,
+    lowStockThreshold: 15,
+    specs: [
+      { label: 'Finish', value: 'Stainless Steel' },
+      { label: 'Size', value: '75mm × 50mm' },
+      { label: 'Material', value: 'Stainless Steel 304' },
+      { label: 'Load', value: 'Heavy Duty' },
+    ],
+    active: true,
+    featured: false,
+    createdAt: new Date().toISOString(),
+    updatedAt: new Date().toISOString(),
+  },
+];
+
+export const initialDeliveryZones: DeliveryZoneConfig[] = [
+  {
+    id: 'LAGOS',
+    name: 'Lagos State (Standard)',
+    states: ['Lagos'],
+    feeKobo: 200000, // ₦2,000
+    estimatedDays: '1–2 business days',
+    active: true,
+  },
+  {
+    id: 'SOUTH_WEST',
+    name: 'South West Nigeria (Ogun, Oyo, Osun, Ondo, Ekiti)',
+    states: ['Ogun', 'Oyo', 'Osun', 'Ondo', 'Ekiti'],
+    feeKobo: 400000, // ₦4,000
+    estimatedDays: '2–3 business days',
+    active: true,
+  },
+  {
+    id: 'NATIONWIDE',
+    name: 'Nationwide Courier (Other 30 States + FCT Abuja)',
+    states: [
+      'Abia', 'Adamawa', 'Akwa Ibom', 'Anambra', 'Bauchi', 'Bayelsa', 'Benue', 'Borno',
+      'Cross River', 'Delta', 'Ebonyi', 'Edo', 'Enugu', 'FCT Abuja', 'Gombe', 'Imo',
+      'Jigawa', 'Kaduna', 'Kano', 'Katsina', 'Kebbi', 'Kogi', 'Kwara', 'Nasarawa',
+      'Niger', 'Plateau', 'Rivers', 'Sokoto', 'Taraba', 'Yobe', 'Zamfara'
+    ],
+    feeKobo: 600000, // ₦6,000
+    estimatedDays: '3–5 business days',
+    active: true,
+  },
+  {
+    id: 'PICKUP',
+    name: 'Direct Store Pickup (Mushin Showroom)',
+    states: ['Lagos'],
+    feeKobo: 0, // Free
+    estimatedDays: 'Available same-day during opening hours',
+    active: true,
+  },
+];
+
+export const initialSettings: BusinessSettings = {
+  id: 'default',
+  storeName: 'M.O.B EKI VENTURES',
+  tagline: 'Quality Furniture Accessories & Architectural Hardware',
+  address: '2, Amu Street, Mushin Market, Lagos, Nigeria',
+  openingHours: 'Mon - Sat: 8:00 AM - 5:00 PM (Closed Sundays)',
+  phone1: '08108725967',
+  phone2: '08025262598',
+  phone3: '08028077200',
+  whatsapp: '+2348108725967',
+  email: 'muhazoladejo48@gmail.com',
+  deliveryLagosKobo: 200000,
+  deliverySouthWestKobo: 400000,
+  deliveryNationwideKobo: 600000,
+  bankName: 'Guaranty Trust Bank (GTBank)',
+  bankAccountName: 'M.O.B EKI VENTURES',
+  bankAccountNumber: '0123456789',
+  aboutText: 'M.O.B EKI VENTURES is an established physical Nigerian enterprise situated at 2, Amu Street in the commercial hub of Mushin Market, Lagos. Founded by Mulikat & Mutiu Oladejo and managed alongside Oladejo Muhaz Olayiwola, we specialize in the direct importation, wholesale distribution, and retail supply of premium furniture hardware, cabinet handles, hydraulic soft-close hinges, drawer runners, and security fittings across all 36 states of Nigeria.',
+  announcementText: 'Nationwide delivery available · Retail & wholesale orders welcome',
+  createdAt: new Date().toISOString(),
+  updatedAt: new Date().toISOString(),
+};
+
+export const initialTeamMembers: TeamMember[] = [
+  {
+    id: 'team-1',
+    name: 'Mulikat & Mutiu Oladejo',
+    position: 'Founders & Managing Directors / CEOs',
+    bio: 'Pioneered M.O.B EKI VENTURES in Mushin Market with decades of hardware expertise, establishing trusted partnerships with international manufacturers.',
+    image: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&h=400&fit=crop&q=80',
+    displayOrder: 1,
+    active: true,
+  },
+  {
+    id: 'team-2',
+    name: 'Oladejo Muhaz Olayiwola',
+    position: 'General Manager & Social Media Lead',
+    bio: 'Oversees showroom inventory operations, corporate bulk order deliveries across Nigeria, customer relations, and digital sales inquiries.',
+    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&q=80',
+    displayOrder: 2,
+    active: true,
+  }
+];
+
+export const getInitialAdminUser = async (): Promise<User> => {
+  const hash = await bcrypt.hash('adminpassword123', 10);
+  return {
+    id: 'usr-admin-01',
+    name: 'M.O.B Admin',
+    email: 'admin@mobekiventures.com',
+    phone: '08108725967',
+    passwordHash: hash,
+    role: 'SUPER_ADMIN',
+    createdAt: new Date().toISOString(),
+    updatedAt: new Date().toISOString(),
+  };
+};
