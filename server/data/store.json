@@ -123,9 +123,9 @@
       "retailEnabled": true,
       "wholesaleEnabled": true,
       "createdAt": "2026-09-23T19:14:09.966Z",
-      "updatedAt": "2026-09-23T20:14:14.796Z",
+      "updatedAt": "2026-09-23T20:27:34.248Z",
       "priceKobo": 380000,
-      "reservedQuantity": 2
+      "reservedQuantity": 0
     },
     {
       "id": "prod-2",
@@ -355,7 +355,7 @@
       "totalKobo": 960000,
       "paymentMethod": "BANK_TRANSFER",
       "paymentStatus": "PENDING",
-      "orderStatus": "PENDING_PAYMENT",
+      "orderStatus": "CANCELLED",
       "reservationExpiresAt": "2026-09-23T20:27:10.034Z",
       "items": [
         {
@@ -371,11 +371,16 @@
           "timestamp": "2026-09-23T19:57:10.034Z",
           "status": "PENDING_PAYMENT",
           "note": "Order created, awaiting payment confirmation."
+        },
+        {
+          "timestamp": "2026-09-23T20:27:34.250Z",
+          "status": "CANCELLED",
+          "note": "Order auto-cancelled due to checkout timeout / reservation expiry"
         }
       ],
       "idempotencyKey": "test-idem-1790193430030",
       "createdAt": "2026-09-23T19:57:10.034Z",
-      "updatedAt": "2026-09-23T19:57:10.034Z"
+      "updatedAt": "2026-09-23T20:27:34.250Z"
     },
     {
       "id": "ord-31ad03f2-2a32-4d85-9900-e16e01db00c6",
@@ -467,6 +472,20 @@
     }
   ],
   "movements": [
+    {
+      "id": "mov-45ce29d3-f910-4d42-bc5b-af374a0840bf",
+      "productId": "prod-1",
+      "productName": "Brushed Brass T-Bar Cabinet Handle (160mm Hole Center)",
+      "sku": "MOB-HND-001",
+      "type": "RELEASE",
+      "quantityChange": 2,
+      "previousStock": 241,
+      "newStock": 241,
+      "referenceType": "ORDER",
+      "referenceId": "ord-19525298-0a23-474e-83a5-d35ba5c18782",
+      "reason": "Checkout reservation expired after 30 minutes",
+      "createdAt": "2026-09-23T20:27:34.249Z"
+    },
     {
       "id": "mov-d77abe5e-6da0-4c19-99ec-a5528040a9bf",
       "productId": "prod-1",
