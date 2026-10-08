@@ -13,11 +13,50 @@ import { productService } from '../services/ProductAndCategoryServices';
 import { auditLogService } from '../services/AuthAuditSettingsServices';
 import { repositories } from '../repositories';
 import { whatsAppService } from '../services/WhatsAppService';
+import { uploadImageToStorage } from '../lib/supabaseStorage';
 
 const router = Router();
 
 // Protect entire admin router
 router.use(requireAuth, requireAdmin);
+
+// POST /api/admin/upload
+router.post('/upload', async (req, res, next) => {
+  try {
+    const { fileData, fileName, fileType, folder } = req.body;
+
+    if (!fileData || !fileName) {
+      return res.status(400).json({ error: 'fileData (Base64) and fileName are required' });
+    }
+
+    const result = await uploadImageToStorage({
+      fileData,
+      fileName,
+      fileType,
+      folder: folder || 'products',
+    });
+
+    await auditLogService.log({
+      adminId: req.user!.id,
+      adminEmail: req.user!.email,
+      action: 'UPLOAD_IMAGE',
+      entityType: 'SETTINGS',
+      entityId: result.fileKey,
+      afterState: { url: result.url, fileName: result.fileName, size: result.size },
+    });
+
+    return res.status(201).json({
+      success: true,
+      url: result.url,
+      fileName: result.fileName,
+      fileKey: result.fileKey,
+      size: result.size,
+    });
+  } catch (err: any) {
+    console.error('[Admin Upload Error]', err);
+    return res.status(400).json({ error: err.message || 'Image upload failed' });
+  }
+});
 
 // GET /api/admin/dashboard
 router.get('/dashboard', async (req, res, next) => {

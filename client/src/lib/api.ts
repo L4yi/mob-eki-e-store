@@ -75,6 +75,40 @@ export const api = {
     if (!res.ok) throw new Error('Failed to delete product');
   },
 
+  // --- Image Upload (Supabase Storage) ---
+  async uploadImage(file: File, folder = 'products'): Promise<{ url: string; fileName: string; size: number }> {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onload = async () => {
+        try {
+          const base64Data = reader.result as string;
+          const res = await fetch(`${API_BASE}/admin/upload`, {
+            method: 'POST',
+            headers: getAuthHeaders(),
+            body: JSON.stringify({
+              fileData: base64Data,
+              fileName: file.name,
+              fileType: file.type,
+              folder,
+            }),
+          });
+
+          if (!res.ok) {
+            const err = await res.json().catch(() => ({ error: 'Upload failed' }));
+            throw new Error(err.error || 'Failed to upload image');
+          }
+
+          const data = await res.json();
+          resolve(data);
+        } catch (err) {
+          reject(err);
+        }
+      };
+      reader.onerror = () => reject(new Error('Failed to read image file'));
+      reader.readAsDataURL(file);
+    });
+  },
+
   // --- Categories ---
   async getCategories(): Promise<Category[]> {
     const res = await fetch(`${API_BASE}/categories`);

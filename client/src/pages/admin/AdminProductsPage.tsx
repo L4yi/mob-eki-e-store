@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { api } from '../../lib/api';
 import { Product, Category } from '../../types';
 import { Plus, Edit2, Trash2, Check, X, Search, Image as ImageIcon } from 'lucide-react';
+import ImageUploadDropzone from '../../components/admin/ImageUploadDropzone';
 
 export default function AdminProductsPage() {
   const [products, setProducts] = useState<Product[]>([]);
@@ -18,7 +19,7 @@ export default function AdminProductsPage() {
   const [price, setPrice] = useState('');
   const [stockQuantity, setStockQuantity] = useState('');
   const [description, setDescription] = useState('');
-  const [image, setImage] = useState('');
+  const [images, setImages] = useState<string[]>([]);
   const [specsText, setSpecsText] = useState('Material: Brass\nFinish: Gold');
 
   const loadData = () => {
@@ -46,7 +47,7 @@ export default function AdminProductsPage() {
     setPrice('3500');
     setStockQuantity('50');
     setDescription('');
-    setImage('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=600&fit=crop&q=80');
+    setImages(['https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=600&fit=crop&q=80']);
     setSpecsText('Material: Solid Brass\nFinish: Satin Gold');
     setIsModalOpen(true);
   };
@@ -59,7 +60,7 @@ export default function AdminProductsPage() {
     setPrice(String(p.price));
     setStockQuantity(String(p.stockQuantity));
     setDescription(p.description);
-    setImage(p.images[0] || '');
+    setImages(p.images && p.images.length > 0 ? p.images : [(p as any).image || 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=600&fit=crop&q=80']);
     setSpecsText(p.specs ? p.specs.map((s) => `${s.label}: ${s.value}`).join('\n') : '');
     setIsModalOpen(true);
   };
@@ -84,7 +85,7 @@ export default function AdminProductsPage() {
       price: Number(price),
       stockQuantity: Number(stockQuantity),
       description,
-      images: [image],
+      images: images.length > 0 ? images : ['https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=600&fit=crop&q=80'],
       specs,
       active: true,
       featured: false,
@@ -306,13 +307,12 @@ export default function AdminProductsPage() {
               </div>
 
               <div>
-                <label className="block font-bold text-gray-700 mb-1">Image URL</label>
-                <input
-                  type="url"
-                  value={image}
-                  onChange={(e) => setImage(e.target.value)}
-                  placeholder="https://images.unsplash.com/..."
-                  className="w-full p-2.5 bg-gray-50 border border-gray-200 rounded-xl"
+                <label className="block font-bold text-gray-700 mb-1">Product Images (Drag & Drop or File Upload)</label>
+                <ImageUploadDropzone
+                  images={images}
+                  onChange={setImages}
+                  folder="products"
+                  maxFiles={5}
                 />
               </div>
 
