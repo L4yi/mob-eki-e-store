@@ -183,9 +183,26 @@ export class OrderService {
       );
     }
 
-    // If order is cancelled from PENDING_PAYMENT, release stock reservation
-    if (newStatus === 'CANCELLED' && order.orderStatus === 'PENDING_PAYMENT') {
-      await inventoryService.releaseOrderStock(order.items, order.id, 'Order cancelled by staff or user');
+    // Inventory lifecycle handling on status transitions
+    if (newStatus === 'CONFIRMED' && order.orderStatus === 'PENDING_PAYMENT') {
+      // Commit reserved stock to final sale
+      await inventoryService.commitOrderSale(order.items, order.id, order.orderNumber);
+    } else if (newStatus === 'CANCELLED') {
+      if (order.orderStatus === 'PENDING_PAYMENT') {
+        // Release uncommitted reservation
+        await inventoryService.releaseOrderStock(order.items, order.id, 'Order cancelled by staff or user');
+      } else if (order.orderStatus === 'CONFIRMED' || order.orderStatus === 'PROCESSING') {
+        // Return committed inventory back to available stock
+        for (const item of order.items) {
+          await inventoryService.adjustStock({
+            productId: item.productId,
+            type: 'RETURN',
+            quantityChange: item.quantity,
+            reason: `Order ${order.orderNumber} cancelled during ${order.orderStatus}`,
+            performedBy: 'System / Staff',
+          });
+        }
+      }
     }
 
     const trackingNotes = [
@@ -193,14 +210,20 @@ export class OrderService {
       {
         timestamp: new Date().toISOString(),
         status: newStatus,
-        note: note || `Order transitioned to ${newStatus}`,
+        note: note || `Order status updated to ${newStatus.replace(/_/g, ' ')}`,
       },
     ];
 
-    return this.orderRepo.update(order.id, {
+    const updates: Partial<Order> = {
       orderStatus: newStatus,
       trackingNotes,
-    });
+    };
+
+    if (newStatus === 'CONFIRMED' && order.paymentStatus === 'PENDING' && order.paymentMethod !== 'PAY_ON_DELIVERY') {
+      updates.paymentStatus = 'PAID';
+    }
+
+    return this.orderRepo.update(order.id, updates);
   }
 
   public async cancelOrder(orderId: string, userId?: string): Promise<Order | null> {

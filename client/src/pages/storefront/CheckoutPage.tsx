@@ -10,6 +10,8 @@ const nigerianStates =
     '.'
   );
 
+const southWestStates = ['Ogun', 'Oyo', 'Osun', 'Ondo', 'Ekiti'];
+
 export default function CheckoutPage() {
   const { items, total, clearCart } = useCart();
   const { user } = useAuth();
@@ -31,8 +33,18 @@ export default function CheckoutPage() {
   const [createdOrderNumber, setCreatedOrderNumber] = useState('');
   const [loading, setLoading] = useState(false);
 
-  const deliveryCost =
-    form.delivery === 'pickup' ? 0 : form.delivery === 'express' ? 4500 : 2000;
+  const isPickup = form.delivery === 'pickup';
+  const isLagos = form.state === 'Lagos';
+  const isSouthWest = southWestStates.includes(form.state);
+
+  const deliveryCost = isPickup
+    ? 0
+    : isLagos
+    ? (form.delivery === 'express' ? 4500 : 2000)
+    : isSouthWest
+    ? (form.delivery === 'express' ? 6000 : 3500)
+    : (form.delivery === 'express' ? 8000 : 5000);
+
   const grandTotal = total + (items.length > 0 ? deliveryCost : 0);
 
   const handleChange = (field: string, value: string) => {
@@ -63,18 +75,25 @@ export default function CheckoutPage() {
 
     setLoading(true);
     try {
+      const zone = isPickup
+        ? 'PICKUP'
+        : isLagos
+        ? 'LAGOS'
+        : isSouthWest
+        ? 'SOUTH_WEST'
+        : 'NATIONWIDE';
+
       const orderData = {
         userId: user?.id,
-        customerName: form.fullName,
-        customerEmail: form.email,
-        customerPhone: form.phone,
-        deliveryZone: form.delivery === 'pickup' ? 'PICKUP' : form.state === 'Lagos' ? 'LAGOS' : 'NATIONWIDE',
-        deliveryState: form.delivery === 'pickup' ? 'Lagos' : form.state,
-        deliveryCity: form.delivery === 'pickup' ? 'Mushin' : form.city,
-        deliveryAddress:
-          form.delivery === 'pickup'
-            ? 'Store Pickup: 2, Amu Street, Mushin Market, Lagos'
-            : form.address,
+        customerName: form.fullName.trim(),
+        customerEmail: form.email.trim(),
+        customerPhone: form.phone.trim(),
+        deliveryZone: zone,
+        deliveryState: isPickup ? 'Lagos' : form.state,
+        deliveryCity: isPickup ? 'Mushin' : form.city.trim(),
+        deliveryAddress: isPickup
+          ? 'Store Pickup: 2, Amu Street, Mushin Market, Lagos'
+          : form.address.trim(),
         paymentMethod:
           form.payment === 'paystack'
             ? 'PAYSTACK'
@@ -102,37 +121,53 @@ export default function CheckoutPage() {
   };
 
   if (submitted) {
+    const whatsappMsg = encodeURIComponent(
+      `Hello M.O.B EKI VENTURES, I have placed Order ${createdOrderNumber}. Customer: ${form.fullName}. Please confirm delivery!`
+    );
+
     return (
-      <div className="max-w-lg mx-auto px-4 sm:px-6 py-24 text-center">
-        <div className="w-16 h-16 bg-emerald-50 rounded-full flex items-center justify-center mx-auto mb-5">
+      <div className="max-w-lg mx-auto px-4 sm:px-6 py-20 text-center">
+        <div className="w-16 h-16 bg-emerald-50 rounded-full flex items-center justify-center mx-auto mb-5 shadow-xs">
           <CheckCircle2 size={32} className="text-emerald-600" />
         </div>
-        <h2 className="font-serif text-2xl text-[#0B1F3A] font-semibold mb-2">
+        <h2 className="font-serif text-2xl sm:text-3xl text-[#0B1F3A] font-semibold mb-2">
           Order Placed Successfully
         </h2>
         {createdOrderNumber && (
-          <p className="text-xs font-mono font-bold text-[#C9A227] mb-2">
+          <p className="text-sm font-mono font-bold text-[#C9A227] mb-3">
             Order Reference: {createdOrderNumber}
           </p>
         )}
-        <p className="text-[#6B7280] text-sm leading-relaxed mb-7">
-          Thank you for your order. We'll contact you shortly on WhatsApp / Phone to confirm delivery details.
+        <p className="text-[#6B7280] text-sm leading-relaxed mb-6">
+          Thank you for choosing M.O.B EKI VENTURES. Your order has been registered in our Mushin Market showroom fulfillment queue.
         </p>
-        <div className="flex justify-center gap-3">
-          <Link
-            to="/shop"
-            className="inline-flex items-center gap-2 bg-[#0B1F3A] text-white font-semibold text-sm px-6 py-3 hover:bg-[#164A7A] transition-colors"
+
+        <div className="flex flex-col sm:flex-row justify-center gap-3 mb-6">
+          <a
+            href={`https://wa.me/2348108725967?text=${whatsappMsg}`}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center justify-center gap-2 bg-[#25D366] text-white font-semibold text-sm px-6 py-3 hover:bg-[#1EBE5D] transition-colors"
           >
-            Continue Shopping
-          </Link>
+            Confirm on WhatsApp →
+          </a>
           {createdOrderNumber && (
             <Link
               to={`/orders/${createdOrderNumber}`}
-              className="inline-flex items-center gap-2 border border-[#0B1F3A] text-[#0B1F3A] font-semibold text-sm px-6 py-3 hover:bg-[#0B1F3A]/5 transition-colors"
+              className="inline-flex items-center justify-center gap-2 bg-[#0B1F3A] text-white font-semibold text-sm px-6 py-3 hover:bg-[#164A7A] transition-colors"
             >
-              Track Order
+              Track Order Status
             </Link>
           )}
+        </div>
+
+        <div>
+          <Link
+            to="/shop"
+            className="text-xs text-[#6B7280] hover:text-[#0B1F3A] underline transition-colors"
+          >
+            Continue Shopping
+          </Link>
         </div>
       </div>
     );

@@ -4,9 +4,14 @@ import { MessageCircle, Phone, Camera } from 'lucide-react';
 import { BusinessSettings } from '../../types';
 
 export default function Footer({ settings }: { settings?: BusinessSettings }) {
-  const whatsapp = settings?.whatsapp || '08108725967';
+  const rawWhatsApp = settings?.whatsapp || '08108725967';
   const phone = settings?.phone1 || '08108725967';
-  const cleanWhatsApp = whatsapp.replace(/[^0-9]/g, '');
+  
+  // Format to Nigerian international format for WhatsApp deep links (234...)
+  let cleanWhatsApp = rawWhatsApp.replace(/[^0-9]/g, '');
+  if (cleanWhatsApp.startsWith('0')) {
+    cleanWhatsApp = '234' + cleanWhatsApp.substring(1);
+  }
   const cleanPhone = phone.replace(/[^0-9]/g, '');
 
   return (
@@ -20,7 +25,7 @@ export default function Footer({ settings }: { settings?: BusinessSettings }) {
             Furniture Accessories
           </div>
           <p className="text-[#9CA3AF] text-sm leading-relaxed">
-            Quality furniture accessories and fittings for retail and wholesale customers across Nigeria.
+            Quality furniture accessories, architectural hardware, and fittings for retail and wholesale customers across Nigeria.
           </p>
         </div>
         <div>
@@ -29,10 +34,10 @@ export default function Footer({ settings }: { settings?: BusinessSettings }) {
           </h4>
           <ul className="space-y-2.5">
             {[
-              { label: 'Shop All', to: '/shop' },
-              { label: 'Categories', to: '/shop' },
-              { label: 'About', to: '/about' },
-              { label: 'Contact', to: '/#store' },
+              { label: 'Shop All Hardware', to: '/shop' },
+              { label: 'Browse Categories', to: '/shop' },
+              { label: 'About Us', to: '/about' },
+              { label: 'Showroom Location', to: '/#store' },
             ].map((item) => (
               <li key={item.label}>
                 <Link
@@ -50,14 +55,30 @@ export default function Footer({ settings }: { settings?: BusinessSettings }) {
             Customer Support
           </h4>
           <ul className="space-y-2.5">
-            {['Delivery', 'Returns', 'FAQs', 'Track Order'].map((item) => (
-              <li key={item}>
-                <Link
-                  to={item === 'Track Order' ? '/orders/ORD-2024-001' : '/'}
-                  className="text-sm text-[#9CA3AF] hover:text-white transition-colors"
-                >
-                  {item}
-                </Link>
+            {[
+              { label: 'Track Order', to: '/track' },
+              { label: 'Delivery Information', to: '/about' },
+              { label: 'Customer Account', to: '/account' },
+              { label: 'WhatsApp Dispatch', to: `https://wa.me/${cleanWhatsApp}` },
+            ].map((item) => (
+              <li key={item.label}>
+                {item.to.startsWith('http') ? (
+                  <a
+                    href={item.to}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="text-sm text-[#9CA3AF] hover:text-white transition-colors"
+                  >
+                    {item.label}
+                  </a>
+                ) : (
+                  <Link
+                    to={item.to}
+                    className="text-sm text-[#9CA3AF] hover:text-white transition-colors"
+                  >
+                    {item.label}
+                  </Link>
+                )}
               </li>
             ))}
           </ul>

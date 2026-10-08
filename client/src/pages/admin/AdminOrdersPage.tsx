@@ -109,15 +109,26 @@ export default function AdminOrdersPage() {
                       className="text-xs bg-gray-50 border border-gray-200 rounded-lg px-2.5 py-1.5 font-bold text-[#0B1F3A] focus:ring-2 focus:ring-[#0B1F3A]"
                     >
                       <option value="PENDING_PAYMENT">PENDING PAYMENT</option>
-                      <option value="PAID">PAID</option>
+                      <option value="CONFIRMED">CONFIRMED (COMMITTED)</option>
                       <option value="PROCESSING">PROCESSING IN MUSHIN</option>
                       <option value="DISPATCHED">DISPATCHED TO COURIER</option>
                       <option value="OUT_FOR_DELIVERY">OUT FOR DELIVERY</option>
                       <option value="DELIVERED">DELIVERED</option>
-                      <option value="CANCELLED">CANCELLED</option>
+                      <option value="CANCELLED">CANCELLED (RESTOCK)</option>
                     </select>
                   </td>
-                  <td className="p-4 text-right">
+                  <td className="p-4 text-right flex items-center justify-end gap-1.5">
+                    {o.customerPhone && (
+                      <a
+                        href={`https://wa.me/${o.customerPhone.replace(/[^0-9]/g, '').startsWith('0') ? '234' + o.customerPhone.replace(/[^0-9]/g, '').substring(1) : o.customerPhone.replace(/[^0-9]/g, '')}?text=${encodeURIComponent(`Hello ${o.customerName}, this is M.O.B EKI VENTURES regarding your Order ${o.orderNumber}. Status: ${o.orderStatus.replace(/_/g, ' ')}.`)}`}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="p-2 text-emerald-600 hover:text-emerald-700 hover:bg-emerald-50 rounded-lg transition"
+                        title="Chat on WhatsApp"
+                      >
+                        <ShoppingBag className="w-4 h-4" />
+                      </a>
+                    )}
                     <button
                       onClick={() => setSelectedOrder(o)}
                       className="p-2 text-gray-600 hover:text-[#0B1F3A] hover:bg-gray-100 rounded-lg transition"
