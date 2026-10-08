@@ -1,5 +1,12 @@
 import { Router } from 'express';
-import { requireAuth, requireAdmin } from '../middleware/auth';
+import {
+  requireAuth,
+  requireAdmin,
+  requireOrderManagement,
+  requireInventoryManagement,
+  requireSettingsManagement,
+  requireSuperAdmin,
+} from '../middleware/auth';
 import { validate } from '../middleware/validateAndErrors';
 import {
   adjustInventorySchema,
@@ -17,11 +24,11 @@ import { uploadImageToStorage } from '../lib/supabaseStorage';
 
 const router = Router();
 
-// Protect entire admin router
+// Protect entire admin router for authenticated staff
 router.use(requireAuth, requireAdmin);
 
 // POST /api/admin/upload
-router.post('/upload', async (req, res, next) => {
+router.post('/upload', requireInventoryManagement, async (req, res, next) => {
   try {
     const { fileData, fileName, fileType, folder } = req.body;
 
@@ -148,7 +155,7 @@ router.get('/orders/:id', async (req, res, next) => {
 });
 
 // PUT /api/admin/orders/:id/status
-router.put('/orders/:id/status', validate(updateOrderStatusSchema), async (req, res, next) => {
+router.put('/orders/:id/status', requireOrderManagement, validate(updateOrderStatusSchema), async (req, res, next) => {
   try {
     const id = Array.isArray(req.params.id) ? req.params.id[0] : req.params.id;
     const { status, note } = req.body;
@@ -208,7 +215,7 @@ router.get('/inventory/low-stock', async (req, res, next) => {
 });
 
 // POST /api/admin/inventory/adjust
-router.post('/inventory/adjust', validate(adjustInventorySchema), async (req, res, next) => {
+router.post('/inventory/adjust', requireInventoryManagement, validate(adjustInventorySchema), async (req, res, next) => {
   try {
     const updated = await inventoryService.adjustStock({
       ...req.body,
@@ -256,7 +263,7 @@ router.get('/payments', async (req, res, next) => {
 });
 
 // POST /api/admin/payments/verify-transfer
-router.post('/payments/verify-transfer', validate(verifyTransferSchema), async (req, res, next) => {
+router.post('/payments/verify-transfer', requireOrderManagement, validate(verifyTransferSchema), async (req, res, next) => {
   try {
     const { orderId, bankReference, verifiedNotes } = req.body;
     const updatedOrder = await paymentService.verifyBankTransferManual({
@@ -304,7 +311,7 @@ router.get('/customers', async (req, res, next) => {
 });
 
 // GET /api/admin/audit-logs
-router.get('/audit-logs', async (req, res, next) => {
+router.get('/audit-logs', requireSettingsManagement, async (req, res, next) => {
   try {
     const { page, limit } = req.query;
     const result = await auditLogService.getLogs(

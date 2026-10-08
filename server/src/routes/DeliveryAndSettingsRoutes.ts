@@ -1,7 +1,7 @@
 import { Router } from 'express';
 import { deliveryService } from '../services/DeliveryService';
 import { settingsService } from '../services/AuthAuditSettingsServices';
-import { requireAuth, requireAdmin } from '../middleware/auth';
+import { requireAuth, requireAdmin, requireSettingsManagement } from '../middleware/auth';
 import { validate } from '../middleware/validateAndErrors';
 import { updateSettingsSchema } from '../validation/schemas';
 import { auditLogService } from '../services/AuthAuditSettingsServices';
@@ -65,8 +65,8 @@ settingsRouter.get('/', async (req, res, next) => {
   }
 });
 
-// PUT /api/settings (Admin Only)
-settingsRouter.put('/', requireAuth, requireAdmin, validate(updateSettingsSchema), async (req, res, next) => {
+// PUT /api/settings (Super Admin & Admin Only)
+settingsRouter.put('/', requireAuth, requireSettingsManagement, validate(updateSettingsSchema), async (req, res, next) => {
   try {
     const updated = await settingsService.updateSettings(req.body);
     await auditLogService.log({
