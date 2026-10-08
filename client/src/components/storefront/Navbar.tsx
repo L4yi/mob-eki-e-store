@@ -154,15 +154,24 @@ export default function Navbar() {
           {/* Cart Icon with Gold Badge */}
           <Link
             to="/cart"
-            aria-label="Cart"
-            className="relative text-[#6B7280] hover:text-[#0B1F3A] transition-colors p-1"
+            aria-label="Shopping Cart"
+            className="relative flex items-center gap-1.5 text-[#6B7280] hover:text-[#0B1F3A] transition-colors p-1"
           >
             <ShoppingCart size={18} />
             {count > 0 && (
-              <span className="absolute -top-1 -right-1 bg-[#C9A227] text-[#0B1F3A] text-[10px] font-bold rounded-full w-4 h-4 flex items-center justify-center leading-none">
+              <span className="bg-[#C9A227] text-[#0B1F3A] text-[10px] font-bold rounded-full w-4 h-4 flex items-center justify-center leading-none">
                 {count}
               </span>
             )}
+          </Link>
+
+          {/* Direct Checkout Button */}
+          <Link
+            to="/checkout"
+            className="hidden sm:inline-flex items-center gap-1.5 px-3.5 py-1.5 bg-[#0B1F3A] hover:bg-[#164A7A] text-white text-xs font-semibold rounded-lg shadow-xs transition"
+          >
+            <span>Checkout</span>
+            {count > 0 && <span className="bg-[#C9A227] text-[#0B1F3A] text-[10px] px-1.5 py-0.2 rounded-full font-bold">{count}</span>}
           </Link>
 
           {/* Mobile Menu Toggle */}
@@ -224,6 +233,16 @@ export default function Navbar() {
                   <UserIcon size={16} /> Sign In
                 </Link>
               )}
+            </div>
+            <div className="pt-2">
+              <Link
+                to="/checkout"
+                onClick={() => setMenuOpen(false)}
+                className="flex items-center justify-center gap-2 w-full py-2.5 bg-[#0B1F3A] text-white text-xs font-bold rounded-xl shadow-xs"
+              >
+                <ShoppingCart size={15} />
+                <span>Go to Checkout {count > 0 ? `(${count} items)` : ''}</span>
+              </Link>
             </div>
           </nav>
         </div>

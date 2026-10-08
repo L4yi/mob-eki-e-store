@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, useNavigate } from 'react-router-dom';
 import { api } from '../../lib/api';
 import { Product } from '../../types';
 import { useCart } from '../../context/CartContext';
@@ -11,6 +11,7 @@ import {
   MessageCircle,
   Truck,
   Package,
+  ArrowRight,
 } from 'lucide-react';
 import ProductCard from '../../components/storefront/ProductCard';
 
@@ -22,6 +23,7 @@ const stockBadges = {
 
 export default function ProductDetailPage() {
   const { id } = useParams<{ id: string }>();
+  const navigate = useNavigate();
   const [product, setProduct] = useState<Product | null>(null);
   const [relatedProducts, setRelatedProducts] = useState<Product[]>([]);
   const [selectedImgIdx, setSelectedImgIdx] = useState(0);
@@ -98,6 +100,12 @@ export default function ProductDetailPage() {
     addToCart(product, quantity);
     setJustAdded(true);
     setTimeout(() => setJustAdded(false), 2000);
+  };
+
+  const handleBuyNow = () => {
+    if (!inStock) return;
+    addToCart(product, quantity);
+    navigate('/checkout');
   };
 
   const whatsappMessage = encodeURIComponent(
@@ -199,11 +207,19 @@ export default function ProductDetailPage() {
                 className={`flex-1 flex items-center justify-center gap-2 font-semibold text-sm py-3 transition-colors ${
                   justAdded
                     ? 'bg-emerald-600 text-white'
-                    : 'bg-[#0B1F3A] text-white hover:bg-[#164A7A]'
+                    : 'bg-[#FAF8F5] text-[#0B1F3A] border border-[#0B1F3A] hover:bg-[#0B1F3A] hover:text-white'
                 }`}
               >
                 <ShoppingCart size={15} />
                 {justAdded ? 'Added to Cart' : 'Add to Cart'}
+              </button>
+
+              <button
+                onClick={handleBuyNow}
+                className="flex-1 flex items-center justify-center gap-2 font-semibold text-sm py-3 bg-[#0B1F3A] text-white hover:bg-[#164A7A] transition-colors shadow-xs"
+              >
+                <span>Buy Now</span>
+                <ArrowRight size={15} className="text-[#C9A227]" />
               </button>
             </div>
           )}

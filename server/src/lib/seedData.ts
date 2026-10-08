@@ -1242,16 +1242,46 @@ export const initialTeamMembers: TeamMember[] = [
   }
 ];
 
-export const getInitialAdminUser = async (): Promise<User> => {
-  const hash = await bcrypt.hash('adminpassword123', 10);
-  return {
-    id: 'usr-admin-01',
-    name: 'M.O.B Admin',
-    email: 'admin@mobekiventures.com',
-    phone: '08108725967',
-    passwordHash: hash,
-    role: 'SUPER_ADMIN',
-    createdAt: new Date().toISOString(),
-    updatedAt: new Date().toISOString(),
-  };
+export const getInitialAdminUsers = async (): Promise<User[]> => {
+  const hash1 = await bcrypt.hash('adminpassword123', 10);
+  const hash2 = await bcrypt.hash('Awenimi90', 10);
+  const now = new Date().toISOString();
+  return [
+    {
+      id: 'usr-admin-01',
+      name: 'M.O.B Admin',
+      email: 'admin@mobekiventures.com',
+      phone: '08108725967',
+      passwordHash: hash1,
+      role: 'SUPER_ADMIN',
+      createdAt: now,
+      updatedAt: now,
+    },
+    {
+      id: 'usr-admin-02',
+      name: 'Oladejo Muhaz',
+      email: 'muhazoladejo@gmail.com',
+      phone: '08108725967',
+      passwordHash: hash2,
+      role: 'SUPER_ADMIN',
+      createdAt: now,
+      updatedAt: now,
+    },
+    {
+      id: 'usr-admin-03',
+      name: 'Oladejo Muhaz Olayiwola',
+      email: 'muhazoladejo48@gmail.com',
+      phone: '08108725967',
+      passwordHash: hash2,
+      role: 'SUPER_ADMIN',
+      createdAt: now,
+      updatedAt: now,
+    },
+  ];
 };
+
+export const getInitialAdminUser = async (): Promise<User> => {
+  const users = await getInitialAdminUsers();
+  return users[1]; // default to muhazoladejo@gmail.com
+};
+

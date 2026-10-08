@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
-import { Lock, Mail, ArrowRight, ShieldCheck } from 'lucide-react';
+import { Lock, Mail, ArrowRight } from 'lucide-react';
 
 export default function LoginPage() {
   const [email, setEmail] = useState('');
@@ -18,9 +18,10 @@ export default function LoginPage() {
     setLoading(true);
 
     try {
-      await login(email, password);
-      // If admin, navigate to /admin, else /account
-      if (email.toLowerCase().includes('admin')) {
+      const loggedUser = await login(email, password);
+      const role = (loggedUser?.role || '').toUpperCase();
+      const isAdminRole = ['SUPER_ADMIN', 'SUPERADMIN', 'ADMIN', 'ORDER_MANAGER', 'INVENTORY_MANAGER'].includes(role);
+      if (isAdminRole) {
         navigate('/admin');
       } else {
         navigate('/account');
@@ -32,16 +33,11 @@ export default function LoginPage() {
     }
   };
 
-  const handleFillAdmin = () => {
-    setEmail('admin@mobekiventures.com');
-    setPassword('adminpassword123');
-  };
-
   return (
     <div className="bg-white rounded-3xl border border-gray-200 p-8 sm:p-10 shadow-lg space-y-6">
       <div className="text-center space-y-1">
         <h2 className="font-serif font-bold text-2xl text-[#0B1F3A]">Welcome Back</h2>
-        <p className="text-xs text-gray-500">Sign in to your M.O.B EKI customer or staff account</p>
+        <p className="text-xs text-gray-500">Sign in to your M.O.B EKI account</p>
       </div>
 
       {error && (
@@ -92,32 +88,12 @@ export default function LoginPage() {
             <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
           ) : (
             <>
-              <span>Sign In to Account</span>
+              <span>Sign In</span>
               <ArrowRight className="w-4 h-4 text-[#C9A227]" />
             </>
           )}
         </button>
       </form>
-
-      {/* Admin Demo Helper */}
-      <div className="p-3.5 rounded-xl bg-amber-50/70 border border-amber-200/80 text-[11px] text-amber-900 space-y-1">
-        <div className="flex items-center justify-between">
-          <span className="font-bold flex items-center gap-1">
-            <ShieldCheck className="w-3.5 h-3.5 text-[#C9A227]" />
-            Staff / Admin Quick Login:
-          </span>
-          <button
-            type="button"
-            onClick={handleFillAdmin}
-            className="text-[10px] font-bold text-[#0B1F3A] underline hover:text-[#164A7A]"
-          >
-            Auto-fill Admin
-          </button>
-        </div>
-        <p className="text-[10px] text-gray-600 font-mono">
-          admin@mobekiventures.com &bull; adminpassword123
-        </p>
-      </div>
 
       <div className="text-center pt-2 text-xs text-gray-500">
         Don't have an account yet?{' '}

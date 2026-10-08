@@ -9,6 +9,26 @@
       "role": "SUPER_ADMIN",
       "createdAt": "2026-09-23T19:14:13.673Z",
       "updatedAt": "2026-09-23T19:14:13.673Z"
+    },
+    {
+      "id": "usr-admin-02",
+      "name": "Oladejo Muhaz",
+      "email": "muhazoladejo@gmail.com",
+      "phone": "08108725967",
+      "passwordHash": "$2b$10$1Sca8nVtkN2JudaD/Rw2euSpaA1Tr/2Hz6f71WZLZiuVQOWhQMe.S",
+      "role": "SUPER_ADMIN",
+      "createdAt": "2026-10-08T13:25:00.000Z",
+      "updatedAt": "2026-10-08T13:25:00.000Z"
+    },
+    {
+      "id": "usr-admin-03",
+      "name": "Oladejo Muhaz Olayiwola",
+      "email": "muhazoladejo48@gmail.com",
+      "phone": "08108725967",
+      "passwordHash": "$2b$10$1Sca8nVtkN2JudaD/Rw2euSpaA1Tr/2Hz6f71WZLZiuVQOWhQMe.S",
+      "role": "SUPER_ADMIN",
+      "createdAt": "2026-10-08T13:25:00.000Z",
+      "updatedAt": "2026-10-08T13:25:00.000Z"
     }
   ],
   "addresses": [],
