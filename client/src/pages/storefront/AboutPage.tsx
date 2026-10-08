@@ -107,7 +107,7 @@ export default function AboutPage() {
             <div className="bg-white rounded-2xl border border-gray-200 p-6 flex flex-col sm:flex-row items-center gap-6 shadow-sm hover:border-[#0B1F3A] hover:shadow-md transition">
               <img
                 src="/team/general-manager-oladejo-muhaz.jpg"
-                alt="Oladejo Muhaz Olayiwola - General Manager"
+                alt="Oladejo Muhaz Akanbi - General Manager"
                 className="w-32 h-36 sm:w-36 sm:h-40 rounded-2xl object-cover object-top border-2 border-[#0B1F3A]/40 shadow-sm shrink-0"
               />
               <div className="text-center sm:text-left space-y-2">
@@ -115,7 +115,7 @@ export default function AboutPage() {
                   GENERAL MANAGER
                 </span>
                 <h3 className="font-serif font-bold text-lg text-gray-900">
-                  Oladejo Muhaz Olayiwola
+                  Oladejo Muhaz Akanbi
                 </h3>
                 <p className="text-xs text-gray-600 leading-relaxed">
                   Oversees physical store operations, commercial joinery bulk shipments, nationwide logistics, and digital client relations.
