@@ -10,156 +10,1235 @@ import bcrypt from 'bcryptjs';
 
 export const initialCategories: Category[] = [
   {
-    id: 'cat-handles',
-    slug: 'handles',
-    name: 'Handles',
-    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop&q=80',
-    description: 'Modern cabinet bar handles, profile pulls, T-bars, and luxury wardrobe handles.',
-    displayOrder: 1,
-    active: true,
-    createdAt: new Date().toISOString(),
-    updatedAt: new Date().toISOString(),
+    "id": "cat-handles",
+    "slug": "handles",
+    "name": "Handles",
+    "image": "/products/matte-black-gold-banded-tbar-handle.jpg",
+    "description": "Modern cabinet bar handles, profile pulls, T-bars, and luxury wardrobe handles.",
+    "displayOrder": 1,
+    "active": true,
+    "createdAt": "2026-10-08T12:38:23.257Z",
+    "updatedAt": "2026-10-08T12:38:23.257Z"
   },
   {
-    id: 'cat-knobs',
-    slug: 'knobs',
-    name: 'Knobs',
-    image: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400&h=300&fit=crop&q=80',
-    description: 'Brass, matte black, crystal, and stainless steel drawer and dresser knobs.',
-    displayOrder: 2,
-    active: true,
-    createdAt: new Date().toISOString(),
-    updatedAt: new Date().toISOString(),
+    "id": "cat-knobs",
+    "slug": "knobs",
+    "name": "Knobs",
+    "image": "/products/solid-polished-ball-knob.jpg",
+    "description": "Brass, matte black, crystal, and stainless steel drawer and dresser knobs.",
+    "displayOrder": 2,
+    "active": true,
+    "createdAt": "2026-10-08T12:38:23.257Z",
+    "updatedAt": "2026-10-08T12:38:23.257Z"
   },
   {
-    id: 'cat-hinges',
-    slug: 'hinges',
-    name: 'Hinges',
-    image: 'https://images.unsplash.com/photo-1538688525198-9b88f6f53126?w=400&h=300&fit=crop&q=80',
-    description: 'Hydraulic soft-close cabinet hinges, concealed 3D hinges, and heavy-duty pivot hinges.',
-    displayOrder: 3,
-    active: true,
-    createdAt: new Date().toISOString(),
-    updatedAt: new Date().toISOString(),
+    "id": "cat-hinges",
+    "slug": "hinges",
+    "name": "Hinges",
+    "image": "https://images.unsplash.com/photo-1538688525198-9b88f6f53126?w=400&h=300&fit=crop&q=80",
+    "description": "Hydraulic soft-close cabinet hinges, concealed 3D hinges, and heavy-duty pivot hinges.",
+    "displayOrder": 3,
+    "active": true,
+    "createdAt": "2026-10-08T12:38:23.257Z",
+    "updatedAt": "2026-10-08T12:38:23.257Z"
   },
   {
-    id: 'cat-locks',
-    slug: 'locks',
-    name: 'Locks',
-    image: 'https://images.unsplash.com/photo-1558002038-1055907df827?w=400&h=300&fit=crop&q=80',
-    description: 'Drawer locks, wardrobe cam locks, digital keypad locks, and central locking bars.',
-    displayOrder: 4,
-    active: true,
-    createdAt: new Date().toISOString(),
-    updatedAt: new Date().toISOString(),
+    "id": "cat-locks",
+    "slug": "locks",
+    "name": "Locks",
+    "image": "https://images.unsplash.com/photo-1558002038-1055907df827?w=400&h=300&fit=crop&q=80",
+    "description": "Drawer locks, wardrobe cam locks, digital keypad locks, and central locking bars.",
+    "displayOrder": 4,
+    "active": true,
+    "createdAt": "2026-10-08T12:38:23.257Z",
+    "updatedAt": "2026-10-08T12:38:23.257Z"
   },
   {
-    id: 'cat-fittings',
-    slug: 'fittings',
-    name: 'Furniture Fittings',
-    image: 'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=400&h=300&fit=crop&q=80',
-    description: 'Telescopic drawer slides, soft-close undermount runners, gas springs, and shelf pins.',
-    displayOrder: 5,
-    active: true,
-    createdAt: new Date().toISOString(),
-    updatedAt: new Date().toISOString(),
+    "id": "cat-fittings",
+    "slug": "furniture-fittings",
+    "name": "Furniture Fittings",
+    "image": "/products/magic-corner-kitchen-basket.jpg",
+    "description": "Telescopic drawer slides, soft-close pantry larder units, corner pullouts, and spice racks.",
+    "displayOrder": 5,
+    "active": true,
+    "createdAt": "2026-10-08T12:38:23.257Z",
+    "updatedAt": "2026-10-08T12:38:23.257Z"
   },
   {
-    id: 'cat-accessories',
-    slug: 'accessories',
-    name: 'Other Accessories',
-    image: 'https://images.unsplash.com/photo-1507089947368-19c1da9775ae?w=400&h=300&fit=crop&q=80',
-    description: 'Heavy duty caster wheels, adjustable sofa legs, cable grommets, and wardrobe accessories.',
-    displayOrder: 6,
-    active: true,
-    createdAt: new Date().toISOString(),
-    updatedAt: new Date().toISOString(),
+    "id": "cat-accessories",
+    "slug": "other-accessories",
+    "name": "Other Accessories",
+    "image": "/products/luxury-wardrobe-jewelry-tray.jpg",
+    "description": "Luxury wardrobe jewelry trays, laundry pull-out baskets, cutlery dividers, and caster wheels.",
+    "displayOrder": 6,
+    "active": true,
+    "createdAt": "2026-10-08T12:38:23.257Z",
+    "updatedAt": "2026-10-08T12:38:23.257Z"
   },
+  {
+    "id": "cat-appliances",
+    "slug": "kitchen-appliances",
+    "name": "Kitchen Appliances",
+    "image": "/products/hippont-90cm-flat-heat-extractor.jpg",
+    "description": "Built-in gas hobs, electric cooktops, digital heat extractors, range hoods, and built-in microwaves.",
+    "displayOrder": 7,
+    "active": true,
+    "createdAt": "2026-10-08T12:38:23.257Z",
+    "updatedAt": "2026-10-08T12:38:23.257Z"
+  }
 ];
 
-export const initialProducts: Product[] = [];
-
-export const initialDeliveryZones: DeliveryZoneConfig[] = [
+export const initialProducts: Product[] = [
   {
-    id: 'LAGOS',
-    name: 'Lagos State (Standard)',
-    states: ['Lagos'],
-    feeKobo: 200000, // ₦2,000
-    estimatedDays: '1–2 business days',
-    active: true,
-  },
-  {
-    id: 'SOUTH_WEST',
-    name: 'South West Nigeria (Ogun, Oyo, Osun, Ondo, Ekiti)',
-    states: ['Ogun', 'Oyo', 'Osun', 'Ondo', 'Ekiti'],
-    feeKobo: 350000, // ₦3,500
-    estimatedDays: '2–3 business days',
-    active: true,
-  },
-  {
-    id: 'NATIONWIDE',
-    name: 'Nationwide Courier (Other 30 States + FCT Abuja)',
-    states: [
-      'Abia', 'Adamawa', 'Akwa Ibom', 'Anambra', 'Bauchi', 'Bayelsa', 'Benue', 'Borno',
-      'Cross River', 'Delta', 'Ebonyi', 'Edo', 'Enugu', 'FCT Abuja', 'Gombe', 'Imo',
-      'Jigawa', 'Kaduna', 'Kano', 'Katsina', 'Kebbi', 'Kogi', 'Kwara', 'Nasarawa',
-      'Niger', 'Plateau', 'Rivers', 'Sokoto', 'Taraba', 'Yobe', 'Zamfara'
+    "id": "prd-hdl-01",
+    "name": "Luxury Black & Gold Geometric Cabinet Pull Handle",
+    "slug": "luxury-black-gold-geometric-cabinet-pull-handle",
+    "sku": "HDL-BLK-GLD-GEO",
+    "categoryId": "cat-handles",
+    "categoryName": "Handles",
+    "categorySlug": "handles",
+    "description": "Contemporary dual-tone cabinet pull handle with lustrous gold accents and matte black inlay. Built for luxury wardrobes and bespoke modern kitchen cabinetry.",
+    "priceKobo": 450000,
+    "wholesaleEnabled": true,
+    "retailEnabled": true,
+    "wholesaleMinQty": 20,
+    "wholesalePriceKobo": 350000,
+    "images": [
+      "/products/luxury-gold-black-geometric-handle.jpg"
     ],
-    feeKobo: 500000, // ₦5,000
-    estimatedDays: '3–5 business days',
-    active: true,
+    "stockQuantity": 150,
+    "reservedQuantity": 0,
+    "lowStockThreshold": 15,
+    "specs": [
+      {
+        "label": "Material",
+        "value": "Solid Zinc Alloy"
+      },
+      {
+        "label": "Finish",
+        "value": "Electroplated Gold & Matte Black"
+      },
+      {
+        "label": "Hole Spacing",
+        "value": "128mm / 160mm / 192mm"
+      },
+      {
+        "label": "Application",
+        "value": "Kitchen Cabinets, Wardrobes, Drawers"
+      }
+    ],
+    "active": true,
+    "featured": true,
+    "createdAt": "2026-10-08T12:38:23.257Z",
+    "updatedAt": "2026-10-08T12:38:23.257Z"
   },
   {
-    id: 'PICKUP',
-    name: 'Direct Store Pickup (Mushin Showroom)',
-    states: ['Lagos'],
-    feeKobo: 0, // Free
-    estimatedDays: 'Available same-day during opening hours',
-    active: true,
+    "id": "prd-hdl-02",
+    "name": "Matte Black & Gold Banded T-Bar Cabinet Handle",
+    "slug": "matte-black-gold-banded-tbar-cabinet-handle",
+    "sku": "HDL-BLK-GLD-TBR",
+    "categoryId": "cat-handles",
+    "categoryName": "Handles",
+    "categorySlug": "handles",
+    "description": "Refined cylindrical T-bar handle featuring gold ring accents on a rich matte black bar. Available in multiple lengths and matching single knobs.",
+    "priceKobo": 420000,
+    "wholesaleEnabled": true,
+    "retailEnabled": true,
+    "wholesaleMinQty": 20,
+    "wholesalePriceKobo": 320000,
+    "images": [
+      "/products/matte-black-gold-banded-tbar-handle.jpg"
+    ],
+    "stockQuantity": 180,
+    "reservedQuantity": 0,
+    "lowStockThreshold": 20,
+    "specs": [
+      {
+        "label": "Material",
+        "value": "Stainless Steel & Solid Brass Rings"
+      },
+      {
+        "label": "Finish",
+        "value": "Matte Black with Polished Gold Rings"
+      },
+      {
+        "label": "Hole Spacing",
+        "value": "96mm, 128mm, 192mm, 256mm"
+      },
+      {
+        "label": "Application",
+        "value": "Cabinetry, Cupboards, Wardrobes"
+      }
+    ],
+    "active": true,
+    "featured": true,
+    "createdAt": "2026-10-08T12:38:23.257Z",
+    "updatedAt": "2026-10-08T12:38:23.257Z"
   },
+  {
+    "id": "prd-hdl-03",
+    "name": "Matte Black Modern Bow Bridge Cabinet Handle",
+    "slug": "matte-black-modern-bow-bridge-cabinet-handle",
+    "sku": "HDL-BLK-BOW01",
+    "categoryId": "cat-handles",
+    "categoryName": "Handles",
+    "categorySlug": "handles",
+    "description": "Ergonomic bridge-style arched cabinet handle with flared mounting feet. Clean minimalist design suitable for contemporary kitchens and furniture.",
+    "priceKobo": 380000,
+    "wholesaleEnabled": true,
+    "retailEnabled": true,
+    "wholesaleMinQty": 25,
+    "wholesalePriceKobo": 290000,
+    "images": [
+      "/products/matte-black-bow-bridge-handle.jpg"
+    ],
+    "stockQuantity": 200,
+    "reservedQuantity": 0,
+    "lowStockThreshold": 25,
+    "specs": [
+      {
+        "label": "Material",
+        "value": "Die-cast Aluminum Alloy"
+      },
+      {
+        "label": "Finish",
+        "value": "Anodized Matte Black"
+      },
+      {
+        "label": "Hole Spacing",
+        "value": "128mm, 160mm, 224mm"
+      },
+      {
+        "label": "Application",
+        "value": "Kitchen drawers, Wardrobes"
+      }
+    ],
+    "active": true,
+    "featured": false,
+    "createdAt": "2026-10-08T12:38:23.257Z",
+    "updatedAt": "2026-10-08T12:38:23.257Z"
+  },
+  {
+    "id": "prd-hdl-04",
+    "name": "Brushed Stainless Steel Heavy-Duty Modern Bar Handle",
+    "slug": "brushed-stainless-steel-heavy-duty-modern-bar-handle",
+    "sku": "HDL-SS-BAR01",
+    "categoryId": "cat-handles",
+    "categoryName": "Handles",
+    "categorySlug": "handles",
+    "description": "Corrosion-resistant brushed stainless steel round bar pull handles with solid square standoffs. High durability for heavy traffic cabinets.",
+    "priceKobo": 350000,
+    "wholesaleEnabled": true,
+    "retailEnabled": true,
+    "wholesaleMinQty": 25,
+    "wholesalePriceKobo": 260000,
+    "images": [
+      "/products/brushed-stainless-steel-bar-handle.jpg"
+    ],
+    "stockQuantity": 220,
+    "reservedQuantity": 0,
+    "lowStockThreshold": 20,
+    "specs": [
+      {
+        "label": "Material",
+        "value": "Grade 304 Stainless Steel"
+      },
+      {
+        "label": "Finish",
+        "value": "Satin Brushed Chrome"
+      },
+      {
+        "label": "Hole Spacing",
+        "value": "128mm, 160mm, 192mm, 320mm"
+      },
+      {
+        "label": "Durability",
+        "value": "Rustproof, Commercial Grade"
+      }
+    ],
+    "active": true,
+    "featured": false,
+    "createdAt": "2026-10-08T12:38:23.257Z",
+    "updatedAt": "2026-10-08T12:38:23.257Z"
+  },
+  {
+    "id": "prd-hdl-05",
+    "name": "Minimalist Aluminum Edge Profile Pull Handle",
+    "slug": "minimalist-aluminum-edge-profile-pull-handle",
+    "sku": "HDL-EDG-PRF01",
+    "categoryId": "cat-handles",
+    "categoryName": "Handles",
+    "categorySlug": "handles",
+    "description": "Modern edge-mounted profile pull handle available in Brushed Gold and Matte Black. Mounts seamlessly on the top or side edge of doors for a sleek handleless look.",
+    "priceKobo": 390000,
+    "wholesaleEnabled": true,
+    "retailEnabled": true,
+    "wholesaleMinQty": 20,
+    "wholesalePriceKobo": 295000,
+    "images": [
+      "/products/minimalist-edge-profile-pull-handle.jpg"
+    ],
+    "stockQuantity": 160,
+    "reservedQuantity": 0,
+    "lowStockThreshold": 20,
+    "specs": [
+      {
+        "label": "Material",
+        "value": "Extruded Aluminum"
+      },
+      {
+        "label": "Colors",
+        "value": "Brushed Champagne Gold & Matte Black"
+      },
+      {
+        "label": "Lengths",
+        "value": "150mm, 200mm, 300mm, 400mm"
+      },
+      {
+        "label": "Mounting",
+        "value": "Rear Screw Edge Fix"
+      }
+    ],
+    "active": true,
+    "featured": true,
+    "createdAt": "2026-10-08T12:38:23.257Z",
+    "updatedAt": "2026-10-08T12:38:23.257Z"
+  },
+  {
+    "id": "prd-hdl-06",
+    "name": "Matte Black Architectural T-Bar Cabinet Pull & Knob",
+    "slug": "matte-black-architectural-tbar-cabinet-pull-knob",
+    "sku": "HDL-BLK-TBR02",
+    "categoryId": "cat-handles",
+    "categoryName": "Handles",
+    "categorySlug": "handles",
+    "description": "Bold square-profile matte black T-bar handle with solid square posts. Engineered for heavy kitchen pantry doors and vanity drawers.",
+    "priceKobo": 320000,
+    "wholesaleEnabled": true,
+    "retailEnabled": true,
+    "wholesaleMinQty": 25,
+    "wholesalePriceKobo": 240000,
+    "images": [
+      "/products/matte-black-architectural-tbar-handle.jpg"
+    ],
+    "stockQuantity": 240,
+    "reservedQuantity": 0,
+    "lowStockThreshold": 25,
+    "specs": [
+      {
+        "label": "Material",
+        "value": "Solid Aluminum Alloy"
+      },
+      {
+        "label": "Finish",
+        "value": "Anodized Black Matte"
+      },
+      {
+        "label": "Hole Spacing",
+        "value": "96mm, 128mm, 160mm, 192mm"
+      },
+      {
+        "label": "Includes",
+        "value": "M4 Mounting Screws"
+      }
+    ],
+    "active": true,
+    "featured": false,
+    "createdAt": "2026-10-08T12:38:23.257Z",
+    "updatedAt": "2026-10-08T12:38:23.257Z"
+  },
+  {
+    "id": "prd-hdl-07",
+    "name": "Matte Black Concealed Lip Edge Finger Pull Handle",
+    "slug": "matte-black-concealed-lip-edge-finger-pull-handle",
+    "sku": "HDL-BLK-LIP01",
+    "categoryId": "cat-handles",
+    "categoryName": "Handles",
+    "categorySlug": "handles",
+    "description": "Low-profile continuous lip finger pull that slots neatly over cabinet door edges. Provides a clean seamless aesthetic without visible screw heads.",
+    "priceKobo": 360000,
+    "wholesaleEnabled": true,
+    "retailEnabled": true,
+    "wholesaleMinQty": 25,
+    "wholesalePriceKobo": 270000,
+    "images": [
+      "/products/matte-black-concealed-lip-edge-pull.jpg"
+    ],
+    "stockQuantity": 190,
+    "reservedQuantity": 0,
+    "lowStockThreshold": 20,
+    "specs": [
+      {
+        "label": "Material",
+        "value": "Precision Aluminum Extrusion"
+      },
+      {
+        "label": "Finish",
+        "value": "Matte Black Powder Coat"
+      },
+      {
+        "label": "Door Thickness",
+        "value": "Fits 18mm to 20mm panels"
+      },
+      {
+        "label": "Application",
+        "value": "Modern Handleless Kitchens"
+      }
+    ],
+    "active": true,
+    "featured": false,
+    "createdAt": "2026-10-08T12:38:23.257Z",
+    "updatedAt": "2026-10-08T12:38:23.257Z"
+  },
+  {
+    "id": "prd-knb-01",
+    "name": "Modern Oval Paperclip Drop Ring Drawer Knob",
+    "slug": "modern-oval-paperclip-drop-ring-drawer-knob",
+    "sku": "KNB-OVL-PPC01",
+    "categoryId": "cat-knobs",
+    "categoryName": "Knobs",
+    "categorySlug": "knobs",
+    "description": "Creative dual-tone designer oval ring knob with gold frame and vibrant matte insert plates (Black, White, Orange, Silver). Perfect accent for luxury dressers.",
+    "priceKobo": 220000,
+    "wholesaleEnabled": true,
+    "retailEnabled": true,
+    "wholesaleMinQty": 30,
+    "wholesalePriceKobo": 170000,
+    "images": [
+      "/products/modern-oval-paperclip-drawer-knob.jpg"
+    ],
+    "stockQuantity": 250,
+    "reservedQuantity": 0,
+    "lowStockThreshold": 30,
+    "specs": [
+      {
+        "label": "Material",
+        "value": "Solid Brass & Zinc Inlay"
+      },
+      {
+        "label": "Color Options",
+        "value": "Gold/Black, Gold/White, Gold/Orange, Chrome/Black"
+      },
+      {
+        "label": "Mounting",
+        "value": "Single Hole Bolt"
+      },
+      {
+        "label": "Application",
+        "value": "Wardrobes, Nightstands, Vanity Drawers"
+      }
+    ],
+    "active": true,
+    "featured": true,
+    "createdAt": "2026-10-08T12:38:23.257Z",
+    "updatedAt": "2026-10-08T12:38:23.257Z"
+  },
+  {
+    "id": "prd-knb-02",
+    "name": "Solid Polished Spherical Ball Cabinet Knob",
+    "slug": "solid-polished-spherical-ball-cabinet-knob",
+    "sku": "KNB-BAL-SLD01",
+    "categoryId": "cat-knobs",
+    "categoryName": "Knobs",
+    "categorySlug": "knobs",
+    "description": "Heavy solid spherical ball knob with mirror-polished reflective finish. Available in French Gold, Rose Gold, and Mirror Chrome.",
+    "priceKobo": 180000,
+    "wholesaleEnabled": true,
+    "retailEnabled": true,
+    "wholesaleMinQty": 30,
+    "wholesalePriceKobo": 135000,
+    "images": [
+      "/products/solid-polished-ball-knob.jpg"
+    ],
+    "stockQuantity": 300,
+    "reservedQuantity": 0,
+    "lowStockThreshold": 30,
+    "specs": [
+      {
+        "label": "Material",
+        "value": "Solid Brass Alloy"
+      },
+      {
+        "label": "Diameter",
+        "value": "25mm / 30mm"
+      },
+      {
+        "label": "Finish",
+        "value": "High Gloss Mirror Gold & Chrome"
+      },
+      {
+        "label": "Application",
+        "value": "Cabinets, Bathroom Vanities, Sideboards"
+      }
+    ],
+    "active": true,
+    "featured": false,
+    "createdAt": "2026-10-08T12:38:23.257Z",
+    "updatedAt": "2026-10-08T12:38:23.257Z"
+  },
+  {
+    "id": "prd-fit-01",
+    "name": "Magic Corner Kitchen Pull-Out Blind Corner Organizer Basket",
+    "slug": "magic-corner-kitchen-pull-out-blind-corner-organizer-basket",
+    "sku": "FIT-CRN-001",
+    "categoryId": "cat-fittings",
+    "categoryName": "Furniture Fittings",
+    "categorySlug": "furniture-fittings",
+    "description": "Heavy-duty 2-tier magic corner mechanism with smooth soft-close sliding tracks. Pulls blind corner kitchen contents forward for effortless access.",
+    "priceKobo": 14500000,
+    "wholesaleEnabled": true,
+    "retailEnabled": true,
+    "wholesaleMinQty": 3,
+    "wholesalePriceKobo": 12500000,
+    "images": [
+      "/products/magic-corner-kitchen-basket.jpg"
+    ],
+    "stockQuantity": 12,
+    "reservedQuantity": 0,
+    "lowStockThreshold": 2,
+    "specs": [
+      {
+        "label": "Mechanism",
+        "value": "Synchronized Soft-Close Runner"
+      },
+      {
+        "label": "Tray Material",
+        "value": "Tempered Smoked Glass & Carbon Steel"
+      },
+      {
+        "label": "Cabinet Width",
+        "value": "Fits 900mm - 1000mm blind corner units"
+      },
+      {
+        "label": "Load Capacity",
+        "value": "Up to 35kg total"
+      }
+    ],
+    "active": true,
+    "featured": true,
+    "createdAt": "2026-10-08T12:38:23.257Z",
+    "updatedAt": "2026-10-08T12:38:23.257Z"
+  },
+  {
+    "id": "prd-fit-02",
+    "name": "Multi-Tier Kitchen Tall Larder / Tandem Pantry Pull-Out Unit",
+    "slug": "multi-tier-kitchen-tall-larder-tandem-pantry-pull-out-unit",
+    "sku": "FIT-LDR-001",
+    "categoryId": "cat-fittings",
+    "categoryName": "Furniture Fittings",
+    "categorySlug": "furniture-fittings",
+    "description": "Tall pantry larder storage system with dual-action door trays and internal pull-out shelves. Maximizes vertical kitchen storage space.",
+    "priceKobo": 22000000,
+    "wholesaleEnabled": true,
+    "retailEnabled": true,
+    "wholesaleMinQty": 2,
+    "wholesalePriceKobo": 19500000,
+    "images": [
+      "/products/tall-larder-pantry-unit.jpg"
+    ],
+    "stockQuantity": 10,
+    "reservedQuantity": 0,
+    "lowStockThreshold": 2,
+    "specs": [
+      {
+        "label": "Height Range",
+        "value": "1850mm - 2150mm (Adjustable Frame)"
+      },
+      {
+        "label": "Baskets",
+        "value": "6 Main Trays + 6 Door Baskets"
+      },
+      {
+        "label": "Motion",
+        "value": "Heavy Duty Soft Close Damper"
+      },
+      {
+        "label": "Load Rating",
+        "value": "70kg Total"
+      }
+    ],
+    "active": true,
+    "featured": true,
+    "createdAt": "2026-10-08T12:38:23.257Z",
+    "updatedAt": "2026-10-08T12:38:23.257Z"
+  },
+  {
+    "id": "prd-fit-03",
+    "name": "Premium Glass-Side Tall Pantry Pull-Out Larder Unit",
+    "slug": "premium-glass-side-tall-pantry-pull-out-larder-unit",
+    "sku": "FIT-LDR-002",
+    "categoryId": "cat-fittings",
+    "categoryName": "Furniture Fittings",
+    "categorySlug": "furniture-fittings",
+    "description": "High-end tall larder unit with transparent smoked glass side guards and non-slip mats. Full extension soft close slide mechanism.",
+    "priceKobo": 24000000,
+    "wholesaleEnabled": true,
+    "retailEnabled": true,
+    "wholesaleMinQty": 2,
+    "wholesalePriceKobo": 21500000,
+    "images": [
+      "/products/tall-pantry-glass-pullout.jpg"
+    ],
+    "stockQuantity": 8,
+    "reservedQuantity": 0,
+    "lowStockThreshold": 2,
+    "specs": [
+      {
+        "label": "Basket Sides",
+        "value": "Smoked Toughened Safety Glass"
+      },
+      {
+        "label": "Slides",
+        "value": "Under-mount Heavy Duty Hydraulic Runners"
+      },
+      {
+        "label": "Cabinet Width",
+        "value": "450mm / 600mm"
+      },
+      {
+        "label": "Load Capacity",
+        "value": "80kg"
+      }
+    ],
+    "active": true,
+    "featured": false,
+    "createdAt": "2026-10-08T12:38:23.257Z",
+    "updatedAt": "2026-10-08T12:38:23.257Z"
+  },
+  {
+    "id": "prd-fit-04",
+    "name": "Soft-Close Tall Larder Swing-Out Pantry Unit",
+    "slug": "soft-close-tall-larder-swing-out-pantry-unit",
+    "sku": "FIT-LDR-003",
+    "categoryId": "cat-fittings",
+    "categoryName": "Furniture Fittings",
+    "categorySlug": "furniture-fittings",
+    "description": "Swing-out 180° revolving tall pantry system. When opened, inner baskets glide forward while door baskets pivot outward for full panoramic visibility.",
+    "priceKobo": 26000000,
+    "wholesaleEnabled": true,
+    "retailEnabled": true,
+    "wholesaleMinQty": 2,
+    "wholesalePriceKobo": 23000000,
+    "images": [
+      "/products/tall-larder-swingout-pantry.jpg"
+    ],
+    "stockQuantity": 6,
+    "reservedQuantity": 0,
+    "lowStockThreshold": 2,
+    "specs": [
+      {
+        "label": "Structure",
+        "value": "Anodized Grey Steel & Glass Baskets"
+      },
+      {
+        "label": "Capacity",
+        "value": "12 Tier Storage (6 Door + 6 Inner)"
+      },
+      {
+        "label": "Opening Angle",
+        "value": "110° to 180° swing"
+      }
+    ],
+    "active": true,
+    "featured": false,
+    "createdAt": "2026-10-08T12:38:23.257Z",
+    "updatedAt": "2026-10-08T12:38:23.257Z"
+  },
+  {
+    "id": "prd-fit-05",
+    "name": "Heavy-Duty Pull-Down Elevator Upper Cabinet Spice Rack",
+    "slug": "heavy-duty-pull-down-elevator-upper-cabinet-spice-rack",
+    "sku": "FIT-PLD-SPC01",
+    "categoryId": "cat-fittings",
+    "categoryName": "Furniture Fittings",
+    "categorySlug": "furniture-fittings",
+    "description": "Hydraulic counterbalanced pull-down storage basket for overhead wall cabinets. Lowers jars and spices directly into comfortable reaching height.",
+    "priceKobo": 8500000,
+    "wholesaleEnabled": true,
+    "retailEnabled": true,
+    "wholesaleMinQty": 3,
+    "wholesalePriceKobo": 7200000,
+    "images": [
+      "/products/pulldown-elevator-spice-rack.jpg"
+    ],
+    "stockQuantity": 20,
+    "reservedQuantity": 0,
+    "lowStockThreshold": 4,
+    "specs": [
+      {
+        "label": "Cabinet Width",
+        "value": "600mm / 800mm / 900mm wall cabinets"
+      },
+      {
+        "label": "Mechanism",
+        "value": "Dual Gas-Spring Balanced Lift"
+      },
+      {
+        "label": "Tiers",
+        "value": "2-Tier Stainless Steel with Front Guard"
+      },
+      {
+        "label": "Weight Capacity",
+        "value": "15kg"
+      }
+    ],
+    "active": true,
+    "featured": true,
+    "createdAt": "2026-10-08T12:38:23.257Z",
+    "updatedAt": "2026-10-08T12:38:23.257Z"
+  },
+  {
+    "id": "prd-fit-06",
+    "name": "Kitchen Under-Counter Dish & Plate Organizer Drawer Rack",
+    "slug": "kitchen-under-counter-dish-plate-organizer-drawer-rack",
+    "sku": "FIT-KTC-DSH01",
+    "categoryId": "cat-fittings",
+    "categoryName": "Furniture Fittings",
+    "categorySlug": "furniture-fittings",
+    "description": "Pull-out base cabinet drawer basket designed with dedicated vertical slots for dinner plates, bowls, and cookware with drip drainage base.",
+    "priceKobo": 6800000,
+    "wholesaleEnabled": true,
+    "retailEnabled": true,
+    "wholesaleMinQty": 3,
+    "wholesalePriceKobo": 5800000,
+    "images": [
+      "/products/kitchen-dish-plate-drawer-rack.jpg"
+    ],
+    "stockQuantity": 22,
+    "reservedQuantity": 0,
+    "lowStockThreshold": 5,
+    "specs": [
+      {
+        "label": "Material",
+        "value": "Stainless Steel & Solid Polymer"
+      },
+      {
+        "label": "Drawer Size",
+        "value": "Fits 800mm - 900mm wide drawers"
+      },
+      {
+        "label": "Runner Type",
+        "value": "Undermount Soft-Close Slides"
+      }
+    ],
+    "active": true,
+    "featured": false,
+    "createdAt": "2026-10-08T12:38:23.257Z",
+    "updatedAt": "2026-10-08T12:38:23.257Z"
+  },
+  {
+    "id": "prd-fit-07",
+    "name": "Heavy-Duty 90° Corner Cabinet Suspension Hanging Bracket Fittings",
+    "slug": "heavy-duty-90-corner-cabinet-suspension-hanging-bracket-fittings",
+    "sku": "FIT-BRK-90DEG",
+    "categoryId": "cat-fittings",
+    "categoryName": "Furniture Fittings",
+    "categorySlug": "furniture-fittings",
+    "description": "Concealed steel corner brackets with snap-on decorative cover caps. Used for structural assembly and wall hanging of heavy kitchen and wardrobe cabinets.",
+    "priceKobo": 120000,
+    "wholesaleEnabled": true,
+    "retailEnabled": true,
+    "wholesaleMinQty": 50,
+    "wholesalePriceKobo": 85000,
+    "images": [
+      "/products/corner-cabinet-suspension-bracket-fittings.jpg"
+    ],
+    "stockQuantity": 500,
+    "reservedQuantity": 0,
+    "lowStockThreshold": 50,
+    "specs": [
+      {
+        "label": "Material",
+        "value": "Zinc Plated Steel with ABS Cover"
+      },
+      {
+        "label": "Cap Colors",
+        "value": "Black, White, Grey, Brown"
+      },
+      {
+        "label": "Angle",
+        "value": "90 Degree Precision"
+      },
+      {
+        "label": "Application",
+        "value": "Cabinet Wall Hanging & Joint Support"
+      }
+    ],
+    "active": true,
+    "featured": false,
+    "createdAt": "2026-10-08T12:38:23.257Z",
+    "updatedAt": "2026-10-08T12:38:23.257Z"
+  },
+  {
+    "id": "prd-acc-01",
+    "name": "Luxury Wardrobe Leather Jewelry & Watch Organizer Drawer Tray",
+    "slug": "luxury-wardrobe-leather-jewelry-watch-organizer-drawer-tray",
+    "sku": "ACC-WRD-JWL01",
+    "categoryId": "cat-accessories",
+    "categoryName": "Other Accessories",
+    "categorySlug": "other-accessories",
+    "description": "Master closet organizer tray wrapped in premium grey micro-suede leather with custom compartments for watches, rings, sunglasses, and precious jewelry.",
+    "priceKobo": 4500000,
+    "wholesaleEnabled": true,
+    "retailEnabled": true,
+    "wholesaleMinQty": 5,
+    "wholesalePriceKobo": 3800000,
+    "images": [
+      "/products/luxury-wardrobe-jewelry-tray.jpg"
+    ],
+    "stockQuantity": 25,
+    "reservedQuantity": 0,
+    "lowStockThreshold": 5,
+    "specs": [
+      {
+        "label": "Exterior",
+        "value": "Hand-stitched Grey PU Leather"
+      },
+      {
+        "label": "Interior",
+        "value": "Velvet Soft Cushion Dividers"
+      },
+      {
+        "label": "Dimensions",
+        "value": "864mm x 450mm x 60mm (Customizable)"
+      },
+      {
+        "label": "Application",
+        "value": "Wardrobe Island, Master Bedroom Dresser"
+      }
+    ],
+    "active": true,
+    "featured": true,
+    "createdAt": "2026-10-08T12:38:23.257Z",
+    "updatedAt": "2026-10-08T12:38:23.257Z"
+  },
+  {
+    "id": "prd-acc-02",
+    "name": "Wardrobe Pull-Out Woven Rattan Laundry & Storage Basket",
+    "slug": "wardrobe-pull-out-woven-rattan-laundry-storage-basket",
+    "sku": "ACC-WRD-BSK01",
+    "categoryId": "cat-accessories",
+    "categoryName": "Other Accessories",
+    "categorySlug": "other-accessories",
+    "description": "Breathable hand-woven rattan storage basket set into an aluminum pullout frame with concealed soft-close slide runners.",
+    "priceKobo": 5500000,
+    "wholesaleEnabled": true,
+    "retailEnabled": true,
+    "wholesaleMinQty": 4,
+    "wholesalePriceKobo": 4600000,
+    "images": [
+      "/products/wardrobe-woven-rattan-basket.jpg"
+    ],
+    "stockQuantity": 30,
+    "reservedQuantity": 0,
+    "lowStockThreshold": 5,
+    "specs": [
+      {
+        "label": "Basket",
+        "value": "Synthetic Breathable Rattan Weave"
+      },
+      {
+        "label": "Frame",
+        "value": "Anodized Charcoal Aluminum"
+      },
+      {
+        "label": "Cabinet Width",
+        "value": "600mm / 800mm / 900mm"
+      },
+      {
+        "label": "Runners",
+        "value": "Full Extension Soft Close"
+      }
+    ],
+    "active": true,
+    "featured": false,
+    "createdAt": "2026-10-08T12:38:23.257Z",
+    "updatedAt": "2026-10-08T12:38:23.257Z"
+  },
+  {
+    "id": "prd-acc-03",
+    "name": "Kitchen Cutlery & Utensil Organizer Grey ABS Drawer Tray",
+    "slug": "kitchen-cutlery-utensil-organizer-grey-abs-drawer-tray",
+    "sku": "ACC-KTC-CTL01",
+    "categoryId": "cat-accessories",
+    "categoryName": "Other Accessories",
+    "categorySlug": "other-accessories",
+    "description": "Durable food-grade ABS cutlery organizer tray with molded compartments for spoons, knives, forks, and long cooking utensils.",
+    "priceKobo": 1850000,
+    "wholesaleEnabled": true,
+    "retailEnabled": true,
+    "wholesaleMinQty": 10,
+    "wholesalePriceKobo": 1450000,
+    "images": [
+      "/products/kitchen-cutlery-tray-grey.jpg"
+    ],
+    "stockQuantity": 45,
+    "reservedQuantity": 0,
+    "lowStockThreshold": 10,
+    "specs": [
+      {
+        "label": "Material",
+        "value": "High-Impact Food Grade ABS"
+      },
+      {
+        "label": "Color",
+        "value": "Anthracite Metallic Grey"
+      },
+      {
+        "label": "Size",
+        "value": "Fits 600mm - 900mm wide kitchen drawers"
+      },
+      {
+        "label": "Maintenance",
+        "value": "Wipe Clean / Dishwasher Safe"
+      }
+    ],
+    "active": true,
+    "featured": false,
+    "createdAt": "2026-10-08T12:38:23.257Z",
+    "updatedAt": "2026-10-08T12:38:23.257Z"
+  },
+  {
+    "id": "prd-app-01",
+    "name": "HIPPONT 90cm Slim Flat Kitchen Heat Extractor",
+    "slug": "hippont-90cm-slim-flat-kitchen-heat-extractor",
+    "sku": "APP-HIP-EXT90",
+    "categoryId": "cat-appliances",
+    "categoryName": "Kitchen Appliances",
+    "categorySlug": "kitchen-appliances",
+    "description": "High suction 90cm flat kitchen heat extractor hood with digital touch control panel, multi-layer aluminum grease filters, and ultra-bright LED work lighting.",
+    "priceKobo": 12500000,
+    "wholesaleEnabled": true,
+    "retailEnabled": true,
+    "wholesaleMinQty": 2,
+    "wholesalePriceKobo": 11500000,
+    "images": [
+      "/products/hippont-90cm-flat-heat-extractor.jpg"
+    ],
+    "stockQuantity": 15,
+    "reservedQuantity": 0,
+    "lowStockThreshold": 3,
+    "specs": [
+      {
+        "label": "Brand",
+        "value": "HIPPONT"
+      },
+      {
+        "label": "Size",
+        "value": "90cm Slim Profile"
+      },
+      {
+        "label": "Control",
+        "value": "Digital Touch & Motion Sensor"
+      },
+      {
+        "label": "Filter",
+        "value": "3x Washable Baffle Filters"
+      },
+      {
+        "label": "Lighting",
+        "value": "High-efficiency LED Strip"
+      }
+    ],
+    "active": true,
+    "featured": true,
+    "createdAt": "2026-10-08T12:38:23.257Z",
+    "updatedAt": "2026-10-08T12:38:23.257Z"
+  },
+  {
+    "id": "prd-app-02",
+    "name": "HIPPONT 5-Burner Tempered Glass Built-In Cooktop Hob",
+    "slug": "hippont-5-burner-tempered-glass-built-in-cooktop-hob",
+    "sku": "APP-HIP-HOB05",
+    "categoryId": "cat-appliances",
+    "categoryName": "Kitchen Appliances",
+    "categorySlug": "kitchen-appliances",
+    "description": "Premium 5-burner gas cooktop with 8mm explosion-proof tempered black glass, heavy-duty cast iron pan supports, and automatic electric pulse ignition.",
+    "priceKobo": 13000000,
+    "wholesaleEnabled": true,
+    "retailEnabled": true,
+    "wholesaleMinQty": 2,
+    "wholesalePriceKobo": 11800000,
+    "images": [
+      "/products/hippont-5-burner-glass-cooktop.jpg"
+    ],
+    "stockQuantity": 18,
+    "reservedQuantity": 0,
+    "lowStockThreshold": 3,
+    "specs": [
+      {
+        "label": "Brand",
+        "value": "HIPPONT"
+      },
+      {
+        "label": "Burners",
+        "value": "5 High-Efficiency Gas Burners (Triple Ring Wok)"
+      },
+      {
+        "label": "Surface",
+        "value": "8mm Tempered Black Safety Glass"
+      },
+      {
+        "label": "Supports",
+        "value": "Heavy Duty Cast Iron"
+      },
+      {
+        "label": "Ignition",
+        "value": "Automatic Under-knob Electric Pulse"
+      }
+    ],
+    "active": true,
+    "featured": true,
+    "createdAt": "2026-10-08T12:38:23.257Z",
+    "updatedAt": "2026-10-08T12:38:23.257Z"
+  },
+  {
+    "id": "prd-app-03",
+    "name": "POLYSTAR 20L Built-In Microwave with Frame Kit (PV-BD20BBL)",
+    "slug": "polystar-20l-built-in-microwave-pv-bd20bbl",
+    "sku": "APP-PLY-MCW20",
+    "categoryId": "cat-appliances",
+    "categoryName": "Kitchen Appliances",
+    "categorySlug": "kitchen-appliances",
+    "description": "Polystar 20-Litre built-in microwave oven with integrated grill function, seamless trim frame kit, 700W microwave output, and 900W grill power input.",
+    "priceKobo": 18500000,
+    "wholesaleEnabled": true,
+    "retailEnabled": true,
+    "wholesaleMinQty": 2,
+    "wholesalePriceKobo": 16500000,
+    "images": [
+      "/products/polystar-20l-builtin-microwave.jpg"
+    ],
+    "stockQuantity": 14,
+    "reservedQuantity": 0,
+    "lowStockThreshold": 3,
+    "specs": [
+      {
+        "label": "Brand",
+        "value": "POLYSTAR (PV-BD20BBL)"
+      },
+      {
+        "label": "Capacity",
+        "value": "20 Litres"
+      },
+      {
+        "label": "Microwave Power",
+        "value": "700 Watts"
+      },
+      {
+        "label": "Grill Power",
+        "value": "900 Watts"
+      },
+      {
+        "label": "Control",
+        "value": "Digital Control with LED Display"
+      }
+    ],
+    "active": true,
+    "featured": true,
+    "createdAt": "2026-10-08T12:38:23.257Z",
+    "updatedAt": "2026-10-08T12:38:23.257Z"
+  },
+  {
+    "id": "prd-app-04",
+    "name": "POLYSTAR 4-Burner & 1 Electric Built-In Gas Hob (PV-JYPS4G1EB)",
+    "slug": "polystar-4-burner-1-electric-built-in-gas-hob-pv-jyps4g1eb",
+    "sku": "APP-PLY-HOB41",
+    "categoryId": "cat-appliances",
+    "categoryName": "Kitchen Appliances",
+    "categorySlug": "kitchen-appliances",
+    "description": "Dual-fuel hybrid built-in hob featuring 4 rapid gas burners and 1 rapid electric hotplate on an 8mm black stainless steel chassis with metal control knobs.",
+    "priceKobo": 17500000,
+    "wholesaleEnabled": true,
+    "retailEnabled": true,
+    "wholesaleMinQty": 2,
+    "wholesalePriceKobo": 15500000,
+    "images": [
+      "/products/polystar-4b-1e-gas-hob.jpg"
+    ],
+    "stockQuantity": 16,
+    "reservedQuantity": 0,
+    "lowStockThreshold": 3,
+    "specs": [
+      {
+        "label": "Brand",
+        "value": "POLYSTAR (PV-JYPS4G1EB)"
+      },
+      {
+        "label": "Configuration",
+        "value": "4 Gas Burners + 1 Electric Hotplate"
+      },
+      {
+        "label": "Material",
+        "value": "8mm Real Stainless Steel Black Finish"
+      },
+      {
+        "label": "Knobs",
+        "value": "Heat-resistant Metal Knobs with BS Plug"
+      }
+    ],
+    "active": true,
+    "featured": false,
+    "createdAt": "2026-10-08T12:38:23.257Z",
+    "updatedAt": "2026-10-08T12:38:23.257Z"
+  },
+  {
+    "id": "prd-app-05",
+    "name": "POLYSTAR 90cm Digital Rangehood with Voice Control (PV-TD9110BVC)",
+    "slug": "polystar-90cm-digital-rangehood-voice-control-pv-td9110bvc",
+    "sku": "APP-PLY-RNG90",
+    "categoryId": "cat-appliances",
+    "categoryName": "Kitchen Appliances",
+    "categorySlug": "kitchen-appliances",
+    "description": "Smart kitchen rangehood with intelligent voice commands, infrared hand gesture control, pure copper motor, metal blower, and aluminum charcoal filters.",
+    "priceKobo": 19500000,
+    "wholesaleEnabled": true,
+    "retailEnabled": true,
+    "wholesaleMinQty": 2,
+    "wholesalePriceKobo": 17500000,
+    "images": [
+      "/products/polystar-90cm-digital-rangehood.jpg"
+    ],
+    "stockQuantity": 12,
+    "reservedQuantity": 0,
+    "lowStockThreshold": 2,
+    "specs": [
+      {
+        "label": "Brand",
+        "value": "POLYSTAR (PV-TD9110BVC)"
+      },
+      {
+        "label": "Smart Tech",
+        "value": "Voice Control & Hand Wave Motion Sensor"
+      },
+      {
+        "label": "Motor",
+        "value": "Heavy Duty 100% Pure Copper Motor"
+      },
+      {
+        "label": "Filter",
+        "value": "Aluminum Charcoal Filter with Metal Blower"
+      },
+      {
+        "label": "Lighting",
+        "value": "Tempered Glass with Energy-Saving LED"
+      }
+    ],
+    "active": true,
+    "featured": true,
+    "createdAt": "2026-10-08T12:38:23.257Z",
+    "updatedAt": "2026-10-08T12:38:23.257Z"
+  }
 ];
 
 export const initialSettings: BusinessSettings = {
-  id: 'default',
-  storeName: 'M.O.B EKI VENTURES',
-  tagline: 'Quality Furniture Accessories & Architectural Hardware',
-  address: '2, Amu Street, Mushin Market, Lagos, Nigeria',
-  openingHours: 'Mon - Sat: 8:00 AM - 5:00 PM (Closed Sundays)',
-  phone1: '08108725967',
-  phone2: '08025262598',
-  phone3: '08028077200',
-  whatsapp: '+2348108725967',
-  email: 'muhazoladejo48@gmail.com',
-  deliveryLagosKobo: 200000,
-  deliverySouthWestKobo: 350000,
-  deliveryNationwideKobo: 500000,
-  bankName: 'Guaranty Trust Bank (GTBank)',
-  bankAccountName: 'M.O.B EKI VENTURES',
-  bankAccountNumber: '0123456789',
-  aboutText: 'M.O.B EKI VENTURES is an established physical enterprise situated at 2, Amu Street in the commercial hub of Mushin Market, Lagos. Founded by Mulikat & Mutiu Oladejo and managed alongside Oladejo Muhaz Olayiwola, we specialize in the direct importation, wholesale distribution, and retail supply of premium furniture hardware, cabinet handles, hydraulic soft-close hinges, drawer runners, and security fittings across all 36 states of Nigeria.',
-  announcementText: 'Nationwide delivery available · Retail & wholesale orders welcome',
-  createdAt: new Date().toISOString(),
-  updatedAt: new Date().toISOString(),
+  "id": "settings-01",
+  "storeName": "M.O.B EKI VENTURES",
+  "tagline": "Quality Furniture Accessories & Fittings",
+  "address": "2, Amu Street, Mushin Market, Lagos, Nigeria",
+  "openingHours": "Mon - Sat: 8:00 AM - 6:00 PM",
+  "phone1": "08108725967",
+  "phone2": "08023841013",
+  "whatsapp": "2348108725967",
+  "email": "sales@mobekiventures.com",
+  "deliveryLagosKobo": 200000,
+  "deliverySouthWestKobo": 350000,
+  "deliveryNationwideKobo": 500000,
+  "bankName": "Access Bank",
+  "bankAccountName": "M.O.B EKI VENTURES",
+  "bankAccountNumber": "1234567890",
+  "aboutText": "M.O.B EKI VENTURES is a premier hardware supplier based in Mushin, Lagos, Nigeria. We specialize in luxury architectural handles, knobs, hydraulic hinges, precision locks, wardrobe accessories, and modern kitchen fittings.",
+  "announcementText": "Showroom open Mon-Sat at 2, Amu Street, Mushin Market, Lagos. Same-day dispatch across Lagos & nationwide haulage available.",
+  "createdAt": "2026-10-08T12:38:23.257Z",
+  "updatedAt": "2026-10-08T12:38:23.257Z"
 };
+
+export const initialDeliveryZones: DeliveryZoneConfig[] = [
+  {
+    "id": "LAGOS",
+    "name": "Lagos State (Same / Next Day Delivery)",
+    "states": [
+      "Lagos"
+    ],
+    "feeKobo": 200000,
+    "estimatedDays": "1-2 business days",
+    "active": true
+  },
+  {
+    "id": "SOUTH_WEST",
+    "name": "South-West Nigeria (Interstate Courier)",
+    "states": [
+      "Ogun",
+      "Oyo",
+      "Osun",
+      "Ondo",
+      "Ekiti"
+    ],
+    "feeKobo": 350000,
+    "estimatedDays": "2-3 business days",
+    "active": true
+  },
+  {
+    "id": "NATIONWIDE",
+    "name": "Nationwide Haulage / Park Delivery",
+    "states": [
+      "Abia",
+      "Adamawa",
+      "Akwa Ibom",
+      "Anambra",
+      "Bauchi",
+      "Bayelsa",
+      "Benue",
+      "Borno",
+      "Cross River",
+      "Delta",
+      "Ebonyi",
+      "Edo",
+      "Enugu",
+      "Gombe",
+      "Imo",
+      "Jigawa",
+      "Kaduna",
+      "Kano",
+      "Katsina",
+      "Kebbi",
+      "Kogi",
+      "Kwara",
+      "Nasarawa",
+      "Niger",
+      "Plateau",
+      "Rivers",
+      "Sokoto",
+      "Taraba",
+      "Yobe",
+      "Zamfara",
+      "FCT - Abuja"
+    ],
+    "feeKobo": 500000,
+    "estimatedDays": "3-5 business days",
+    "active": true
+  },
+  {
+    "id": "PICKUP",
+    "name": "Store Pickup (2, Amu Street, Mushin Market)",
+    "states": [
+      "Lagos"
+    ],
+    "feeKobo": 0,
+    "estimatedDays": "Ready same day",
+    "active": true
+  }
+];
 
 export const initialTeamMembers: TeamMember[] = [
   {
-    id: 'team-1',
-    name: 'Mulikat & Mutiu Oladejo',
-    position: 'Founders & Managing Directors / CEOs',
-    bio: 'Pioneered M.O.B EKI VENTURES in Mushin Market with decades of hardware expertise, establishing trusted partnerships with international manufacturers.',
-    image: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&h=400&fit=crop&q=80',
-    displayOrder: 1,
-    active: true,
-  },
-  {
-    id: 'team-2',
-    name: 'Oladejo Muhaz Olayiwola',
-    position: 'General Manager & Operations Lead',
-    bio: 'Oversees showroom inventory operations, corporate bulk order deliveries across Nigeria, customer relations, and digital sales inquiries.',
-    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&q=80',
-    displayOrder: 2,
-    active: true,
+    "id": "team-01",
+    "name": "M.O.B Store Manager",
+    "position": "Operations & Inventory Lead",
+    "bio": "Oversees inventory quality control and trade fulfillment at Mushin showroom.",
+    "image": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=200&h=200&fit=crop&q=80",
+    "displayOrder": 1,
+    "active": true
   }
 ];
 
