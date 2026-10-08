@@ -84,46 +84,46 @@ export default function AboutPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {/* Founders */}
-            <div className="bg-white rounded-2xl border border-gray-200 p-6 flex flex-col sm:flex-row items-center gap-6 shadow-xs hover:border-[#0B1F3A] transition">
+            <div className="bg-white rounded-2xl border border-gray-200 p-6 flex flex-col sm:flex-row items-center gap-6 shadow-sm hover:border-[#C9A227] hover:shadow-md transition">
               <img
-                src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=300&h=300&fit=crop&q=80"
-                alt="Mulikat & Mutiu Oladejo"
-                className="w-28 h-28 rounded-2xl object-cover border border-gray-200 shrink-0"
+                src="/team/founders-mulikat-mutiu-oladejo.jpg"
+                alt="Mulikat & Mutiu Oladejo - Founders & CEOs"
+                className="w-32 h-36 sm:w-36 sm:h-40 rounded-2xl object-cover object-top border-2 border-[#C9A227]/40 shadow-sm shrink-0"
               />
               <div className="text-center sm:text-left space-y-2">
-                <span className="px-2.5 py-0.5 rounded text-[10px] font-bold bg-amber-100 text-amber-800">
+                <span className="px-2.5 py-0.5 rounded text-[10px] font-bold bg-amber-100 text-amber-800 tracking-wide">
                   FOUNDERS & CEOS
                 </span>
                 <h3 className="font-serif font-bold text-lg text-gray-900">
                   Mulikat & Mutiu Oladejo
                 </h3>
-                <p className="text-xs text-gray-500 leading-relaxed">
-                  Visionaries behind M.O.B EKI VENTURES who established our strong manufacturer supply chain and physical presence in Mushin Market.
+                <p className="text-xs text-gray-600 leading-relaxed">
+                  Visionaries behind M.O.B EKI VENTURES who established our direct manufacturer supply chain and premier physical presence in Mushin Market.
                 </p>
               </div>
             </div>
 
             {/* General Manager */}
-            <div className="bg-white rounded-2xl border border-gray-200 p-6 flex flex-col sm:flex-row items-center gap-6 shadow-xs hover:border-[#0B1F3A] transition">
+            <div className="bg-white rounded-2xl border border-gray-200 p-6 flex flex-col sm:flex-row items-center gap-6 shadow-sm hover:border-[#0B1F3A] hover:shadow-md transition">
               <img
-                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop&q=80"
-                alt="Oladejo Muhaz Olayiwola"
-                className="w-28 h-28 rounded-2xl object-cover border border-gray-200 shrink-0"
+                src="/team/general-manager-oladejo-muhaz.jpg"
+                alt="Oladejo Muhaz Olayiwola - General Manager"
+                className="w-32 h-36 sm:w-36 sm:h-40 rounded-2xl object-cover object-top border-2 border-[#0B1F3A]/40 shadow-sm shrink-0"
               />
               <div className="text-center sm:text-left space-y-2">
-                <span className="px-2.5 py-0.5 rounded text-[10px] font-bold bg-blue-100 text-[#0B1F3A]">
+                <span className="px-2.5 py-0.5 rounded text-[10px] font-bold bg-blue-100 text-[#0B1F3A] tracking-wide">
                   GENERAL MANAGER
                 </span>
                 <h3 className="font-serif font-bold text-lg text-gray-900">
                   Oladejo Muhaz Olayiwola
                 </h3>
-                <p className="text-xs text-gray-500 leading-relaxed">
-                  Oversees physical store operations, commercial joinery bulk shipments, nationwide orders, and digital customer relations.
+                <p className="text-xs text-gray-600 leading-relaxed">
+                  Oversees physical store operations, commercial joinery bulk shipments, nationwide logistics, and digital client relations.
                 </p>
                 <div className="pt-1">
                   <a
                     href="mailto:muhazoladejo48@gmail.com"
-                    className="text-[11px] font-semibold text-[#0B1F3A] hover:underline"
+                    className="text-[11px] font-semibold text-[#0B1F3A] hover:text-[#C9A227] hover:underline transition"
                   >
                     muhazoladejo48@gmail.com
                   </a>
