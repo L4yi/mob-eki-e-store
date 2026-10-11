@@ -21,14 +21,19 @@ import { auditLogService } from '../services/AuthAuditSettingsServices';
 import { repositories } from '../repositories';
 import { whatsAppService } from '../services/WhatsAppService';
 import { uploadImageToStorage } from '../lib/supabaseStorage';
+import {
+  adminMutationLimiter,
+  imageUploadLimiter,
+  inventoryMutationLimiter,
+} from '../middleware/rateLimiter';
 
 const router = Router();
 
 // Protect entire admin router for authenticated staff
 router.use(requireAuth, requireAdmin);
 
-// POST /api/admin/upload
-router.post('/upload', requireInventoryManagement, async (req, res, next) => {
+// POST /api/admin/upload (Max 10 uploads / 10 min / Admin)
+router.post('/upload', requireInventoryManagement, imageUploadLimiter, async (req, res, next) => {
   try {
     const { fileData, fileName, fileType, folder } = req.body;
 
@@ -154,8 +159,8 @@ router.get('/orders/:id', async (req, res, next) => {
   }
 });
 
-// PUT /api/admin/orders/:id/status
-router.put('/orders/:id/status', requireOrderManagement, validate(updateOrderStatusSchema), async (req, res, next) => {
+// PUT /api/admin/orders/:id/status (Max 30 mut / min)
+router.put('/orders/:id/status', requireOrderManagement, adminMutationLimiter, validate(updateOrderStatusSchema), async (req, res, next) => {
   try {
     const id = Array.isArray(req.params.id) ? req.params.id[0] : req.params.id;
     const { status, note } = req.body;
@@ -214,8 +219,8 @@ router.get('/inventory/low-stock', async (req, res, next) => {
   }
 });
 
-// POST /api/admin/inventory/adjust
-router.post('/inventory/adjust', requireInventoryManagement, validate(adjustInventorySchema), async (req, res, next) => {
+// POST /api/admin/inventory/adjust (Max 30 adj / 10 min)
+router.post('/inventory/adjust', requireInventoryManagement, inventoryMutationLimiter, validate(adjustInventorySchema), async (req, res, next) => {
   try {
     const updated = await inventoryService.adjustStock({
       ...req.body,
@@ -262,8 +267,8 @@ router.get('/payments', async (req, res, next) => {
   }
 });
 
-// POST /api/admin/payments/verify-transfer
-router.post('/payments/verify-transfer', requireOrderManagement, validate(verifyTransferSchema), async (req, res, next) => {
+// POST /api/admin/payments/verify-transfer (Max 30 mut / min)
+router.post('/payments/verify-transfer', requireOrderManagement, adminMutationLimiter, validate(verifyTransferSchema), async (req, res, next) => {
   try {
     const { orderId, bankReference, verifiedNotes } = req.body;
     const updatedOrder = await paymentService.verifyBankTransferManual({

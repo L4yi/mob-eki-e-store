@@ -56,12 +56,23 @@
       "updatedAt": "2026-10-08T12:38:23.257Z"
     },
     {
+      "id": "cat-doors",
+      "slug": "doors",
+      "name": "Doors & Security Doors",
+      "image": "/products/luxury-mahogany-flush-door-silver-inlays.jpg",
+      "description": "Architectural interior flush doors, security doors, and double entrance doors with complete matching frames and architraves.",
+      "displayOrder": 3,
+      "active": true,
+      "createdAt": "2026-10-11T13:00:00.000Z",
+      "updatedAt": "2026-10-11T13:00:00.000Z"
+    },
+    {
       "id": "cat-hinges",
       "slug": "hinges",
       "name": "Hinges",
       "image": "https://images.unsplash.com/photo-1538688525198-9b88f6f53126?w=400&h=300&fit=crop&q=80",
       "description": "Hydraulic soft-close cabinet hinges, concealed 3D hinges, and heavy-duty pivot hinges.",
-      "displayOrder": 3,
+      "displayOrder": 4,
       "active": true,
       "createdAt": "2026-10-08T12:38:23.257Z",
       "updatedAt": "2026-10-08T12:38:23.257Z"
@@ -72,7 +83,7 @@
       "name": "Locks",
       "image": "https://images.unsplash.com/photo-1558002038-1055907df827?w=400&h=300&fit=crop&q=80",
       "description": "Drawer locks, wardrobe cam locks, digital keypad locks, and central locking bars.",
-      "displayOrder": 4,
+      "displayOrder": 5,
       "active": true,
       "createdAt": "2026-10-08T12:38:23.257Z",
       "updatedAt": "2026-10-08T12:38:23.257Z"
@@ -83,7 +94,7 @@
       "name": "Furniture Fittings",
       "image": "/products/magic-corner-kitchen-basket.jpg",
       "description": "Telescopic drawer slides, soft-close pantry larder units, corner pullouts, and spice racks.",
-      "displayOrder": 5,
+      "displayOrder": 6,
       "active": true,
       "createdAt": "2026-10-08T12:38:23.257Z",
       "updatedAt": "2026-10-08T12:38:23.257Z"
@@ -94,7 +105,7 @@
       "name": "Other Accessories",
       "image": "/products/luxury-wardrobe-jewelry-tray.jpg",
       "description": "Luxury wardrobe jewelry trays, laundry pull-out baskets, cutlery dividers, and caster wheels.",
-      "displayOrder": 6,
+      "displayOrder": 7,
       "active": true,
       "createdAt": "2026-10-08T12:38:23.257Z",
       "updatedAt": "2026-10-08T12:38:23.257Z"
@@ -105,7 +116,7 @@
       "name": "Kitchen Appliances",
       "image": "/products/hippont-90cm-flat-heat-extractor.jpg",
       "description": "Built-in gas hobs, electric cooktops, digital heat extractors, range hoods, and built-in microwaves.",
-      "displayOrder": 7,
+      "displayOrder": 8,
       "active": true,
       "createdAt": "2026-10-08T12:38:23.257Z",
       "updatedAt": "2026-10-08T12:38:23.257Z"
@@ -130,7 +141,7 @@
         "/products/luxury-gold-black-geometric-handle.jpg"
       ],
       "stockQuantity": 150,
-      "reservedQuantity": 0,
+      "reservedQuantity": 27,
       "lowStockThreshold": 15,
       "specs": [
         {
@@ -153,7 +164,7 @@
       "active": true,
       "featured": true,
       "createdAt": "2026-10-08T12:38:23.257Z",
-      "updatedAt": "2026-10-08T12:38:23.257Z"
+      "updatedAt": "2026-10-08T14:27:10.964Z"
     },
     {
       "id": "prd-hdl-02",
@@ -1151,11 +1162,1525 @@
       "featured": true,
       "createdAt": "2026-10-08T12:38:23.257Z",
       "updatedAt": "2026-10-08T12:38:23.257Z"
+    },
+    {
+      "id": "prd-door-01",
+      "name": "Luxury Mahogany Flush Door with Dual Silver Inlays & Full Frame",
+      "slug": "luxury-mahogany-flush-door-dual-silver-inlays",
+      "sku": "DOR-MHG-SLV2",
+      "categoryId": "cat-doors",
+      "categoryName": "Doors & Security Doors",
+      "categorySlug": "doors",
+      "description": "High-density solid-core mahogany wood-grain interior security door featuring precision horizontal brushed silver accent inlays, full matching architrave jamb casing, and mortise lever lockset compatibility. All standard and luxury height sizes available.",
+      "priceKobo": 10500000,
+      "wholesaleEnabled": true,
+      "retailEnabled": true,
+      "wholesaleMinQty": 3,
+      "wholesalePriceKobo": 9200000,
+      "images": [
+        "/products/luxury-mahogany-flush-door-silver-inlays.jpg"
+      ],
+      "stockQuantity": 24,
+      "reservedQuantity": 0,
+      "lowStockThreshold": 4,
+      "specs": [
+        {
+          "label": "Available Sizes",
+          "value": "800 x 2100mm, 800 x 2300mm, 900 x 2100mm, 900 x 2300mm, 1200 x 2100mm, 1200 x 2300mm"
+        },
+        {
+          "label": "Finish",
+          "value": "Natural Mahogany Grain with Clear UV Protective Coat"
+        },
+        {
+          "label": "Inlay Design",
+          "value": "Dual Brushed Silver Aluminium Horizontal Inlays"
+        },
+        {
+          "label": "Frame & Architrave",
+          "value": "Full Matching Engineered Wood Frame & Casing Included"
+        },
+        {
+          "label": "Core Type",
+          "value": "Solid Acoustic & Sound-Dampening Engineered Core"
+        },
+        {
+          "label": "Application",
+          "value": "Master Bedroom, Office Suite, Luxury Apartment"
+        }
+      ],
+      "active": true,
+      "featured": true,
+      "createdAt": "2026-10-11T13:00:00.000Z",
+      "updatedAt": "2026-10-11T13:00:00.000Z"
+    },
+    {
+      "id": "prd-door-02",
+      "name": "Executive White Paneled Double Entrance Door with Frosted Glass",
+      "slug": "executive-white-paneled-double-entrance-door-frosted-glass",
+      "sku": "DOR-WHT-DBL-GLS",
+      "categoryId": "cat-doors",
+      "categoryName": "Doors & Security Doors",
+      "categorySlug": "doors",
+      "description": "Architectural 1.5-leaf mother-and-child double entrance door in pure satin white. Features tempered frosted glass grid lites for gentle natural illumination with full privacy, classic raised bottom panels, and wide ornamental corniced architraves.",
+      "priceKobo": 21500000,
+      "wholesaleEnabled": true,
+      "retailEnabled": true,
+      "wholesaleMinQty": 2,
+      "wholesalePriceKobo": 19000000,
+      "images": [
+        "/products/executive-white-paneled-double-door-frosted-glass.jpg"
+      ],
+      "stockQuantity": 15,
+      "reservedQuantity": 0,
+      "lowStockThreshold": 3,
+      "specs": [
+        {
+          "label": "Available Sizes",
+          "value": "800 x 2100mm, 800 x 2300mm, 900 x 2100mm, 900 x 2300mm, 1200 x 2100mm, 1200 x 2300mm"
+        },
+        {
+          "label": "Door Style",
+          "value": "Unequal Double Leaf (Mother & Child) / Glazed Entrance"
+        },
+        {
+          "label": "Glazing",
+          "value": "Dual-Layer Tempered Frosted Privacy Glass"
+        },
+        {
+          "label": "Finish",
+          "value": "Waterproof Satin White Polyurethane Coat"
+        },
+        {
+          "label": "Frame & Architrave",
+          "value": "Heavy-Duty Reinforced Door Jamb with Moulded Cornice Casing"
+        },
+        {
+          "label": "Hardware Support",
+          "value": "Compatible with T-Bar Handles, Deadbolts & Pulls"
+        }
+      ],
+      "active": true,
+      "featured": true,
+      "createdAt": "2026-10-11T13:00:00.000Z",
+      "updatedAt": "2026-10-11T13:00:00.000Z"
+    },
+    {
+      "id": "prd-door-03",
+      "name": "Contemporary Natural Oak Flush Door with Geometric Black Inlays",
+      "slug": "contemporary-natural-oak-flush-door-geometric-black-inlays",
+      "sku": "DOR-OAK-BLK-GEO",
+      "categoryId": "cat-doors",
+      "categoryName": "Doors & Security Doors",
+      "categorySlug": "doors",
+      "description": "Modern Scandinavian-inspired interior flush door crafted with warm natural oak vertical grain veneer and CNC-machined geometric black groove lines. Includes matching seamless box-profile architrave casing.",
+      "priceKobo": 9800000,
+      "wholesaleEnabled": true,
+      "retailEnabled": true,
+      "wholesaleMinQty": 3,
+      "wholesalePriceKobo": 8500000,
+      "images": [
+        "/products/contemporary-natural-oak-interior-door-grooves.jpg"
+      ],
+      "stockQuantity": 28,
+      "reservedQuantity": 0,
+      "lowStockThreshold": 5,
+      "specs": [
+        {
+          "label": "Available Sizes",
+          "value": "800 x 2100mm, 800 x 2300mm, 900 x 2100mm, 900 x 2300mm, 1200 x 2100mm, 1200 x 2300mm"
+        },
+        {
+          "label": "Veneer Finish",
+          "value": "Natural European White Oak Grain Finish"
+        },
+        {
+          "label": "Inlay Design",
+          "value": "Precision Asymmetrical Black Grooved Architectural Lines"
+        },
+        {
+          "label": "Frame Profile",
+          "value": "Full Concealed-Joint Architrave Frame System Included"
+        },
+        {
+          "label": "Thickness",
+          "value": "45mm Heavy-Duty Solid Door Leaf"
+        },
+        {
+          "label": "Recommended For",
+          "value": "Modern Living Rooms, Bedrooms, Commercial Executive Offices"
+        }
+      ],
+      "active": true,
+      "featured": true,
+      "createdAt": "2026-10-11T13:00:00.000Z",
+      "updatedAt": "2026-10-11T13:00:00.000Z"
+    },
+    {
+      "id": "prd-door-04",
+      "name": "Architectural Matte Anthracite Flush Door with 4 Brushed Chrome Inlays",
+      "slug": "architectural-matte-anthracite-flush-door-4-brushed-chrome-inlays",
+      "sku": "DOR-ANT-CHR4",
+      "categoryId": "cat-doors",
+      "categoryName": "Doors & Security Doors",
+      "categorySlug": "doors",
+      "description": "Ultra-modern luxury interior door in deep matte anthracite charcoal grey finish. Accented with 4 equidistant brushed chrome horizontal metal strips embedded flush into the door leaf, framed with matching charcoal architrave casing.",
+      "priceKobo": 11500000,
+      "wholesaleEnabled": true,
+      "retailEnabled": true,
+      "wholesaleMinQty": 3,
+      "wholesalePriceKobo": 9800000,
+      "images": [
+        "/products/architectural-matte-anthracite-flush-door-chrome-strips.jpg"
+      ],
+      "stockQuantity": 20,
+      "reservedQuantity": 0,
+      "lowStockThreshold": 4,
+      "specs": [
+        {
+          "label": "Available Sizes",
+          "value": "800 x 2100mm, 800 x 2300mm, 900 x 2100mm, 900 x 2300mm, 1200 x 2100mm, 1200 x 2300mm"
+        },
+        {
+          "label": "Finish",
+          "value": "Anti-Fingerprint Matte Anthracite Charcoal Texture"
+        },
+        {
+          "label": "Inlay Design",
+          "value": "4 Quad-Spaced Brushed Chrome Stainless Steel Horizontal Strips"
+        },
+        {
+          "label": "Jamb & Architrave",
+          "value": "Complete Matching Casing with Sound-Dampening Rubber Gasket"
+        },
+        {
+          "label": "Hardware Support",
+          "value": "Standard Mortise Magnetic Latch & Euro Profile Cylinder"
+        },
+        {
+          "label": "Application",
+          "value": "Contemporary Luxury Residences, Hotels, Executive Boardrooms"
+        }
+      ],
+      "active": true,
+      "featured": true,
+      "createdAt": "2026-10-11T13:00:00.000Z",
+      "updatedAt": "2026-10-11T13:00:00.000Z"
+    },
+    {
+      "id": "prd-door-05",
+      "name": "Classic Deep Walnut Flush Door with 4 Horizontal Silver Inlays",
+      "slug": "classic-deep-walnut-flush-door-4-horizontal-silver-inlays",
+      "sku": "DOR-MHG-SLV4",
+      "categoryId": "cat-doors",
+      "categoryName": "Doors & Security Doors",
+      "categorySlug": "doors",
+      "description": "Timeless deep reddish-brown mahogany and walnut wood flush door with rich vertical grain figuring. Decorated with 4 clean horizontal silver aluminium strip accents and full matching mahogany wood casing.",
+      "priceKobo": 11000000,
+      "wholesaleEnabled": true,
+      "retailEnabled": true,
+      "wholesaleMinQty": 3,
+      "wholesalePriceKobo": 9500000,
+      "images": [
+        "/products/classic-deep-walnut-flush-door-4-silver-inlays.jpg"
+      ],
+      "stockQuantity": 26,
+      "reservedQuantity": 0,
+      "lowStockThreshold": 4,
+      "specs": [
+        {
+          "label": "Available Sizes",
+          "value": "800 x 2100mm, 800 x 2300mm, 900 x 2100mm, 900 x 2300mm, 1200 x 2100mm, 1200 x 2300mm"
+        },
+        {
+          "label": "Finish",
+          "value": "High-Lustre Deep Walnut / Mahogany Wood Polish"
+        },
+        {
+          "label": "Accents",
+          "value": "4 Horizontal Flush-Embedded Aluminium Inlays"
+        },
+        {
+          "label": "Casing & Frame",
+          "value": "120mm - 150mm Adjustable Wall Thickness Door Jamb & Architraves"
+        },
+        {
+          "label": "Core Construction",
+          "value": "Multi-Ply Engineered Wood Core for Anti-Warping Durability"
+        },
+        {
+          "label": "Usage",
+          "value": "Luxury Residential Bedrooms, Bathrooms, Executive Suites"
+        }
+      ],
+      "active": true,
+      "featured": false,
+      "createdAt": "2026-10-11T13:00:00.000Z",
+      "updatedAt": "2026-10-11T13:00:00.000Z"
+    },
+    {
+      "id": "prd-door-06",
+      "name": "Golden Honey Beech Flush Door with 4 Silver Chrome Inlays",
+      "slug": "golden-honey-beech-flush-door-4-silver-chrome-inlays",
+      "sku": "DOR-BCH-SLV4",
+      "categoryId": "cat-doors",
+      "categoryName": "Doors & Security Doors",
+      "categorySlug": "doors",
+      "description": "Bright and welcoming golden honey beech interior door featuring natural wood warmth and 4 reflective silver chrome horizontal inlays. Supplied complete with matching honey beech architrave frame.",
+      "priceKobo": 10000000,
+      "wholesaleEnabled": true,
+      "retailEnabled": true,
+      "wholesaleMinQty": 3,
+      "wholesalePriceKobo": 8800000,
+      "images": [
+        "/products/golden-honey-beech-flush-door-silver-inlays.jpg"
+      ],
+      "stockQuantity": 22,
+      "reservedQuantity": 0,
+      "lowStockThreshold": 4,
+      "specs": [
+        {
+          "label": "Available Sizes",
+          "value": "800 x 2100mm, 800 x 2300mm, 900 x 2100mm, 900 x 2300mm, 1200 x 2100mm, 1200 x 2300mm"
+        },
+        {
+          "label": "Tone & Finish",
+          "value": "Golden Honey Beech / Warm Teak Fine Grain"
+        },
+        {
+          "label": "Inlays",
+          "value": "4 Stainless Chrome Horizontal Metallic Accent Strips"
+        },
+        {
+          "label": "Architrave Frame",
+          "value": "Solid Timber Frame with Adjustable Architrave Lip Included"
+        },
+        {
+          "label": "Moisture Resistance",
+          "value": "Treated Against Swelling, Termites, and Humid Environments"
+        },
+        {
+          "label": "Recommended For",
+          "value": "Bedrooms, Hotel Guest Rooms, Corridors, Luxury Apartments"
+        }
+      ],
+      "active": true,
+      "featured": false,
+      "createdAt": "2026-10-11T13:00:00.000Z",
+      "updatedAt": "2026-10-11T13:00:00.000Z"
+    },
+    {
+      "id": "prd-door-07",
+      "name": "Deep Walnut Architectural Door with 3 Stainless Steel Inlays & Frame",
+      "slug": "deep-walnut-architectural-door-3-stainless-steel-inlays-frame",
+      "sku": "DOR-WLN-SS3",
+      "categoryId": "cat-doors",
+      "categoryName": "Doors & Security Doors",
+      "categorySlug": "doors",
+      "description": "Heavyweight dark American walnut finished door showing robust jamb construction. Features an architectural 3-strip inlay motif (2 upper header strips and 1 lower base strip) for a balanced modern look.",
+      "priceKobo": 12000000,
+      "wholesaleEnabled": true,
+      "retailEnabled": true,
+      "wholesaleMinQty": 3,
+      "wholesalePriceKobo": 10500000,
+      "images": [
+        "/products/deep-walnut-rosewood-door-with-casing-frame.jpg"
+      ],
+      "stockQuantity": 18,
+      "reservedQuantity": 0,
+      "lowStockThreshold": 3,
+      "specs": [
+        {
+          "label": "Available Sizes",
+          "value": "800 x 2100mm, 800 x 2300mm, 900 x 2100mm, 900 x 2300mm, 1200 x 2100mm, 1200 x 2300mm"
+        },
+        {
+          "label": "Wood Figuring",
+          "value": "Rich Dark American Walnut with Straight & Swirl Grain Patterns"
+        },
+        {
+          "label": "Inlay Pattern",
+          "value": "3 Stainless Steel Strips (2 Header Inlays, 1 Kickplate Inlay)"
+        },
+        {
+          "label": "Door Frame",
+          "value": "Heavy-Duty Solid Engineered Wood Casing with Rebated Gasket"
+        },
+        {
+          "label": "Leaf Thickness",
+          "value": "45mm Solid Security Standard Leaf"
+        },
+        {
+          "label": "Application",
+          "value": "Apartment Entrance, Office Chambers, Master Bedroom"
+        }
+      ],
+      "active": true,
+      "featured": true,
+      "createdAt": "2026-10-11T13:00:00.000Z",
+      "updatedAt": "2026-10-11T13:00:00.000Z"
+    },
+    {
+      "id": "prd-door-08",
+      "name": "Modern Warm Teak Flush Door with Dual Silver Section Inlays",
+      "slug": "modern-warm-teak-flush-door-dual-silver-section-inlays",
+      "sku": "DOR-TEK-SLV2",
+      "categoryId": "cat-doors",
+      "categoryName": "Doors & Security Doors",
+      "categorySlug": "doors",
+      "description": "Natural warm teak interior door designed with two horizontal silver inlay lines that frame the handle and lock cylinder sector. Features full-height matching teak door frame and architraves.",
+      "priceKobo": 10200000,
+      "wholesaleEnabled": true,
+      "retailEnabled": true,
+      "wholesaleMinQty": 3,
+      "wholesalePriceKobo": 8900000,
+      "images": [
+        "/products/modern-warm-teak-flush-door-dual-silver-inlays.jpg"
+      ],
+      "stockQuantity": 30,
+      "reservedQuantity": 0,
+      "lowStockThreshold": 5,
+      "specs": [
+        {
+          "label": "Available Sizes",
+          "value": "800 x 2100mm, 800 x 2300mm, 900 x 2100mm, 900 x 2300mm, 1200 x 2100mm, 1200 x 2300mm"
+        },
+        {
+          "label": "Finish",
+          "value": "Warm African Teak Semi-Gloss Wood Grain"
+        },
+        {
+          "label": "Inlays",
+          "value": "Dual Horizontal Brushed Silver Strips Framing Lock Zone"
+        },
+        {
+          "label": "Casing Package",
+          "value": "Includes 3-Piece Architrave Trim & Matching Rebated Jamb"
+        },
+        {
+          "label": "Acoustic Rating",
+          "value": "Sound-Insulated Composite Core"
+        },
+        {
+          "label": "Compatibility",
+          "value": "Standard Nigerian Mortise Locks and Ball-Bearing Hinges"
+        }
+      ],
+      "active": true,
+      "featured": false,
+      "createdAt": "2026-10-11T13:00:00.000Z",
+      "updatedAt": "2026-10-11T13:00:00.000Z"
+    },
+    {
+      "id": "prd-door-09",
+      "name": "Modern Ebony Black Flush Door with Dual Silver Accent Inlays",
+      "slug": "modern-ebony-black-flush-door-dual-silver-accent-inlays",
+      "sku": "DOR-EBN-SLV2",
+      "categoryId": "cat-doors",
+      "categoryName": "Doors & Security Doors",
+      "categorySlug": "doors",
+      "description": "High-contrast architectural interior flush door in rich ebony black grain finish. Accented by two horizontal silver inlays framing the chrome lockset zone, with matching black architrave frame casing.",
+      "priceKobo": 11000000,
+      "wholesaleEnabled": true,
+      "retailEnabled": true,
+      "wholesaleMinQty": 3,
+      "wholesalePriceKobo": 9600000,
+      "images": [
+        "/products/modern-ebony-black-flush-door-dual-silver-inlays.jpg"
+      ],
+      "stockQuantity": 25,
+      "reservedQuantity": 0,
+      "lowStockThreshold": 4,
+      "specs": [
+        {
+          "label": "Available Sizes",
+          "value": "800 x 2100mm, 800 x 2300mm, 900 x 2100mm, 900 x 2300mm, 1200 x 2100mm, 1200 x 2300mm"
+        },
+        {
+          "label": "Finish",
+          "value": "Deep Ebony Black Matte Grain Finish"
+        },
+        {
+          "label": "Accents",
+          "value": "Two Precision Horizontal Silver Metallic Strips"
+        },
+        {
+          "label": "Casing System",
+          "value": "Full Ebony Black Architrave Jamb Set Included"
+        },
+        {
+          "label": "Core Quality",
+          "value": "Solid Heavyweight Acoustic Core (45mm thickness)"
+        },
+        {
+          "label": "Usage",
+          "value": "Luxury Minimalist Interiors, Master Suites, Studio Apartments"
+        }
+      ],
+      "active": true,
+      "featured": true,
+      "createdAt": "2026-10-11T13:00:00.000Z",
+      "updatedAt": "2026-10-11T13:00:00.000Z"
     }
   ],
-  "orders": [],
-  "inventoryMovements": [],
+  "orders": [
+    {
+      "id": "ord-70f251ac-3c6e-4584-9289-87a3e8b98f0b",
+      "orderNumber": "MOB-2026-6306",
+      "trackingToken": "f0792985cb49d709008e9f5ceee747e5",
+      "customerName": "Adebayo Test",
+      "customerEmail": "adebayo.test@example.com",
+      "customerPhone": "08108725967",
+      "deliveryZone": "LAGOS",
+      "deliveryState": "Lagos",
+      "deliveryCity": "Ikeja",
+      "deliveryAddress": "15 Commercial Avenue",
+      "subtotalKobo": 450000,
+      "discountKobo": 0,
+      "deliveryFeeKobo": 200000,
+      "totalKobo": 650000,
+      "paymentMethod": "BANK_TRANSFER",
+      "paymentStatus": "PENDING",
+      "orderStatus": "PENDING_PAYMENT",
+      "reservationExpiresAt": "2026-10-08T14:56:25.001Z",
+      "items": [
+        {
+          "productId": "prd-hdl-01",
+          "productName": "Luxury Black & Gold Geometric Cabinet Pull Handle",
+          "sku": "HDL-BLK-GLD-GEO",
+          "unitPriceKobo": 450000,
+          "quantity": 1
+        }
+      ],
+      "trackingNotes": [
+        {
+          "timestamp": "2026-10-08T14:26:25.001Z",
+          "status": "PENDING_PAYMENT",
+          "note": "Order created, awaiting payment confirmation."
+        }
+      ],
+      "idempotencyKey": "test-idem-1791469584996",
+      "createdAt": "2026-10-08T14:26:25.001Z",
+      "updatedAt": "2026-10-08T14:26:25.001Z"
+    },
+    {
+      "id": "ord-8e9ca6c8-dd01-4263-acf9-af3366a5e67c",
+      "orderNumber": "MOB-2026-9113",
+      "trackingToken": "63213d31fea69a6fddb5db8beacfb074",
+      "customerName": "Adebayo Test",
+      "customerEmail": "order_1_1791469585026@example.com",
+      "customerPhone": "08108725967",
+      "deliveryZone": "LAGOS",
+      "deliveryState": "Lagos",
+      "deliveryCity": "Ikeja",
+      "deliveryAddress": "15 Commercial Avenue",
+      "subtotalKobo": 450000,
+      "discountKobo": 0,
+      "deliveryFeeKobo": 200000,
+      "totalKobo": 650000,
+      "paymentMethod": "BANK_TRANSFER",
+      "paymentStatus": "PENDING",
+      "orderStatus": "PENDING_PAYMENT",
+      "reservationExpiresAt": "2026-10-08T14:56:25.030Z",
+      "items": [
+        {
+          "productId": "prd-hdl-01",
+          "productName": "Luxury Black & Gold Geometric Cabinet Pull Handle",
+          "sku": "HDL-BLK-GLD-GEO",
+          "unitPriceKobo": 450000,
+          "quantity": 1
+        }
+      ],
+      "trackingNotes": [
+        {
+          "timestamp": "2026-10-08T14:26:25.030Z",
+          "status": "PENDING_PAYMENT",
+          "note": "Order created, awaiting payment confirmation."
+        }
+      ],
+      "idempotencyKey": "batch-order-1791469585026-1",
+      "createdAt": "2026-10-08T14:26:25.030Z",
+      "updatedAt": "2026-10-08T14:26:25.030Z"
+    },
+    {
+      "id": "ord-a69393c1-7074-4b4a-869f-eab942f9e544",
+      "orderNumber": "MOB-2026-4369",
+      "trackingToken": "9e3680784f65af954db82951f27d1bf9",
+      "customerName": "Adebayo Test",
+      "customerEmail": "order_2_1791469585031@example.com",
+      "customerPhone": "08108725967",
+      "deliveryZone": "LAGOS",
+      "deliveryState": "Lagos",
+      "deliveryCity": "Ikeja",
+      "deliveryAddress": "15 Commercial Avenue",
+      "subtotalKobo": 450000,
+      "discountKobo": 0,
+      "deliveryFeeKobo": 200000,
+      "totalKobo": 650000,
+      "paymentMethod": "BANK_TRANSFER",
+      "paymentStatus": "PENDING",
+      "orderStatus": "PENDING_PAYMENT",
+      "reservationExpiresAt": "2026-10-08T14:56:25.033Z",
+      "items": [
+        {
+          "productId": "prd-hdl-01",
+          "productName": "Luxury Black & Gold Geometric Cabinet Pull Handle",
+          "sku": "HDL-BLK-GLD-GEO",
+          "unitPriceKobo": 450000,
+          "quantity": 1
+        }
+      ],
+      "trackingNotes": [
+        {
+          "timestamp": "2026-10-08T14:26:25.033Z",
+          "status": "PENDING_PAYMENT",
+          "note": "Order created, awaiting payment confirmation."
+        }
+      ],
+      "idempotencyKey": "batch-order-1791469585031-2",
+      "createdAt": "2026-10-08T14:26:25.033Z",
+      "updatedAt": "2026-10-08T14:26:25.033Z"
+    },
+    {
+      "id": "ord-9c6713fc-f52d-4b8f-acd6-b79f444c856e",
+      "orderNumber": "MOB-2026-6268",
+      "trackingToken": "a8d0ae6208e9e83ac73ea317a43bcbd1",
+      "customerName": "Adebayo Test",
+      "customerEmail": "order_3_1791469585035@example.com",
+      "customerPhone": "08108725967",
+      "deliveryZone": "LAGOS",
+      "deliveryState": "Lagos",
+      "deliveryCity": "Ikeja",
+      "deliveryAddress": "15 Commercial Avenue",
+      "subtotalKobo": 450000,
+      "discountKobo": 0,
+      "deliveryFeeKobo": 200000,
+      "totalKobo": 650000,
+      "paymentMethod": "BANK_TRANSFER",
+      "paymentStatus": "PENDING",
+      "orderStatus": "PENDING_PAYMENT",
+      "reservationExpiresAt": "2026-10-08T14:56:25.037Z",
+      "items": [
+        {
+          "productId": "prd-hdl-01",
+          "productName": "Luxury Black & Gold Geometric Cabinet Pull Handle",
+          "sku": "HDL-BLK-GLD-GEO",
+          "unitPriceKobo": 450000,
+          "quantity": 1
+        }
+      ],
+      "trackingNotes": [
+        {
+          "timestamp": "2026-10-08T14:26:25.037Z",
+          "status": "PENDING_PAYMENT",
+          "note": "Order created, awaiting payment confirmation."
+        }
+      ],
+      "idempotencyKey": "batch-order-1791469585035-3",
+      "createdAt": "2026-10-08T14:26:25.037Z",
+      "updatedAt": "2026-10-08T14:26:25.037Z"
+    },
+    {
+      "id": "ord-20cb414e-c506-486b-a91b-d36a8d3aaebd",
+      "orderNumber": "MOB-2026-4107",
+      "trackingToken": "ce282ff5f7b8d0a895ec77312cf30e3f",
+      "customerName": "Adebayo Test",
+      "customerEmail": "order_4_1791469585039@example.com",
+      "customerPhone": "08108725967",
+      "deliveryZone": "LAGOS",
+      "deliveryState": "Lagos",
+      "deliveryCity": "Ikeja",
+      "deliveryAddress": "15 Commercial Avenue",
+      "subtotalKobo": 450000,
+      "discountKobo": 0,
+      "deliveryFeeKobo": 200000,
+      "totalKobo": 650000,
+      "paymentMethod": "BANK_TRANSFER",
+      "paymentStatus": "PENDING",
+      "orderStatus": "PENDING_PAYMENT",
+      "reservationExpiresAt": "2026-10-08T14:56:25.041Z",
+      "items": [
+        {
+          "productId": "prd-hdl-01",
+          "productName": "Luxury Black & Gold Geometric Cabinet Pull Handle",
+          "sku": "HDL-BLK-GLD-GEO",
+          "unitPriceKobo": 450000,
+          "quantity": 1
+        }
+      ],
+      "trackingNotes": [
+        {
+          "timestamp": "2026-10-08T14:26:25.041Z",
+          "status": "PENDING_PAYMENT",
+          "note": "Order created, awaiting payment confirmation."
+        }
+      ],
+      "idempotencyKey": "batch-order-1791469585039-4",
+      "createdAt": "2026-10-08T14:26:25.041Z",
+      "updatedAt": "2026-10-08T14:26:25.041Z"
+    },
+    {
+      "id": "ord-afc21854-1b68-46c7-8ad9-1498cfaf428a",
+      "orderNumber": "MOB-2026-9896",
+      "trackingToken": "d3bdf149300d1784dc78d8c1873ae14e",
+      "customerName": "Adebayo Test",
+      "customerEmail": "order_5_1791469585043@example.com",
+      "customerPhone": "08108725967",
+      "deliveryZone": "LAGOS",
+      "deliveryState": "Lagos",
+      "deliveryCity": "Ikeja",
+      "deliveryAddress": "15 Commercial Avenue",
+      "subtotalKobo": 450000,
+      "discountKobo": 0,
+      "deliveryFeeKobo": 200000,
+      "totalKobo": 650000,
+      "paymentMethod": "BANK_TRANSFER",
+      "paymentStatus": "PENDING",
+      "orderStatus": "PENDING_PAYMENT",
+      "reservationExpiresAt": "2026-10-08T14:56:25.045Z",
+      "items": [
+        {
+          "productId": "prd-hdl-01",
+          "productName": "Luxury Black & Gold Geometric Cabinet Pull Handle",
+          "sku": "HDL-BLK-GLD-GEO",
+          "unitPriceKobo": 450000,
+          "quantity": 1
+        }
+      ],
+      "trackingNotes": [
+        {
+          "timestamp": "2026-10-08T14:26:25.045Z",
+          "status": "PENDING_PAYMENT",
+          "note": "Order created, awaiting payment confirmation."
+        }
+      ],
+      "idempotencyKey": "batch-order-1791469585043-5",
+      "createdAt": "2026-10-08T14:26:25.045Z",
+      "updatedAt": "2026-10-08T14:26:25.045Z"
+    },
+    {
+      "id": "ord-ca30e05a-f099-4f62-adeb-49eb3748574d",
+      "orderNumber": "MOB-2026-7088",
+      "trackingToken": "050ea192995b4d317d7545a791262557",
+      "customerName": "Adebayo Test",
+      "customerEmail": "order_6_1791469585047@example.com",
+      "customerPhone": "08108725967",
+      "deliveryZone": "LAGOS",
+      "deliveryState": "Lagos",
+      "deliveryCity": "Ikeja",
+      "deliveryAddress": "15 Commercial Avenue",
+      "subtotalKobo": 450000,
+      "discountKobo": 0,
+      "deliveryFeeKobo": 200000,
+      "totalKobo": 650000,
+      "paymentMethod": "BANK_TRANSFER",
+      "paymentStatus": "PENDING",
+      "orderStatus": "PENDING_PAYMENT",
+      "reservationExpiresAt": "2026-10-08T14:56:25.049Z",
+      "items": [
+        {
+          "productId": "prd-hdl-01",
+          "productName": "Luxury Black & Gold Geometric Cabinet Pull Handle",
+          "sku": "HDL-BLK-GLD-GEO",
+          "unitPriceKobo": 450000,
+          "quantity": 1
+        }
+      ],
+      "trackingNotes": [
+        {
+          "timestamp": "2026-10-08T14:26:25.049Z",
+          "status": "PENDING_PAYMENT",
+          "note": "Order created, awaiting payment confirmation."
+        }
+      ],
+      "idempotencyKey": "batch-order-1791469585047-6",
+      "createdAt": "2026-10-08T14:26:25.049Z",
+      "updatedAt": "2026-10-08T14:26:25.049Z"
+    },
+    {
+      "id": "ord-1637ad02-e814-4d2f-b1aa-0c1ba3af3b75",
+      "orderNumber": "MOB-2026-7874",
+      "trackingToken": "ca2f735eceaaf3f68bf2e41eef26c678",
+      "customerName": "Adebayo Test",
+      "customerEmail": "order_7_1791469585050@example.com",
+      "customerPhone": "08108725967",
+      "deliveryZone": "LAGOS",
+      "deliveryState": "Lagos",
+      "deliveryCity": "Ikeja",
+      "deliveryAddress": "15 Commercial Avenue",
+      "subtotalKobo": 450000,
+      "discountKobo": 0,
+      "deliveryFeeKobo": 200000,
+      "totalKobo": 650000,
+      "paymentMethod": "BANK_TRANSFER",
+      "paymentStatus": "PENDING",
+      "orderStatus": "PENDING_PAYMENT",
+      "reservationExpiresAt": "2026-10-08T14:56:25.053Z",
+      "items": [
+        {
+          "productId": "prd-hdl-01",
+          "productName": "Luxury Black & Gold Geometric Cabinet Pull Handle",
+          "sku": "HDL-BLK-GLD-GEO",
+          "unitPriceKobo": 450000,
+          "quantity": 1
+        }
+      ],
+      "trackingNotes": [
+        {
+          "timestamp": "2026-10-08T14:26:25.053Z",
+          "status": "PENDING_PAYMENT",
+          "note": "Order created, awaiting payment confirmation."
+        }
+      ],
+      "idempotencyKey": "batch-order-1791469585050-7",
+      "createdAt": "2026-10-08T14:26:25.053Z",
+      "updatedAt": "2026-10-08T14:26:25.053Z"
+    },
+    {
+      "id": "ord-a9c1b038-884e-420d-8016-2f8a0d53f009",
+      "orderNumber": "MOB-2026-5753",
+      "trackingToken": "3a446cc2c29d8fe609b66ad92fcc86aa",
+      "customerName": "Adebayo Test",
+      "customerEmail": "order_8_1791469585056@example.com",
+      "customerPhone": "08108725967",
+      "deliveryZone": "LAGOS",
+      "deliveryState": "Lagos",
+      "deliveryCity": "Ikeja",
+      "deliveryAddress": "15 Commercial Avenue",
+      "subtotalKobo": 450000,
+      "discountKobo": 0,
+      "deliveryFeeKobo": 200000,
+      "totalKobo": 650000,
+      "paymentMethod": "BANK_TRANSFER",
+      "paymentStatus": "PENDING",
+      "orderStatus": "PENDING_PAYMENT",
+      "reservationExpiresAt": "2026-10-08T14:56:25.058Z",
+      "items": [
+        {
+          "productId": "prd-hdl-01",
+          "productName": "Luxury Black & Gold Geometric Cabinet Pull Handle",
+          "sku": "HDL-BLK-GLD-GEO",
+          "unitPriceKobo": 450000,
+          "quantity": 1
+        }
+      ],
+      "trackingNotes": [
+        {
+          "timestamp": "2026-10-08T14:26:25.058Z",
+          "status": "PENDING_PAYMENT",
+          "note": "Order created, awaiting payment confirmation."
+        }
+      ],
+      "idempotencyKey": "batch-order-1791469585056-8",
+      "createdAt": "2026-10-08T14:26:25.058Z",
+      "updatedAt": "2026-10-08T14:26:25.058Z"
+    },
+    {
+      "id": "ord-adddb9e5-12f2-48d4-ac82-09bf46a3d6ef",
+      "orderNumber": "MOB-2026-7512",
+      "trackingToken": "a8ce74af4be91b868e8eb6e078d1927c",
+      "customerName": "Adebayo Test",
+      "customerEmail": "adebayo.test@example.com",
+      "customerPhone": "08108725967",
+      "deliveryZone": "LAGOS",
+      "deliveryState": "Lagos",
+      "deliveryCity": "Ikeja",
+      "deliveryAddress": "15 Commercial Avenue",
+      "subtotalKobo": 450000,
+      "discountKobo": 0,
+      "deliveryFeeKobo": 200000,
+      "totalKobo": 650000,
+      "paymentMethod": "BANK_TRANSFER",
+      "paymentStatus": "PENDING",
+      "orderStatus": "PENDING_PAYMENT",
+      "reservationExpiresAt": "2026-10-08T14:56:46.871Z",
+      "items": [
+        {
+          "productId": "prd-hdl-01",
+          "productName": "Luxury Black & Gold Geometric Cabinet Pull Handle",
+          "sku": "HDL-BLK-GLD-GEO",
+          "unitPriceKobo": 450000,
+          "quantity": 1
+        }
+      ],
+      "trackingNotes": [
+        {
+          "timestamp": "2026-10-08T14:26:46.871Z",
+          "status": "PENDING_PAYMENT",
+          "note": "Order created, awaiting payment confirmation."
+        }
+      ],
+      "idempotencyKey": "test-idem-1791469606866",
+      "createdAt": "2026-10-08T14:26:46.871Z",
+      "updatedAt": "2026-10-08T14:26:46.871Z"
+    },
+    {
+      "id": "ord-310d54f8-b1a4-4333-b3d8-464e5b6a1482",
+      "orderNumber": "MOB-2026-6471",
+      "trackingToken": "bc7ab4150ea5831f9ae5a37d4de3c27a",
+      "customerName": "Adebayo Test",
+      "customerEmail": "order_1_1791469606896@example.com",
+      "customerPhone": "08108725967",
+      "deliveryZone": "LAGOS",
+      "deliveryState": "Lagos",
+      "deliveryCity": "Ikeja",
+      "deliveryAddress": "15 Commercial Avenue",
+      "subtotalKobo": 450000,
+      "discountKobo": 0,
+      "deliveryFeeKobo": 200000,
+      "totalKobo": 650000,
+      "paymentMethod": "BANK_TRANSFER",
+      "paymentStatus": "PENDING",
+      "orderStatus": "PENDING_PAYMENT",
+      "reservationExpiresAt": "2026-10-08T14:56:46.898Z",
+      "items": [
+        {
+          "productId": "prd-hdl-01",
+          "productName": "Luxury Black & Gold Geometric Cabinet Pull Handle",
+          "sku": "HDL-BLK-GLD-GEO",
+          "unitPriceKobo": 450000,
+          "quantity": 1
+        }
+      ],
+      "trackingNotes": [
+        {
+          "timestamp": "2026-10-08T14:26:46.898Z",
+          "status": "PENDING_PAYMENT",
+          "note": "Order created, awaiting payment confirmation."
+        }
+      ],
+      "idempotencyKey": "batch-order-1791469606896-1",
+      "createdAt": "2026-10-08T14:26:46.898Z",
+      "updatedAt": "2026-10-08T14:26:46.898Z"
+    },
+    {
+      "id": "ord-b307c653-c33d-42eb-bc18-5a800cc01e1c",
+      "orderNumber": "MOB-2026-6107",
+      "trackingToken": "9ac624dbd3192f8b891f8ba1fb131390",
+      "customerName": "Adebayo Test",
+      "customerEmail": "order_2_1791469606900@example.com",
+      "customerPhone": "08108725967",
+      "deliveryZone": "LAGOS",
+      "deliveryState": "Lagos",
+      "deliveryCity": "Ikeja",
+      "deliveryAddress": "15 Commercial Avenue",
+      "subtotalKobo": 450000,
+      "discountKobo": 0,
+      "deliveryFeeKobo": 200000,
+      "totalKobo": 650000,
+      "paymentMethod": "BANK_TRANSFER",
+      "paymentStatus": "PENDING",
+      "orderStatus": "PENDING_PAYMENT",
+      "reservationExpiresAt": "2026-10-08T14:56:46.902Z",
+      "items": [
+        {
+          "productId": "prd-hdl-01",
+          "productName": "Luxury Black & Gold Geometric Cabinet Pull Handle",
+          "sku": "HDL-BLK-GLD-GEO",
+          "unitPriceKobo": 450000,
+          "quantity": 1
+        }
+      ],
+      "trackingNotes": [
+        {
+          "timestamp": "2026-10-08T14:26:46.902Z",
+          "status": "PENDING_PAYMENT",
+          "note": "Order created, awaiting payment confirmation."
+        }
+      ],
+      "idempotencyKey": "batch-order-1791469606900-2",
+      "createdAt": "2026-10-08T14:26:46.902Z",
+      "updatedAt": "2026-10-08T14:26:46.902Z"
+    },
+    {
+      "id": "ord-3379ba14-2c0e-4497-b71c-a7fb9b70a13e",
+      "orderNumber": "MOB-2026-9123",
+      "trackingToken": "9810310a9c4432141bdf7496bca48d06",
+      "customerName": "Adebayo Test",
+      "customerEmail": "order_3_1791469606903@example.com",
+      "customerPhone": "08108725967",
+      "deliveryZone": "LAGOS",
+      "deliveryState": "Lagos",
+      "deliveryCity": "Ikeja",
+      "deliveryAddress": "15 Commercial Avenue",
+      "subtotalKobo": 450000,
+      "discountKobo": 0,
+      "deliveryFeeKobo": 200000,
+      "totalKobo": 650000,
+      "paymentMethod": "BANK_TRANSFER",
+      "paymentStatus": "PENDING",
+      "orderStatus": "PENDING_PAYMENT",
+      "reservationExpiresAt": "2026-10-08T14:56:46.904Z",
+      "items": [
+        {
+          "productId": "prd-hdl-01",
+          "productName": "Luxury Black & Gold Geometric Cabinet Pull Handle",
+          "sku": "HDL-BLK-GLD-GEO",
+          "unitPriceKobo": 450000,
+          "quantity": 1
+        }
+      ],
+      "trackingNotes": [
+        {
+          "timestamp": "2026-10-08T14:26:46.904Z",
+          "status": "PENDING_PAYMENT",
+          "note": "Order created, awaiting payment confirmation."
+        }
+      ],
+      "idempotencyKey": "batch-order-1791469606903-3",
+      "createdAt": "2026-10-08T14:26:46.904Z",
+      "updatedAt": "2026-10-08T14:26:46.904Z"
+    },
+    {
+      "id": "ord-a75f8095-ea21-4bfa-9b94-3de9173a80e6",
+      "orderNumber": "MOB-2026-3374",
+      "trackingToken": "fba6774c954ded2d877c06b1d36815c4",
+      "customerName": "Adebayo Test",
+      "customerEmail": "order_4_1791469606906@example.com",
+      "customerPhone": "08108725967",
+      "deliveryZone": "LAGOS",
+      "deliveryState": "Lagos",
+      "deliveryCity": "Ikeja",
+      "deliveryAddress": "15 Commercial Avenue",
+      "subtotalKobo": 450000,
+      "discountKobo": 0,
+      "deliveryFeeKobo": 200000,
+      "totalKobo": 650000,
+      "paymentMethod": "BANK_TRANSFER",
+      "paymentStatus": "PENDING",
+      "orderStatus": "PENDING_PAYMENT",
+      "reservationExpiresAt": "2026-10-08T14:56:46.909Z",
+      "items": [
+        {
+          "productId": "prd-hdl-01",
+          "productName": "Luxury Black & Gold Geometric Cabinet Pull Handle",
+          "sku": "HDL-BLK-GLD-GEO",
+          "unitPriceKobo": 450000,
+          "quantity": 1
+        }
+      ],
+      "trackingNotes": [
+        {
+          "timestamp": "2026-10-08T14:26:46.909Z",
+          "status": "PENDING_PAYMENT",
+          "note": "Order created, awaiting payment confirmation."
+        }
+      ],
+      "idempotencyKey": "batch-order-1791469606906-4",
+      "createdAt": "2026-10-08T14:26:46.909Z",
+      "updatedAt": "2026-10-08T14:26:46.909Z"
+    },
+    {
+      "id": "ord-1291b8ba-939c-4817-80e4-62658b783569",
+      "orderNumber": "MOB-2026-9375",
+      "trackingToken": "5d3edc982d44c1775a6e4950aa686613",
+      "customerName": "Adebayo Test",
+      "customerEmail": "order_5_1791469606911@example.com",
+      "customerPhone": "08108725967",
+      "deliveryZone": "LAGOS",
+      "deliveryState": "Lagos",
+      "deliveryCity": "Ikeja",
+      "deliveryAddress": "15 Commercial Avenue",
+      "subtotalKobo": 450000,
+      "discountKobo": 0,
+      "deliveryFeeKobo": 200000,
+      "totalKobo": 650000,
+      "paymentMethod": "BANK_TRANSFER",
+      "paymentStatus": "PENDING",
+      "orderStatus": "PENDING_PAYMENT",
+      "reservationExpiresAt": "2026-10-08T14:56:46.914Z",
+      "items": [
+        {
+          "productId": "prd-hdl-01",
+          "productName": "Luxury Black & Gold Geometric Cabinet Pull Handle",
+          "sku": "HDL-BLK-GLD-GEO",
+          "unitPriceKobo": 450000,
+          "quantity": 1
+        }
+      ],
+      "trackingNotes": [
+        {
+          "timestamp": "2026-10-08T14:26:46.914Z",
+          "status": "PENDING_PAYMENT",
+          "note": "Order created, awaiting payment confirmation."
+        }
+      ],
+      "idempotencyKey": "batch-order-1791469606911-5",
+      "createdAt": "2026-10-08T14:26:46.914Z",
+      "updatedAt": "2026-10-08T14:26:46.914Z"
+    },
+    {
+      "id": "ord-14d2d140-b04d-43c3-9367-0ff136286e68",
+      "orderNumber": "MOB-2026-5462",
+      "trackingToken": "0dd855cae3bd3911f606812ec096f4e2",
+      "customerName": "Adebayo Test",
+      "customerEmail": "order_6_1791469606916@example.com",
+      "customerPhone": "08108725967",
+      "deliveryZone": "LAGOS",
+      "deliveryState": "Lagos",
+      "deliveryCity": "Ikeja",
+      "deliveryAddress": "15 Commercial Avenue",
+      "subtotalKobo": 450000,
+      "discountKobo": 0,
+      "deliveryFeeKobo": 200000,
+      "totalKobo": 650000,
+      "paymentMethod": "BANK_TRANSFER",
+      "paymentStatus": "PENDING",
+      "orderStatus": "PENDING_PAYMENT",
+      "reservationExpiresAt": "2026-10-08T14:56:46.919Z",
+      "items": [
+        {
+          "productId": "prd-hdl-01",
+          "productName": "Luxury Black & Gold Geometric Cabinet Pull Handle",
+          "sku": "HDL-BLK-GLD-GEO",
+          "unitPriceKobo": 450000,
+          "quantity": 1
+        }
+      ],
+      "trackingNotes": [
+        {
+          "timestamp": "2026-10-08T14:26:46.919Z",
+          "status": "PENDING_PAYMENT",
+          "note": "Order created, awaiting payment confirmation."
+        }
+      ],
+      "idempotencyKey": "batch-order-1791469606916-6",
+      "createdAt": "2026-10-08T14:26:46.919Z",
+      "updatedAt": "2026-10-08T14:26:46.919Z"
+    },
+    {
+      "id": "ord-98caf284-ddac-42ac-86cd-fed7c18c6276",
+      "orderNumber": "MOB-2026-9594",
+      "trackingToken": "cc0d0dc721ee37dd0fc024c462e4b80c",
+      "customerName": "Adebayo Test",
+      "customerEmail": "order_7_1791469606920@example.com",
+      "customerPhone": "08108725967",
+      "deliveryZone": "LAGOS",
+      "deliveryState": "Lagos",
+      "deliveryCity": "Ikeja",
+      "deliveryAddress": "15 Commercial Avenue",
+      "subtotalKobo": 450000,
+      "discountKobo": 0,
+      "deliveryFeeKobo": 200000,
+      "totalKobo": 650000,
+      "paymentMethod": "BANK_TRANSFER",
+      "paymentStatus": "PENDING",
+      "orderStatus": "PENDING_PAYMENT",
+      "reservationExpiresAt": "2026-10-08T14:56:46.928Z",
+      "items": [
+        {
+          "productId": "prd-hdl-01",
+          "productName": "Luxury Black & Gold Geometric Cabinet Pull Handle",
+          "sku": "HDL-BLK-GLD-GEO",
+          "unitPriceKobo": 450000,
+          "quantity": 1
+        }
+      ],
+      "trackingNotes": [
+        {
+          "timestamp": "2026-10-08T14:26:46.928Z",
+          "status": "PENDING_PAYMENT",
+          "note": "Order created, awaiting payment confirmation."
+        }
+      ],
+      "idempotencyKey": "batch-order-1791469606920-7",
+      "createdAt": "2026-10-08T14:26:46.928Z",
+      "updatedAt": "2026-10-08T14:26:46.928Z"
+    },
+    {
+      "id": "ord-b372384d-9f23-4430-ad6c-0c09904082d3",
+      "orderNumber": "MOB-2026-8354",
+      "trackingToken": "e83ef7027844cd72e2f18a27c8f2fbed",
+      "customerName": "Adebayo Test",
+      "customerEmail": "order_8_1791469606930@example.com",
+      "customerPhone": "08108725967",
+      "deliveryZone": "LAGOS",
+      "deliveryState": "Lagos",
+      "deliveryCity": "Ikeja",
+      "deliveryAddress": "15 Commercial Avenue",
+      "subtotalKobo": 450000,
+      "discountKobo": 0,
+      "deliveryFeeKobo": 200000,
+      "totalKobo": 650000,
+      "paymentMethod": "BANK_TRANSFER",
+      "paymentStatus": "PENDING",
+      "orderStatus": "PENDING_PAYMENT",
+      "reservationExpiresAt": "2026-10-08T14:56:46.934Z",
+      "items": [
+        {
+          "productId": "prd-hdl-01",
+          "productName": "Luxury Black & Gold Geometric Cabinet Pull Handle",
+          "sku": "HDL-BLK-GLD-GEO",
+          "unitPriceKobo": 450000,
+          "quantity": 1
+        }
+      ],
+      "trackingNotes": [
+        {
+          "timestamp": "2026-10-08T14:26:46.934Z",
+          "status": "PENDING_PAYMENT",
+          "note": "Order created, awaiting payment confirmation."
+        }
+      ],
+      "idempotencyKey": "batch-order-1791469606930-8",
+      "createdAt": "2026-10-08T14:26:46.934Z",
+      "updatedAt": "2026-10-08T14:26:46.934Z"
+    },
+    {
+      "id": "ord-28aca404-bb53-42fa-81f3-7b20ac6d4ab5",
+      "orderNumber": "MOB-2026-3301",
+      "trackingToken": "91d1bd6084236d5e04be2eaf0e9d1521",
+      "customerName": "Adebayo Test",
+      "customerEmail": "adebayo.test@example.com",
+      "customerPhone": "08108725967",
+      "deliveryZone": "LAGOS",
+      "deliveryState": "Lagos",
+      "deliveryCity": "Ikeja",
+      "deliveryAddress": "15 Commercial Avenue",
+      "subtotalKobo": 450000,
+      "discountKobo": 0,
+      "deliveryFeeKobo": 200000,
+      "totalKobo": 650000,
+      "paymentMethod": "BANK_TRANSFER",
+      "paymentStatus": "PENDING",
+      "orderStatus": "PENDING_PAYMENT",
+      "reservationExpiresAt": "2026-10-08T14:57:10.792Z",
+      "items": [
+        {
+          "productId": "prd-hdl-01",
+          "productName": "Luxury Black & Gold Geometric Cabinet Pull Handle",
+          "sku": "HDL-BLK-GLD-GEO",
+          "unitPriceKobo": 450000,
+          "quantity": 1
+        }
+      ],
+      "trackingNotes": [
+        {
+          "timestamp": "2026-10-08T14:27:10.792Z",
+          "status": "PENDING_PAYMENT",
+          "note": "Order created, awaiting payment confirmation."
+        }
+      ],
+      "idempotencyKey": "test-idem-1791469630782",
+      "createdAt": "2026-10-08T14:27:10.793Z",
+      "updatedAt": "2026-10-08T14:27:10.793Z"
+    },
+    {
+      "id": "ord-2af7725c-7441-4c5f-b7ab-877f80766b6d",
+      "orderNumber": "MOB-2026-7476",
+      "trackingToken": "9639f457219842a8e376b39e76db0072",
+      "customerName": "Adebayo Test",
+      "customerEmail": "order_1_1791469630895@example.com",
+      "customerPhone": "08108725967",
+      "deliveryZone": "LAGOS",
+      "deliveryState": "Lagos",
+      "deliveryCity": "Ikeja",
+      "deliveryAddress": "15 Commercial Avenue",
+      "subtotalKobo": 450000,
+      "discountKobo": 0,
+      "deliveryFeeKobo": 200000,
+      "totalKobo": 650000,
+      "paymentMethod": "BANK_TRANSFER",
+      "paymentStatus": "PENDING",
+      "orderStatus": "PENDING_PAYMENT",
+      "reservationExpiresAt": "2026-10-08T14:57:10.910Z",
+      "items": [
+        {
+          "productId": "prd-hdl-01",
+          "productName": "Luxury Black & Gold Geometric Cabinet Pull Handle",
+          "sku": "HDL-BLK-GLD-GEO",
+          "unitPriceKobo": 450000,
+          "quantity": 1
+        }
+      ],
+      "trackingNotes": [
+        {
+          "timestamp": "2026-10-08T14:27:10.910Z",
+          "status": "PENDING_PAYMENT",
+          "note": "Order created, awaiting payment confirmation."
+        }
+      ],
+      "idempotencyKey": "batch-order-1791469630895-1",
+      "createdAt": "2026-10-08T14:27:10.910Z",
+      "updatedAt": "2026-10-08T14:27:10.910Z"
+    },
+    {
+      "id": "ord-c76ed7bc-e324-43d6-8fe0-7b65c6bbb093",
+      "orderNumber": "MOB-2026-9106",
+      "trackingToken": "e26049914c1a066b17e901b3024ddbb6",
+      "customerName": "Adebayo Test",
+      "customerEmail": "order_2_1791469630911@example.com",
+      "customerPhone": "08108725967",
+      "deliveryZone": "LAGOS",
+      "deliveryState": "Lagos",
+      "deliveryCity": "Ikeja",
+      "deliveryAddress": "15 Commercial Avenue",
+      "subtotalKobo": 450000,
+      "discountKobo": 0,
+      "deliveryFeeKobo": 200000,
+      "totalKobo": 650000,
+      "paymentMethod": "BANK_TRANSFER",
+      "paymentStatus": "PENDING",
+      "orderStatus": "PENDING_PAYMENT",
+      "reservationExpiresAt": "2026-10-08T14:57:10.914Z",
+      "items": [
+        {
+          "productId": "prd-hdl-01",
+          "productName": "Luxury Black & Gold Geometric Cabinet Pull Handle",
+          "sku": "HDL-BLK-GLD-GEO",
+          "unitPriceKobo": 450000,
+          "quantity": 1
+        }
+      ],
+      "trackingNotes": [
+        {
+          "timestamp": "2026-10-08T14:27:10.914Z",
+          "status": "PENDING_PAYMENT",
+          "note": "Order created, awaiting payment confirmation."
+        }
+      ],
+      "idempotencyKey": "batch-order-1791469630911-2",
+      "createdAt": "2026-10-08T14:27:10.914Z",
+      "updatedAt": "2026-10-08T14:27:10.914Z"
+    },
+    {
+      "id": "ord-df6d6a3f-a135-4862-8a13-a68922232806",
+      "orderNumber": "MOB-2026-1772",
+      "trackingToken": "3eabb695e09ccee35bdd690341063bf9",
+      "customerName": "Adebayo Test",
+      "customerEmail": "order_3_1791469630917@example.com",
+      "customerPhone": "08108725967",
+      "deliveryZone": "LAGOS",
+      "deliveryState": "Lagos",
+      "deliveryCity": "Ikeja",
+      "deliveryAddress": "15 Commercial Avenue",
+      "subtotalKobo": 450000,
+      "discountKobo": 0,
+      "deliveryFeeKobo": 200000,
+      "totalKobo": 650000,
+      "paymentMethod": "BANK_TRANSFER",
+      "paymentStatus": "PENDING",
+      "orderStatus": "PENDING_PAYMENT",
+      "reservationExpiresAt": "2026-10-08T14:57:10.919Z",
+      "items": [
+        {
+          "productId": "prd-hdl-01",
+          "productName": "Luxury Black & Gold Geometric Cabinet Pull Handle",
+          "sku": "HDL-BLK-GLD-GEO",
+          "unitPriceKobo": 450000,
+          "quantity": 1
+        }
+      ],
+      "trackingNotes": [
+        {
+          "timestamp": "2026-10-08T14:27:10.919Z",
+          "status": "PENDING_PAYMENT",
+          "note": "Order created, awaiting payment confirmation."
+        }
+      ],
+      "idempotencyKey": "batch-order-1791469630917-3",
+      "createdAt": "2026-10-08T14:27:10.919Z",
+      "updatedAt": "2026-10-08T14:27:10.919Z"
+    },
+    {
+      "id": "ord-aa0a9478-8df9-457f-8693-bc641f3cf7ef",
+      "orderNumber": "MOB-2026-8490",
+      "trackingToken": "f00ec29eb5d5608fb4120474d389521a",
+      "customerName": "Adebayo Test",
+      "customerEmail": "order_4_1791469630922@example.com",
+      "customerPhone": "08108725967",
+      "deliveryZone": "LAGOS",
+      "deliveryState": "Lagos",
+      "deliveryCity": "Ikeja",
+      "deliveryAddress": "15 Commercial Avenue",
+      "subtotalKobo": 450000,
+      "discountKobo": 0,
+      "deliveryFeeKobo": 200000,
+      "totalKobo": 650000,
+      "paymentMethod": "BANK_TRANSFER",
+      "paymentStatus": "PENDING",
+      "orderStatus": "PENDING_PAYMENT",
+      "reservationExpiresAt": "2026-10-08T14:57:10.942Z",
+      "items": [
+        {
+          "productId": "prd-hdl-01",
+          "productName": "Luxury Black & Gold Geometric Cabinet Pull Handle",
+          "sku": "HDL-BLK-GLD-GEO",
+          "unitPriceKobo": 450000,
+          "quantity": 1
+        }
+      ],
+      "trackingNotes": [
+        {
+          "timestamp": "2026-10-08T14:27:10.942Z",
+          "status": "PENDING_PAYMENT",
+          "note": "Order created, awaiting payment confirmation."
+        }
+      ],
+      "idempotencyKey": "batch-order-1791469630922-4",
+      "createdAt": "2026-10-08T14:27:10.942Z",
+      "updatedAt": "2026-10-08T14:27:10.942Z"
+    },
+    {
+      "id": "ord-d8966593-4113-4881-84c8-d7606116d8c7",
+      "orderNumber": "MOB-2026-1632",
+      "trackingToken": "39f716d5c9e6592e6a3fb212f96ee8f7",
+      "customerName": "Adebayo Test",
+      "customerEmail": "order_5_1791469630947@example.com",
+      "customerPhone": "08108725967",
+      "deliveryZone": "LAGOS",
+      "deliveryState": "Lagos",
+      "deliveryCity": "Ikeja",
+      "deliveryAddress": "15 Commercial Avenue",
+      "subtotalKobo": 450000,
+      "discountKobo": 0,
+      "deliveryFeeKobo": 200000,
+      "totalKobo": 650000,
+      "paymentMethod": "BANK_TRANSFER",
+      "paymentStatus": "PENDING",
+      "orderStatus": "PENDING_PAYMENT",
+      "reservationExpiresAt": "2026-10-08T14:57:10.951Z",
+      "items": [
+        {
+          "productId": "prd-hdl-01",
+          "productName": "Luxury Black & Gold Geometric Cabinet Pull Handle",
+          "sku": "HDL-BLK-GLD-GEO",
+          "unitPriceKobo": 450000,
+          "quantity": 1
+        }
+      ],
+      "trackingNotes": [
+        {
+          "timestamp": "2026-10-08T14:27:10.951Z",
+          "status": "PENDING_PAYMENT",
+          "note": "Order created, awaiting payment confirmation."
+        }
+      ],
+      "idempotencyKey": "batch-order-1791469630947-5",
+      "createdAt": "2026-10-08T14:27:10.951Z",
+      "updatedAt": "2026-10-08T14:27:10.951Z"
+    },
+    {
+      "id": "ord-efc69113-8189-45d2-9d88-85337c6786e1",
+      "orderNumber": "MOB-2026-7274",
+      "trackingToken": "30c070e075f59d19d6e8e3cec5156041",
+      "customerName": "Adebayo Test",
+      "customerEmail": "order_6_1791469630954@example.com",
+      "customerPhone": "08108725967",
+      "deliveryZone": "LAGOS",
+      "deliveryState": "Lagos",
+      "deliveryCity": "Ikeja",
+      "deliveryAddress": "15 Commercial Avenue",
+      "subtotalKobo": 450000,
+      "discountKobo": 0,
+      "deliveryFeeKobo": 200000,
+      "totalKobo": 650000,
+      "paymentMethod": "BANK_TRANSFER",
+      "paymentStatus": "PENDING",
+      "orderStatus": "PENDING_PAYMENT",
+      "reservationExpiresAt": "2026-10-08T14:57:10.956Z",
+      "items": [
+        {
+          "productId": "prd-hdl-01",
+          "productName": "Luxury Black & Gold Geometric Cabinet Pull Handle",
+          "sku": "HDL-BLK-GLD-GEO",
+          "unitPriceKobo": 450000,
+          "quantity": 1
+        }
+      ],
+      "trackingNotes": [
+        {
+          "timestamp": "2026-10-08T14:27:10.956Z",
+          "status": "PENDING_PAYMENT",
+          "note": "Order created, awaiting payment confirmation."
+        }
+      ],
+      "idempotencyKey": "batch-order-1791469630954-6",
+      "createdAt": "2026-10-08T14:27:10.956Z",
+      "updatedAt": "2026-10-08T14:27:10.956Z"
+    },
+    {
+      "id": "ord-dd702bd4-5f21-4987-a03d-40df4fe7f43c",
+      "orderNumber": "MOB-2026-7635",
+      "trackingToken": "2fda8fe7316a36d28428dc335ff88510",
+      "customerName": "Adebayo Test",
+      "customerEmail": "order_7_1791469630957@example.com",
+      "customerPhone": "08108725967",
+      "deliveryZone": "LAGOS",
+      "deliveryState": "Lagos",
+      "deliveryCity": "Ikeja",
+      "deliveryAddress": "15 Commercial Avenue",
+      "subtotalKobo": 450000,
+      "discountKobo": 0,
+      "deliveryFeeKobo": 200000,
+      "totalKobo": 650000,
+      "paymentMethod": "BANK_TRANSFER",
+      "paymentStatus": "PENDING",
+      "orderStatus": "PENDING_PAYMENT",
+      "reservationExpiresAt": "2026-10-08T14:57:10.959Z",
+      "items": [
+        {
+          "productId": "prd-hdl-01",
+          "productName": "Luxury Black & Gold Geometric Cabinet Pull Handle",
+          "sku": "HDL-BLK-GLD-GEO",
+          "unitPriceKobo": 450000,
+          "quantity": 1
+        }
+      ],
+      "trackingNotes": [
+        {
+          "timestamp": "2026-10-08T14:27:10.959Z",
+          "status": "PENDING_PAYMENT",
+          "note": "Order created, awaiting payment confirmation."
+        }
+      ],
+      "idempotencyKey": "batch-order-1791469630957-7",
+      "createdAt": "2026-10-08T14:27:10.959Z",
+      "updatedAt": "2026-10-08T14:27:10.959Z"
+    },
+    {
+      "id": "ord-d18020e8-a8a2-4603-929e-baf10c3ca8fc",
+      "orderNumber": "MOB-2026-4630",
+      "trackingToken": "ae9d300907e20ba3c7e38fec649a4017",
+      "customerName": "Adebayo Test",
+      "customerEmail": "order_8_1791469630962@example.com",
+      "customerPhone": "08108725967",
+      "deliveryZone": "LAGOS",
+      "deliveryState": "Lagos",
+      "deliveryCity": "Ikeja",
+      "deliveryAddress": "15 Commercial Avenue",
+      "subtotalKobo": 450000,
+      "discountKobo": 0,
+      "deliveryFeeKobo": 200000,
+      "totalKobo": 650000,
+      "paymentMethod": "BANK_TRANSFER",
+      "paymentStatus": "PENDING",
+      "orderStatus": "PENDING_PAYMENT",
+      "reservationExpiresAt": "2026-10-08T14:57:10.965Z",
+      "items": [
+        {
+          "productId": "prd-hdl-01",
+          "productName": "Luxury Black & Gold Geometric Cabinet Pull Handle",
+          "sku": "HDL-BLK-GLD-GEO",
+          "unitPriceKobo": 450000,
+          "quantity": 1
+        }
+      ],
+      "trackingNotes": [
+        {
+          "timestamp": "2026-10-08T14:27:10.965Z",
+          "status": "PENDING_PAYMENT",
+          "note": "Order created, awaiting payment confirmation."
+        }
+      ],
+      "idempotencyKey": "batch-order-1791469630962-8",
+      "createdAt": "2026-10-08T14:27:10.965Z",
+      "updatedAt": "2026-10-08T14:27:10.965Z"
+    }
+  ],
+  "movements": [],
   "payments": [],
+  "auditLogs": [],
   "settings": {
     "id": "settings-01",
     "storeName": "M.O.B EKI VENTURES",
@@ -1188,7 +2713,6 @@
       "active": true
     }
   ],
-  "auditLogs": [],
   "deliveryZones": [
     {
       "id": "LAGOS",

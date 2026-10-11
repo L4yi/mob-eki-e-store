@@ -30,6 +30,7 @@ export default function ProductDetailPage() {
   const [quantity, setQuantity] = useState(1);
   const [justAdded, setJustAdded] = useState(false);
   const [loading, setLoading] = useState(true);
+  const [selectedSize, setSelectedSize] = useState<string>('');
 
   const { addToCart } = useCart();
 
@@ -41,6 +42,18 @@ export default function ProductDetailPage() {
         setProduct(p);
         setSelectedImgIdx(0);
         setQuantity(1);
+
+        const sizeSpec = p.specs?.find(
+          (s) => s.label.toLowerCase().includes('size') || s.label.toLowerCase().includes('dimension')
+        );
+        if (sizeSpec) {
+          const sizes = sizeSpec.value.split(',').map((s) => s.trim()).filter(Boolean);
+          const defaultSz = sizes.find((s) => s.includes('900 x 2100')) || sizes[0] || '';
+          setSelectedSize(defaultSz);
+        } else {
+          setSelectedSize('');
+        }
+
         return api.getProducts({ category: p.categoryId || (p as any).categorySlug });
       })
       .then((rel) => {
@@ -95,21 +108,42 @@ export default function ProductDetailPage() {
   const categoryName = product.category || product.categoryName || 'Hardware';
   const categorySlug = (product as any).categorySlug || product.categoryId || '';
 
+  const sizeSpec = product.specs?.find(
+    (s) => s.label.toLowerCase().includes('size') || s.label.toLowerCase().includes('dimension')
+  );
+  const availableSizesList = sizeSpec
+    ? sizeSpec.value.split(',').map((s) => s.trim()).filter(Boolean)
+    : [];
+
   const handleAddToCart = () => {
     if (!inStock) return;
-    addToCart(product, quantity);
+    const itemToAdd = selectedSize
+      ? {
+          ...product,
+          id: `${product.id}-${selectedSize.replace(/[^a-zA-Z0-9]/g, '')}`,
+          name: `${product.name} (${selectedSize})`,
+        }
+      : product;
+    addToCart(itemToAdd, quantity);
     setJustAdded(true);
     setTimeout(() => setJustAdded(false), 2000);
   };
 
   const handleBuyNow = () => {
     if (!inStock) return;
-    addToCart(product, quantity);
+    const itemToAdd = selectedSize
+      ? {
+          ...product,
+          id: `${product.id}-${selectedSize.replace(/[^a-zA-Z0-9]/g, '')}`,
+          name: `${product.name} (${selectedSize})`,
+        }
+      : product;
+    addToCart(itemToAdd, quantity);
     navigate('/checkout');
   };
 
   const whatsappMessage = encodeURIComponent(
-    `Hello M.O.B EKI VENTURES, I would like to enquire about: ${product.name} (₦${product.price.toLocaleString()})`
+    `Hello M.O.B EKI VENTURES, I would like to enquire about: ${product.name}${selectedSize ? ` [Size: ${selectedSize}]` : ''} (₦${product.price.toLocaleString()})`
   );
 
   return (
@@ -181,6 +215,38 @@ export default function ProductDetailPage() {
           <p className="text-[#6B7280] text-sm leading-relaxed">
             {product.description}
           </p>
+
+          {availableSizesList.length > 0 && (
+            <div className="pt-2 border-t border-[#E5E7EB]">
+              <div className="flex items-center justify-between mb-2">
+                <label className="text-xs font-bold uppercase tracking-wider text-[#0B1F3A]">
+                  Available Dimensions:
+                </label>
+                <span className="text-xs font-semibold text-[#C9A227]">
+                  {selectedSize ? `Selected: ${selectedSize}` : 'Choose Size'}
+                </span>
+              </div>
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
+                {availableSizesList.map((sz) => (
+                  <button
+                    key={sz}
+                    type="button"
+                    onClick={() => setSelectedSize(sz)}
+                    className={`py-2 px-2.5 text-xs font-semibold rounded-md border text-center transition-all ${
+                      selectedSize === sz
+                        ? 'border-[#0B1F3A] bg-[#0B1F3A] text-white shadow-xs'
+                        : 'border-[#E5E7EB] bg-white text-gray-700 hover:border-[#0B1F3A] hover:bg-gray-50'
+                    }`}
+                  >
+                    {sz}
+                  </button>
+                ))}
+              </div>
+              <p className="text-[11px] text-gray-500 mt-2">
+                ✓ Full door set with matching frame jamb & architrave trim included.
+              </p>
+            </div>
+          )}
 
           {inStock && (
             <div className="flex items-center gap-3 pt-2">

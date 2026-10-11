@@ -5,11 +5,12 @@ import { optionalAuth, requireAuth, requireAdmin } from '../middleware/auth';
 import { validate, idempotency } from '../middleware/validateAndErrors';
 import { createOrderSchema, updateOrderStatusSchema } from '../validation/schemas';
 import { auditLogService } from '../services/AuthAuditSettingsServices';
+import { orderCreationLimiter, trackingLimiter } from '../middleware/rateLimiter';
 
 const router = Router();
 
-// POST /api/orders (Customer Checkout - Idempotent)
-router.post('/', optionalAuth, idempotency, validate(createOrderSchema), async (req, res, next) => {
+// POST /api/orders (Customer Checkout - Idempotent, Max 10 orders / 10 min / IP)
+router.post('/', orderCreationLimiter, optionalAuth, idempotency, validate(createOrderSchema), async (req, res, next) => {
   try {
     const idempotencyKey = req.headers['idempotency-key'] as string | undefined;
     const order = await orderService.createOrder({
@@ -48,8 +49,8 @@ router.get('/me', requireAuth, async (req, res, next) => {
   }
 });
 
-// GET /api/orders/:idOrToken (Customer & Guest Order Tracking)
-router.get('/:idOrToken', optionalAuth, async (req, res, next) => {
+// GET /api/orders/:idOrToken (Customer & Guest Order Tracking, Max 20 lookups / 10 min / IP)
+router.get('/:idOrToken', trackingLimiter, optionalAuth, async (req, res, next) => {
   try {
     const param = Array.isArray(req.params.idOrToken) ? req.params.idOrToken[0] : req.params.idOrToken;
     let order = await orderService.getOrderByIdOrNumber(param);

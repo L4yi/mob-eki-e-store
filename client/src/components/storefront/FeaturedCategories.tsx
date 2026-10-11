@@ -22,7 +22,7 @@ export default function FeaturedCategories({ categories }: { categories: Categor
           View all <ChevronRight size={15} />
         </Link>
       </div>
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
         {categories.map((cat) => (
           <Link
             key={cat.id}

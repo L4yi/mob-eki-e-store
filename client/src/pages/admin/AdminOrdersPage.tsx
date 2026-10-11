@@ -185,14 +185,14 @@ export default function AdminOrdersPage() {
                 Ordered Hardware Items
               </h4>
               <div className="divide-y divide-gray-100 max-h-48 overflow-y-auto pr-2">
-                {selectedOrder.items.map((it) => (
-                  <div key={it.id} className="py-2.5 flex items-center justify-between text-xs">
+                {selectedOrder.items.map((it, idx) => (
+                  <div key={it.id || idx} className="py-2.5 flex items-center justify-between text-xs">
                     <div>
                       <span className="font-bold text-gray-900 block">{it.productName}</span>
                       <span className="text-[10px] text-gray-400">SKU: {it.sku} &bull; Qty: {it.quantity}</span>
                     </div>
                     <span className="font-serif font-bold text-gray-900">
-                      ₦{it.subtotal.toLocaleString()}
+                      ₦{((it.subtotal ?? ((it.unitPrice || (it as any).unitPriceKobo / 100 || 0) * it.quantity))).toLocaleString()}
                     </span>
                   </div>
                 ))}

@@ -4,7 +4,12 @@ import helmet from 'helmet';
 import apiRoutes from './routes';
 import { errorHandler } from './middleware/validateAndErrors';
 
+import { globalApiLimiter } from './middleware/rateLimiter';
+
 export const app = express();
+
+// Trust reverse proxy (Vercel Serverless Edge, Cloudflare, etc.)
+app.set('trust proxy', 1);
 
 // Security Headers
 app.use(helmet({
@@ -29,6 +34,9 @@ app.use(
 // Body Parsers
 app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ extended: true, limit: '10mb' }));
+
+// Global Baseline API Rate Limiter (120 req / min)
+app.use('/api', globalApiLimiter);
 
 // Health & Info Endpoint
 app.get('/api/health', (req, res) => {

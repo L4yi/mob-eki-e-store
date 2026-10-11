@@ -9,8 +9,18 @@ export default function AdminProductsPage() {
   const [categories, setCategories] = useState<Category[]>([]);
   const [loading, setLoading] = useState(true);
   const [search, setSearch] = useState('');
+  const [debouncedSearch, setDebouncedSearch] = useState('');
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [editingProduct, setEditingProduct] = useState<Product | null>(null);
+  const [submitting, setSubmitting] = useState(false);
+
+  // Debounce search input by 300ms (Section 13)
+  useEffect(() => {
+    const handler = setTimeout(() => {
+      setDebouncedSearch(search);
+    }, 300);
+    return () => clearTimeout(handler);
+  }, [search]);
 
   // Form State
   const [name, setName] = useState('');
@@ -67,6 +77,8 @@ export default function AdminProductsPage() {
 
   const handleSaveProduct = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (submitting) return;
+
     const specs = specsText
       .split('\n')
       .filter((l) => l.includes(':'))
@@ -91,6 +103,7 @@ export default function AdminProductsPage() {
       featured: false,
     };
 
+    setSubmitting(true);
     try {
       if (editingProduct) {
         await api.updateProduct(editingProduct.id, payload);
@@ -101,6 +114,8 @@ export default function AdminProductsPage() {
       loadData();
     } catch (err: any) {
       alert(err.message || 'Failed to save product');
+    } finally {
+      setSubmitting(false);
     }
   };
 
@@ -116,8 +131,8 @@ export default function AdminProductsPage() {
 
   const filtered = products.filter(
     (p) =>
-      p.name.toLowerCase().includes(search.toLowerCase()) ||
-      p.sku.toLowerCase().includes(search.toLowerCase())
+      p.name.toLowerCase().includes(debouncedSearch.toLowerCase()) ||
+      p.sku.toLowerCase().includes(debouncedSearch.toLowerCase())
   );
 
   return (
@@ -341,15 +356,21 @@ export default function AdminProductsPage() {
                 <button
                   type="button"
                   onClick={() => setIsModalOpen(false)}
+                  disabled={submitting}
                   className="px-4 py-2 border border-gray-200 rounded-xl text-gray-600 font-bold hover:bg-gray-50"
                 >
                   Cancel
                 </button>
                 <button
                   type="submit"
-                  className="px-6 py-2 bg-[#0B1F3A] text-white rounded-xl font-bold hover:bg-[#164A7A]"
+                  disabled={submitting}
+                  className="px-6 py-2 bg-[#0B1F3A] text-white rounded-xl font-bold hover:bg-[#164A7A] transition flex items-center gap-2 disabled:opacity-60"
                 >
-                  Save Product
+                  {submitting ? (
+                    <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                  ) : (
+                    'Save Product'
+                  )}
                 </button>
               </div>
             </form>

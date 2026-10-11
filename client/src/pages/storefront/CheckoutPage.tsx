@@ -32,6 +32,7 @@ export default function CheckoutPage() {
   const [submitted, setSubmitted] = useState(false);
   const [createdOrderNumber, setCreatedOrderNumber] = useState('');
   const [loading, setLoading] = useState(false);
+  const [idempotencyKey] = useState(() => 'mob-idem-' + Math.random().toString(36).substring(2) + '-' + Date.now());
 
   const isPickup = form.delivery === 'pickup';
   const isLagos = form.state === 'Lagos';
@@ -109,7 +110,7 @@ export default function CheckoutPage() {
         })),
       };
 
-      const result = await api.createOrder(orderData);
+      const result = await api.createOrder(orderData, idempotencyKey);
       setCreatedOrderNumber(result.orderNumber);
       setSubmitted(true);
       clearCart();
@@ -175,19 +176,41 @@ export default function CheckoutPage() {
 
   if (items.length === 0) {
     return (
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-24 text-center">
-        <h2 className="font-serif text-2xl text-[#0B1F3A] font-semibold mb-2">
-          Your cart is empty
-        </h2>
-        <p className="text-[#6B7280] text-sm mb-6">
-          Please add items to your cart before proceeding to checkout.
-        </p>
-        <Link
-          to="/shop"
-          className="inline-flex items-center gap-2 bg-[#0B1F3A] text-white font-semibold text-sm px-6 py-3 hover:bg-[#164A7A] transition-colors"
-        >
-          Browse Products
-        </Link>
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 py-16">
+        <div className="flex items-center gap-2 text-xs text-[#9CA3AF] mb-6">
+          <Link to="/" className="hover:text-[#0B1F3A] transition-colors">Home</Link>
+          <ChevronRight size={12} />
+          <Link to="/cart" className="hover:text-[#0B1F3A] transition-colors">Cart</Link>
+          <ChevronRight size={12} />
+          <span className="text-[#0B1F3A] font-semibold">Checkout</span>
+        </div>
+
+        <div className="bg-white border border-[#E5E7EB] rounded-2xl p-8 sm:p-12 text-center shadow-xs">
+          <div className="w-16 h-16 bg-[#0B1F3A]/5 rounded-full flex items-center justify-center mx-auto mb-4 text-[#0B1F3A]">
+            <Lock size={28} className="text-[#C9A227]" />
+          </div>
+          <h1 className="font-serif text-2xl sm:text-3xl text-[#0B1F3A] font-semibold mb-2">
+            Secure Checkout
+          </h1>
+          <p className="text-[#6B7280] text-sm max-w-md mx-auto mb-8">
+            Your shopping cart is currently empty. Add architectural hardware, hinges, or kitchen accessories from our catalog to complete your order.
+          </p>
+
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <Link
+              to="/shop"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#0B1F3A] text-white font-semibold text-sm px-7 py-3.5 hover:bg-[#164A7A] transition-colors shadow-sm rounded-lg"
+            >
+              Browse Catalog & Shop
+            </Link>
+            <Link
+              to="/track"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 border border-[#E5E7EB] text-[#0B1F3A] font-semibold text-sm px-6 py-3.5 hover:bg-gray-50 transition-colors rounded-lg"
+            >
+              Track Existing Order
+            </Link>
+          </div>
+        </div>
       </div>
     );
   }

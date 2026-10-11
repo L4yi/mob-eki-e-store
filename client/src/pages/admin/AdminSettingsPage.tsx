@@ -8,6 +8,7 @@ export default function AdminSettingsPage() {
   const [team, setTeam] = useState<TeamMember[]>([]);
   const [loading, setLoading] = useState(true);
   const [saved, setSaved] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
 
   useEffect(() => {
     api.getSettings()
@@ -21,14 +22,22 @@ export default function AdminSettingsPage() {
 
   const handleSave = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!settings) return;
+    if (!settings || submitting) return;
 
+    setSubmitting(true);
     try {
-      await api.updateSettings(settings);
+      await api.updateSettings({
+        ...settings,
+        deliveryLagosKobo: Math.round(Number(settings.deliveryLagos) * 100),
+        deliverySouthWestKobo: Math.round(Number(settings.deliverySouthWest) * 100),
+        deliveryNationwideKobo: Math.round(Number(settings.deliveryNationwide) * 100),
+      } as any);
       setSaved(true);
       setTimeout(() => setSaved(false), 3000);
     } catch (err: any) {
-      alert('Failed to update settings');
+      alert(err.message || 'Failed to update settings');
+    } finally {
+      setSubmitting(false);
     }
   };
 
@@ -222,10 +231,17 @@ export default function AdminSettingsPage() {
         <div className="flex justify-end">
           <button
             type="submit"
-            className="px-8 py-3.5 bg-[#0B1F3A] text-white font-bold text-xs rounded-xl hover:bg-[#164A7A] transition flex items-center gap-2 shadow-lg"
+            disabled={submitting}
+            className="px-8 py-3.5 bg-[#0B1F3A] text-white font-bold text-xs rounded-xl hover:bg-[#164A7A] transition flex items-center gap-2 shadow-lg disabled:opacity-60"
           >
-            <Save className="w-4 h-4 text-[#C9A227]" />
-            Save Store Configuration
+            {submitting ? (
+              <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+            ) : (
+              <>
+                <Save className="w-4 h-4 text-[#C9A227]" />
+                <span>Save Store Configuration</span>
+              </>
+            )}
           </button>
         </div>
       </form>

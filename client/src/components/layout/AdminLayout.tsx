@@ -18,8 +18,10 @@ export default function AdminLayout() {
     );
   }
 
-  // If not logged in or not admin, redirect to admin login
-  if (!user || (user.role !== 'ADMIN' && user.role !== 'SUPERADMIN')) {
+  // If not logged in or not staff/admin, redirect to admin login
+  const allowedRoles = ['ADMIN', 'SUPERADMIN', 'SUPER_ADMIN', 'ORDER_MANAGER', 'INVENTORY_MANAGER'];
+  const userRole = user?.role?.toUpperCase();
+  if (!user || !userRole || !allowedRoles.includes(userRole)) {
     return <Navigate to="/login" replace />;
   }
 

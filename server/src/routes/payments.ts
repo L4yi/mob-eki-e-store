@@ -3,11 +3,12 @@ import { paymentService } from '../services/PaymentService';
 import { validate } from '../middleware/validateAndErrors';
 import { initializePaystackSchema } from '../validation/schemas';
 import { optionalAuth } from '../middleware/auth';
+import { productBrowseLimiter } from '../middleware/rateLimiter';
 
 const router = Router();
 
 // POST /api/payments/paystack/initialize (Public / Customer)
-router.post('/paystack/initialize', optionalAuth, validate(initializePaystackSchema), async (req, res, next) => {
+router.post('/paystack/initialize', productBrowseLimiter, optionalAuth, validate(initializePaystackSchema), async (req, res, next) => {
   try {
     const { orderId } = req.body;
     const result = await paymentService.initializePaystack(orderId);

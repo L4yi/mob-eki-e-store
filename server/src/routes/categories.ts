@@ -4,11 +4,12 @@ import { requireAuth, requireAdmin } from '../middleware/auth';
 import { validate } from '../middleware/validateAndErrors';
 import { createCategorySchema, updateCategorySchema } from '../validation/schemas';
 import { auditLogService } from '../services/AuthAuditSettingsServices';
+import { productBrowseLimiter, adminMutationLimiter } from '../middleware/rateLimiter';
 
 const router = Router();
 
-// GET /api/categories (Public)
-router.get('/', async (req, res, next) => {
+// GET /api/categories (Public, Max 120 req / min / IP)
+router.get('/', productBrowseLimiter, async (req, res, next) => {
   try {
     const categories = await categoryService.getCategories(true);
     return res.json(categories);
@@ -17,8 +18,8 @@ router.get('/', async (req, res, next) => {
   }
 });
 
-// GET /api/categories/:idOrSlug (Public)
-router.get('/:idOrSlug', async (req, res, next) => {
+// GET /api/categories/:idOrSlug (Public, Max 120 req / min / IP)
+router.get('/:idOrSlug', productBrowseLimiter, async (req, res, next) => {
   try {
     const idOrSlug = Array.isArray(req.params.idOrSlug) ? req.params.idOrSlug[0] : req.params.idOrSlug;
     const category = await categoryService.getCategoryByIdOrSlug(idOrSlug);
@@ -29,8 +30,8 @@ router.get('/:idOrSlug', async (req, res, next) => {
   }
 });
 
-// POST /api/categories (Admin Only)
-router.post('/', requireAuth, requireAdmin, validate(createCategorySchema), async (req, res, next) => {
+// POST /api/categories (Admin Only, Max 30 mut / min)
+router.post('/', requireAuth, requireAdmin, adminMutationLimiter, validate(createCategorySchema), async (req, res, next) => {
   try {
     const created = await categoryService.createCategory(req.body);
     await auditLogService.log({
@@ -47,8 +48,8 @@ router.post('/', requireAuth, requireAdmin, validate(createCategorySchema), asyn
   }
 });
 
-// PUT /api/categories/:id (Admin Only)
-router.put('/:id', requireAuth, requireAdmin, validate(updateCategorySchema), async (req, res, next) => {
+// PUT /api/categories/:id (Admin Only, Max 30 mut / min)
+router.put('/:id', requireAuth, requireAdmin, adminMutationLimiter, validate(updateCategorySchema), async (req, res, next) => {
   try {
     const id = Array.isArray(req.params.id) ? req.params.id[0] : req.params.id;
     const before = await categoryService.getCategoryByIdOrSlug(id);
@@ -70,8 +71,8 @@ router.put('/:id', requireAuth, requireAdmin, validate(updateCategorySchema), as
   }
 });
 
-// DELETE /api/categories/:id (Admin Only)
-router.delete('/:id', requireAuth, requireAdmin, async (req, res, next) => {
+// DELETE /api/categories/:id (Admin Only, Max 30 mut / min)
+router.delete('/:id', requireAuth, requireAdmin, adminMutationLimiter, async (req, res, next) => {
   try {
     const id = Array.isArray(req.params.id) ? req.params.id[0] : req.params.id;
     const success = await categoryService.deleteCategory(id);

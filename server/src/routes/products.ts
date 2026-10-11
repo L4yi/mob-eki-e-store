@@ -4,11 +4,12 @@ import { requireAuth, requireAdmin, requireInventoryManagement } from '../middle
 import { validate } from '../middleware/validateAndErrors';
 import { createProductSchema, updateProductSchema } from '../validation/schemas';
 import { auditLogService } from '../services/AuthAuditSettingsServices';
+import { productBrowseLimiter, adminMutationLimiter } from '../middleware/rateLimiter';
 
 const router = Router();
 
-// GET /api/products (Public)
-router.get('/', async (req, res, next) => {
+// GET /api/products (Public, Max 120 req / min / IP)
+router.get('/', productBrowseLimiter, async (req, res, next) => {
   try {
     const { category, search, sort, page, limit } = req.query;
     const result = await productService.getProducts({
@@ -36,8 +37,8 @@ router.get('/', async (req, res, next) => {
   }
 });
 
-// GET /api/products/:idOrSlug (Public)
-router.get('/:idOrSlug', async (req, res, next) => {
+// GET /api/products/:idOrSlug (Public, Max 120 req / min / IP)
+router.get('/:idOrSlug', productBrowseLimiter, async (req, res, next) => {
   try {
     const idOrSlug = Array.isArray(req.params.idOrSlug) ? req.params.idOrSlug[0] : req.params.idOrSlug;
     const product = await productService.getProductByIdOrSlug(idOrSlug);
@@ -59,8 +60,8 @@ router.get('/:idOrSlug', async (req, res, next) => {
   }
 });
 
-// POST /api/products (Admin/Inventory Manager Only)
-router.post('/', requireAuth, requireInventoryManagement, validate(createProductSchema), async (req, res, next) => {
+// POST /api/products (Admin/Inventory Manager Only, Max 30 mut / min)
+router.post('/', requireAuth, requireInventoryManagement, adminMutationLimiter, validate(createProductSchema), async (req, res, next) => {
   try {
     const created = await productService.createProduct(req.body);
     await auditLogService.log({
@@ -77,8 +78,8 @@ router.post('/', requireAuth, requireInventoryManagement, validate(createProduct
   }
 });
 
-// PUT /api/products/:id (Admin/Inventory Manager Only)
-router.put('/:id', requireAuth, requireInventoryManagement, validate(updateProductSchema), async (req, res, next) => {
+// PUT /api/products/:id (Admin/Inventory Manager Only, Max 30 mut / min)
+router.put('/:id', requireAuth, requireInventoryManagement, adminMutationLimiter, validate(updateProductSchema), async (req, res, next) => {
   try {
     const id = Array.isArray(req.params.id) ? req.params.id[0] : req.params.id;
     const before = await productService.getProductByIdOrSlug(id);
@@ -100,8 +101,8 @@ router.put('/:id', requireAuth, requireInventoryManagement, validate(updateProdu
   }
 });
 
-// DELETE /api/products/:id (Admin/Inventory Manager Only - Soft Delete)
-router.delete('/:id', requireAuth, requireInventoryManagement, async (req, res, next) => {
+// DELETE /api/products/:id (Admin/Inventory Manager Only - Soft Delete, Max 30 mut / min)
+router.delete('/:id', requireAuth, requireInventoryManagement, adminMutationLimiter, async (req, res, next) => {
   try {
     const id = Array.isArray(req.params.id) ? req.params.id[0] : req.params.id;
     const success = await productService.deleteProduct(id);

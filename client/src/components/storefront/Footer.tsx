@@ -36,6 +36,8 @@ export default function Footer({ settings }: { settings?: BusinessSettings }) {
             {[
               { label: 'Shop All Hardware', to: '/shop' },
               { label: 'Browse Categories', to: '/shop' },
+              { label: 'Shopping Cart', to: '/cart' },
+              { label: 'Proceed to Checkout', to: '/checkout' },
               { label: 'About Us', to: '/about' },
               { label: 'Showroom Location', to: '/#store' },
             ].map((item) => (
@@ -58,6 +60,7 @@ export default function Footer({ settings }: { settings?: BusinessSettings }) {
             {[
               { label: 'Track Order', to: '/track' },
               { label: 'Delivery Information', to: '/about' },
+              { label: 'Shopping Cart & Checkout', to: '/checkout' },
               { label: 'Customer Account', to: '/account' },
               { label: 'WhatsApp Dispatch', to: `https://wa.me/${cleanWhatsApp}` },
             ].map((item) => (

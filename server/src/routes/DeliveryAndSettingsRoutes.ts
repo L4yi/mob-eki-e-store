@@ -5,13 +5,14 @@ import { requireAuth, requireAdmin, requireSettingsManagement } from '../middlew
 import { validate } from '../middleware/validateAndErrors';
 import { updateSettingsSchema } from '../validation/schemas';
 import { auditLogService } from '../services/AuthAuditSettingsServices';
+import { productBrowseLimiter, settingsMutationLimiter } from '../middleware/rateLimiter';
 
 const deliveryRouter = Router();
 const settingsRouter = Router();
 
 // --- Delivery Routes ---
-// GET /api/delivery/calculate or /api/delivery/quote (Public)
-deliveryRouter.get(['/calculate', '/quote'], async (req, res, next) => {
+// GET /api/delivery/calculate or /api/delivery/quote (Public, Max 120 req / min / IP)
+deliveryRouter.get(['/calculate', '/quote'], productBrowseLimiter, async (req, res, next) => {
   try {
     const { state, isPickup } = req.query;
     if (!state && isPickup !== 'true') {
@@ -32,8 +33,8 @@ deliveryRouter.get(['/calculate', '/quote'], async (req, res, next) => {
   }
 });
 
-// GET /api/delivery/zones (Public)
-deliveryRouter.get('/zones', async (req, res, next) => {
+// GET /api/delivery/zones (Public, Max 120 req / min / IP)
+deliveryRouter.get('/zones', productBrowseLimiter, async (req, res, next) => {
   try {
     const zones = await deliveryService.getDeliveryZones();
     const enriched = zones.map((z) => ({
@@ -47,8 +48,8 @@ deliveryRouter.get('/zones', async (req, res, next) => {
 });
 
 // --- Settings Routes ---
-// GET /api/settings (Public - Showroom, Team, Bank accounts)
-settingsRouter.get('/', async (req, res, next) => {
+// GET /api/settings (Public - Showroom, Team, Bank accounts, Max 120 req / min / IP)
+settingsRouter.get('/', productBrowseLimiter, async (req, res, next) => {
   try {
     const result = await settingsService.getSettings();
     return res.json({
@@ -65,8 +66,8 @@ settingsRouter.get('/', async (req, res, next) => {
   }
 });
 
-// PUT /api/settings (Super Admin & Admin Only)
-settingsRouter.put('/', requireAuth, requireSettingsManagement, validate(updateSettingsSchema), async (req, res, next) => {
+// PUT /api/settings (Super Admin & Admin Only, Max 20 updates / hour)
+settingsRouter.put('/', requireAuth, requireSettingsManagement, settingsMutationLimiter, validate(updateSettingsSchema), async (req, res, next) => {
   try {
     const updated = await settingsService.updateSettings(req.body);
     await auditLogService.log({

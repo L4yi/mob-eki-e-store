@@ -155,10 +155,14 @@ export const api = {
   },
 
   // --- Orders ---
-  async createOrder(orderData: any): Promise<Order & { whatsAppUrl?: string }> {
+  async createOrder(orderData: any, idempotencyKey?: string): Promise<Order & { whatsAppUrl?: string }> {
+    const headers = {
+      ...getAuthHeaders(),
+      ...(idempotencyKey ? { 'Idempotency-Key': idempotencyKey } : {}),
+    };
     const res = await fetch(`${API_BASE}/orders`, {
       method: 'POST',
-      headers: getAuthHeaders(),
+      headers,
       body: JSON.stringify(orderData),
     });
     if (!res.ok) {
@@ -370,7 +374,7 @@ export const api = {
       });
       if (!res.ok) return null;
       const data = await res.json();
-      return data.user;
+      return data.user || data;
     } catch {
       return null;
     }

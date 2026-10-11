@@ -6,9 +6,12 @@ interface CartContextType {
   addToCart: (product: Product, quantity?: number) => void;
   removeFromCart: (productId: string) => void;
   updateQuantity: (productId: string, quantity: number) => void;
+  updateQty: (productId: string, quantity: number) => void;
   clearCart: () => void;
   totalItems: number;
+  count: number;
   subtotal: number;
+  total: number;
   isDrawerOpen: boolean;
   openDrawer: () => void;
   closeDrawer: () => void;
@@ -83,9 +86,12 @@ export function CartProvider({ children }: { children: ReactNode }) {
         addToCart,
         removeFromCart,
         updateQuantity,
+        updateQty: updateQuantity,
         clearCart,
         totalItems,
+        count: totalItems,
         subtotal,
+        total: subtotal,
         isDrawerOpen,
         openDrawer: () => setIsDrawerOpen(true),
         closeDrawer: () => setIsDrawerOpen(false),

@@ -14,6 +14,8 @@ export default function AdminInventoryPage() {
   const [type, setType] = useState('RESTOCK');
   const [reason, setReason] = useState('New Shipment Container Arrival at Mushin');
 
+  const [submitting, setSubmitting] = useState(false);
+
   const loadData = () => {
     setLoading(true);
     Promise.all([api.getProducts(), api.getInventoryTransactions()])
@@ -34,8 +36,9 @@ export default function AdminInventoryPage() {
 
   const handleAdjustStock = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!selectedProductId) return;
+    if (!selectedProductId || submitting) return;
 
+    setSubmitting(true);
     try {
       const change = type === 'SALE' ? -Math.abs(Number(quantityChange)) : Math.abs(Number(quantityChange));
       await api.adjustStock(selectedProductId, change, type, reason);
@@ -43,6 +46,8 @@ export default function AdminInventoryPage() {
       loadData();
     } catch (err: any) {
       alert(err.message || 'Failed to adjust stock');
+    } finally {
+      setSubmitting(false);
     }
   };
 
@@ -235,15 +240,21 @@ export default function AdminInventoryPage() {
                 <button
                   type="button"
                   onClick={() => setIsModalOpen(false)}
+                  disabled={submitting}
                   className="px-4 py-2 border border-gray-200 rounded-xl text-gray-600 font-bold"
                 >
                   Cancel
                 </button>
                 <button
                   type="submit"
-                  className="px-6 py-2 bg-[#0B1F3A] text-white rounded-xl font-bold hover:bg-[#164A7A]"
+                  disabled={submitting}
+                  className="px-6 py-2 bg-[#0B1F3A] text-white rounded-xl font-bold hover:bg-[#164A7A] transition flex items-center gap-2 disabled:opacity-60"
                 >
-                  Confirm Movement
+                  {submitting ? (
+                    <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                  ) : (
+                    'Confirm Movement'
+                  )}
                 </button>
               </div>
             </form>

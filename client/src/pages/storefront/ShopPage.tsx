@@ -19,10 +19,19 @@ export default function ShopPage() {
   const [loading, setLoading] = useState(true);
 
   const [searchQuery, setSearchQuery] = useState(searchParams.get('search') || '');
+  const [debouncedSearchQuery, setDebouncedSearchQuery] = useState(searchParams.get('search') || '');
   const [sortBy, setSortBy] = useState(searchParams.get('sort') || 'featured');
   const [showFilters, setShowFilters] = useState(true);
 
   const categorySlug = searchParams.get('category') || '';
+
+  // Debounce search input by 300ms (Section 13)
+  useEffect(() => {
+    const handler = setTimeout(() => {
+      setDebouncedSearchQuery(searchQuery);
+    }, 300);
+    return () => clearTimeout(handler);
+  }, [searchQuery]);
 
   useEffect(() => {
     setLoading(true);
@@ -57,8 +66,8 @@ export default function ShopPage() {
       );
     }
 
-    if (searchQuery.trim()) {
-      const q = searchQuery.toLowerCase();
+    if (debouncedSearchQuery.trim()) {
+      const q = debouncedSearchQuery.toLowerCase();
       list = list.filter(
         (p) =>
           p.name.toLowerCase().includes(q) ||
@@ -76,7 +85,7 @@ export default function ShopPage() {
     }
 
     return list;
-  }, [products, categorySlug, searchQuery, sortBy]);
+  }, [products, categorySlug, debouncedSearchQuery, sortBy]);
 
   const activeCategoryObj = categories.find((c) => c.slug === categorySlug);
 
