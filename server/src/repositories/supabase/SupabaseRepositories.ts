@@ -130,14 +130,21 @@ export class SupabaseProductRepository implements IProductRepository {
     const available = product.stockQuantity - product.reservedQuantity;
     if (available < quantity) return false;
 
-    const { error } = await this.client
+    // Optimistic concurrency check: only update if reserved_quantity has not been mutated concurrently
+    const { data, error } = await this.client
       .from('products')
       .update({
         reserved_quantity: product.reservedQuantity + quantity,
         updated_at: new Date().toISOString(),
       })
-      .eq('id', productId);
-    return !error;
+      .eq('id', productId)
+      .filter('reserved_quantity', 'eq', product.reservedQuantity)
+      .select('id');
+
+    if (error || !data || (data as any).length === 0) {
+      return false;
+    }
+    return true;
   }
 
   async releaseStock(productId: string, quantity: number): Promise<boolean> {

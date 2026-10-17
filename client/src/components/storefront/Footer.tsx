@@ -59,8 +59,9 @@ export default function Footer({ settings }: { settings?: BusinessSettings }) {
           <ul className="space-y-2.5">
             {[
               { label: 'Track Order', to: '/track' },
-              { label: 'Delivery Information', to: '/about' },
-              { label: 'Shopping Cart & Checkout', to: '/checkout' },
+              { label: 'Delivery & Shipping', to: '/shipping' },
+              { label: 'Returns & Exchanges', to: '/returns' },
+              { label: 'Store Policies & Terms', to: '/policies' },
               { label: 'Customer Account', to: '/account' },
               { label: 'WhatsApp Dispatch', to: `https://wa.me/${cleanWhatsApp}` },
             ].map((item) => (
@@ -127,11 +128,17 @@ export default function Footer({ settings }: { settings?: BusinessSettings }) {
           <p className="text-[#6B7280] text-xs">
             © {new Date().getFullYear()} M.O.B EKI VENTURES. All rights reserved.
           </p>
-          <div className="flex gap-4">
-            <Link to="/" className="text-[#6B7280] hover:text-white text-xs transition-colors">
+          <div className="flex flex-wrap gap-4 text-xs">
+            <Link to="/shipping" className="text-[#6B7280] hover:text-white transition-colors">
+              Delivery
+            </Link>
+            <Link to="/returns" className="text-[#6B7280] hover:text-white transition-colors">
+              Returns & Refunds
+            </Link>
+            <Link to="/terms" className="text-[#6B7280] hover:text-white transition-colors">
               Terms & Conditions
             </Link>
-            <Link to="/" className="text-[#6B7280] hover:text-white text-xs transition-colors">
+            <Link to="/privacy" className="text-[#6B7280] hover:text-white transition-colors">
               Privacy Policy
             </Link>
           </div>

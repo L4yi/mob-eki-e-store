@@ -226,12 +226,19 @@ export class OrderService {
     return this.orderRepo.update(order.id, updates);
   }
 
-  public async cancelOrder(orderId: string, userId?: string): Promise<Order | null> {
+  public async cancelOrder(
+    orderId: string,
+    options?: { userId?: string; trackingToken?: string; isAdmin?: boolean }
+  ): Promise<Order | null> {
     const order = await this.orderRepo.findById(orderId);
     if (!order) throw new Error('Order not found');
 
-    if (userId && order.userId !== userId) {
-      throw new Error('Unauthorized to cancel this order');
+    const isAdmin = options?.isAdmin === true;
+    const isOwner = Boolean(options?.userId && order.userId && order.userId === options.userId);
+    const hasToken = Boolean(options?.trackingToken && order.trackingToken && order.trackingToken === options.trackingToken);
+
+    if (!isAdmin && !isOwner && !hasToken) {
+      throw new Error('Unauthorized to cancel this order. Tracking token or account authentication required.');
     }
 
     if (order.orderStatus !== 'PENDING_PAYMENT') {

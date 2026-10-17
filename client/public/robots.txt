@@ -1,0 +1,18 @@
+User-agent: *
+Allow: /
+Allow: /shop
+Allow: /product/
+Allow: /about
+Allow: /track
+Allow: /policies
+Allow: /shipping
+Allow: /returns
+Allow: /terms
+Allow: /privacy
+Disallow: /admin
+Disallow: /admin/
+Disallow: /admin/*
+Disallow: /checkout
+Disallow: /account
+
+Sitemap: https://mob-eki-ventures.web.app/sitemap.xml

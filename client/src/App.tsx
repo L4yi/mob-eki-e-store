@@ -31,6 +31,8 @@ import AdminOrdersPage from './pages/admin/AdminOrdersPage';
 import AdminPaymentsPage from './pages/admin/AdminPaymentsPage';
 import AdminSettingsPage from './pages/admin/AdminSettingsPage';
 
+import PolicyPage from './pages/storefront/PolicyPage';
+
 export default function App() {
   return (
     <AuthProvider>
@@ -49,6 +51,11 @@ export default function App() {
               <Route path="track" element={<OrderTrackingPage />} />
               <Route path="orders/:id" element={<OrderTrackingPage />} />
               <Route path="account" element={<AccountPage />} />
+              <Route path="policies" element={<PolicyPage />} />
+              <Route path="terms" element={<PolicyPage initialTab="payment" />} />
+              <Route path="privacy" element={<PolicyPage initialTab="privacy" />} />
+              <Route path="shipping" element={<PolicyPage initialTab="shipping" />} />
+              <Route path="returns" element={<PolicyPage initialTab="returns" />} />
             </Route>
 
             {/* Authentication Routes (Centered clean card, ZERO Storefront Footer) */}

@@ -172,9 +172,15 @@ export const api = {
     return res.json();
   },
 
-  async getOrder(idOrToken: string): Promise<Order & { whatsAppUrl?: string }> {
-    const res = await fetch(`${API_BASE}/orders/${encodeURIComponent(idOrToken)}`, {
-      headers: getAuthHeaders(),
+  async getOrder(idOrToken: string, token?: string): Promise<Order & { whatsAppUrl?: string; isMasked?: boolean }> {
+    const url = new URL(`${API_BASE}/orders/${encodeURIComponent(idOrToken)}`, window.location.origin);
+    if (token) url.searchParams.set('token', token);
+    const headers = {
+      ...getAuthHeaders(),
+      ...(token ? { 'x-tracking-token': token } : {}),
+    };
+    const res = await fetch(url.toString(), {
+      headers,
     });
     if (!res.ok) {
       const err = await res.json().catch(() => ({ error: 'Order not found' }));
@@ -183,8 +189,24 @@ export const api = {
     return res.json();
   },
 
-  async trackOrder(query: string): Promise<Order & { whatsAppUrl?: string }> {
-    return this.getOrder(query);
+  async cancelOrder(id: string, token?: string): Promise<Order> {
+    const res = await fetch(`${API_BASE}/orders/${encodeURIComponent(id)}/cancel`, {
+      method: 'PUT',
+      headers: {
+        ...getAuthHeaders(),
+        ...(token ? { 'x-tracking-token': token } : {}),
+      },
+      body: JSON.stringify({ token }),
+    });
+    if (!res.ok) {
+      const err = await res.json().catch(() => ({ error: 'Failed to cancel order' }));
+      throw new Error(err.error || 'Failed to cancel order');
+    }
+    return res.json();
+  },
+
+  async trackOrder(query: string, token?: string): Promise<Order & { whatsAppUrl?: string; isMasked?: boolean }> {
+    return this.getOrder(query, token);
   },
 
   async getUserOrders(): Promise<Order[]> {

@@ -141,7 +141,7 @@
         "/products/luxury-gold-black-geometric-handle.jpg"
       ],
       "stockQuantity": 150,
-      "reservedQuantity": 27,
+      "reservedQuantity": 0,
       "lowStockThreshold": 15,
       "specs": [
         {
@@ -164,7 +164,7 @@
       "active": true,
       "featured": true,
       "createdAt": "2026-10-08T12:38:23.257Z",
-      "updatedAt": "2026-10-08T14:27:10.964Z"
+      "updatedAt": "2026-10-17T19:40:10.221Z"
     },
     {
       "id": "prd-hdl-02",
@@ -1641,7 +1641,7 @@
       "totalKobo": 650000,
       "paymentMethod": "BANK_TRANSFER",
       "paymentStatus": "PENDING",
-      "orderStatus": "PENDING_PAYMENT",
+      "orderStatus": "CANCELLED",
       "reservationExpiresAt": "2026-10-08T14:56:25.001Z",
       "items": [
         {
@@ -1657,11 +1657,16 @@
           "timestamp": "2026-10-08T14:26:25.001Z",
           "status": "PENDING_PAYMENT",
           "note": "Order created, awaiting payment confirmation."
+        },
+        {
+          "timestamp": "2026-10-17T19:39:45.350Z",
+          "status": "CANCELLED",
+          "note": "Order auto-cancelled due to checkout timeout / reservation expiry"
         }
       ],
       "idempotencyKey": "test-idem-1791469584996",
       "createdAt": "2026-10-08T14:26:25.001Z",
-      "updatedAt": "2026-10-08T14:26:25.001Z"
+      "updatedAt": "2026-10-17T19:39:45.350Z"
     },
     {
       "id": "ord-8e9ca6c8-dd01-4263-acf9-af3366a5e67c",
@@ -1680,7 +1685,7 @@
       "totalKobo": 650000,
       "paymentMethod": "BANK_TRANSFER",
       "paymentStatus": "PENDING",
-      "orderStatus": "PENDING_PAYMENT",
+      "orderStatus": "CANCELLED",
       "reservationExpiresAt": "2026-10-08T14:56:25.030Z",
       "items": [
         {
@@ -1696,11 +1701,16 @@
           "timestamp": "2026-10-08T14:26:25.030Z",
           "status": "PENDING_PAYMENT",
           "note": "Order created, awaiting payment confirmation."
+        },
+        {
+          "timestamp": "2026-10-17T19:39:45.353Z",
+          "status": "CANCELLED",
+          "note": "Order auto-cancelled due to checkout timeout / reservation expiry"
         }
       ],
       "idempotencyKey": "batch-order-1791469585026-1",
       "createdAt": "2026-10-08T14:26:25.030Z",
-      "updatedAt": "2026-10-08T14:26:25.030Z"
+      "updatedAt": "2026-10-17T19:39:45.353Z"
     },
     {
       "id": "ord-a69393c1-7074-4b4a-869f-eab942f9e544",
@@ -1719,7 +1729,7 @@
       "totalKobo": 650000,
       "paymentMethod": "BANK_TRANSFER",
       "paymentStatus": "PENDING",
-      "orderStatus": "PENDING_PAYMENT",
+      "orderStatus": "CANCELLED",
       "reservationExpiresAt": "2026-10-08T14:56:25.033Z",
       "items": [
         {
@@ -1735,11 +1745,16 @@
           "timestamp": "2026-10-08T14:26:25.033Z",
           "status": "PENDING_PAYMENT",
           "note": "Order created, awaiting payment confirmation."
+        },
+        {
+          "timestamp": "2026-10-17T19:39:45.356Z",
+          "status": "CANCELLED",
+          "note": "Order auto-cancelled due to checkout timeout / reservation expiry"
         }
       ],
       "idempotencyKey": "batch-order-1791469585031-2",
       "createdAt": "2026-10-08T14:26:25.033Z",
-      "updatedAt": "2026-10-08T14:26:25.033Z"
+      "updatedAt": "2026-10-17T19:39:45.356Z"
     },
     {
       "id": "ord-9c6713fc-f52d-4b8f-acd6-b79f444c856e",
@@ -1758,7 +1773,7 @@
       "totalKobo": 650000,
       "paymentMethod": "BANK_TRANSFER",
       "paymentStatus": "PENDING",
-      "orderStatus": "PENDING_PAYMENT",
+      "orderStatus": "CANCELLED",
       "reservationExpiresAt": "2026-10-08T14:56:25.037Z",
       "items": [
         {
@@ -1774,11 +1789,16 @@
           "timestamp": "2026-10-08T14:26:25.037Z",
           "status": "PENDING_PAYMENT",
           "note": "Order created, awaiting payment confirmation."
+        },
+        {
+          "timestamp": "2026-10-17T19:39:45.358Z",
+          "status": "CANCELLED",
+          "note": "Order auto-cancelled due to checkout timeout / reservation expiry"
         }
       ],
       "idempotencyKey": "batch-order-1791469585035-3",
       "createdAt": "2026-10-08T14:26:25.037Z",
-      "updatedAt": "2026-10-08T14:26:25.037Z"
+      "updatedAt": "2026-10-17T19:39:45.358Z"
     },
     {
       "id": "ord-20cb414e-c506-486b-a91b-d36a8d3aaebd",
@@ -1797,7 +1817,7 @@
       "totalKobo": 650000,
       "paymentMethod": "BANK_TRANSFER",
       "paymentStatus": "PENDING",
-      "orderStatus": "PENDING_PAYMENT",
+      "orderStatus": "CANCELLED",
       "reservationExpiresAt": "2026-10-08T14:56:25.041Z",
       "items": [
         {
@@ -1813,11 +1833,16 @@
           "timestamp": "2026-10-08T14:26:25.041Z",
           "status": "PENDING_PAYMENT",
           "note": "Order created, awaiting payment confirmation."
+        },
+        {
+          "timestamp": "2026-10-17T19:39:45.359Z",
+          "status": "CANCELLED",
+          "note": "Order auto-cancelled due to checkout timeout / reservation expiry"
         }
       ],
       "idempotencyKey": "batch-order-1791469585039-4",
       "createdAt": "2026-10-08T14:26:25.041Z",
-      "updatedAt": "2026-10-08T14:26:25.041Z"
+      "updatedAt": "2026-10-17T19:39:45.359Z"
     },
     {
       "id": "ord-afc21854-1b68-46c7-8ad9-1498cfaf428a",
@@ -1836,7 +1861,7 @@
       "totalKobo": 650000,
       "paymentMethod": "BANK_TRANSFER",
       "paymentStatus": "PENDING",
-      "orderStatus": "PENDING_PAYMENT",
+      "orderStatus": "CANCELLED",
       "reservationExpiresAt": "2026-10-08T14:56:25.045Z",
       "items": [
         {
@@ -1852,11 +1877,16 @@
           "timestamp": "2026-10-08T14:26:25.045Z",
           "status": "PENDING_PAYMENT",
           "note": "Order created, awaiting payment confirmation."
+        },
+        {
+          "timestamp": "2026-10-17T19:39:45.362Z",
+          "status": "CANCELLED",
+          "note": "Order auto-cancelled due to checkout timeout / reservation expiry"
         }
       ],
       "idempotencyKey": "batch-order-1791469585043-5",
       "createdAt": "2026-10-08T14:26:25.045Z",
-      "updatedAt": "2026-10-08T14:26:25.045Z"
+      "updatedAt": "2026-10-17T19:39:45.362Z"
     },
     {
       "id": "ord-ca30e05a-f099-4f62-adeb-49eb3748574d",
@@ -1875,7 +1905,7 @@
       "totalKobo": 650000,
       "paymentMethod": "BANK_TRANSFER",
       "paymentStatus": "PENDING",
-      "orderStatus": "PENDING_PAYMENT",
+      "orderStatus": "CANCELLED",
       "reservationExpiresAt": "2026-10-08T14:56:25.049Z",
       "items": [
         {
@@ -1891,11 +1921,16 @@
           "timestamp": "2026-10-08T14:26:25.049Z",
           "status": "PENDING_PAYMENT",
           "note": "Order created, awaiting payment confirmation."
+        },
+        {
+          "timestamp": "2026-10-17T19:39:45.364Z",
+          "status": "CANCELLED",
+          "note": "Order auto-cancelled due to checkout timeout / reservation expiry"
         }
       ],
       "idempotencyKey": "batch-order-1791469585047-6",
       "createdAt": "2026-10-08T14:26:25.049Z",
-      "updatedAt": "2026-10-08T14:26:25.049Z"
+      "updatedAt": "2026-10-17T19:39:45.364Z"
     },
     {
       "id": "ord-1637ad02-e814-4d2f-b1aa-0c1ba3af3b75",
@@ -1914,7 +1949,7 @@
       "totalKobo": 650000,
       "paymentMethod": "BANK_TRANSFER",
       "paymentStatus": "PENDING",
-      "orderStatus": "PENDING_PAYMENT",
+      "orderStatus": "CANCELLED",
       "reservationExpiresAt": "2026-10-08T14:56:25.053Z",
       "items": [
         {
@@ -1930,11 +1965,16 @@
           "timestamp": "2026-10-08T14:26:25.053Z",
           "status": "PENDING_PAYMENT",
           "note": "Order created, awaiting payment confirmation."
+        },
+        {
+          "timestamp": "2026-10-17T19:39:45.367Z",
+          "status": "CANCELLED",
+          "note": "Order auto-cancelled due to checkout timeout / reservation expiry"
         }
       ],
       "idempotencyKey": "batch-order-1791469585050-7",
       "createdAt": "2026-10-08T14:26:25.053Z",
-      "updatedAt": "2026-10-08T14:26:25.053Z"
+      "updatedAt": "2026-10-17T19:39:45.367Z"
     },
     {
       "id": "ord-a9c1b038-884e-420d-8016-2f8a0d53f009",
@@ -1953,7 +1993,7 @@
       "totalKobo": 650000,
       "paymentMethod": "BANK_TRANSFER",
       "paymentStatus": "PENDING",
-      "orderStatus": "PENDING_PAYMENT",
+      "orderStatus": "CANCELLED",
       "reservationExpiresAt": "2026-10-08T14:56:25.058Z",
       "items": [
         {
@@ -1969,11 +2009,16 @@
           "timestamp": "2026-10-08T14:26:25.058Z",
           "status": "PENDING_PAYMENT",
           "note": "Order created, awaiting payment confirmation."
+        },
+        {
+          "timestamp": "2026-10-17T19:39:45.369Z",
+          "status": "CANCELLED",
+          "note": "Order auto-cancelled due to checkout timeout / reservation expiry"
         }
       ],
       "idempotencyKey": "batch-order-1791469585056-8",
       "createdAt": "2026-10-08T14:26:25.058Z",
-      "updatedAt": "2026-10-08T14:26:25.058Z"
+      "updatedAt": "2026-10-17T19:39:45.369Z"
     },
     {
       "id": "ord-adddb9e5-12f2-48d4-ac82-09bf46a3d6ef",
@@ -1992,7 +2037,7 @@
       "totalKobo": 650000,
       "paymentMethod": "BANK_TRANSFER",
       "paymentStatus": "PENDING",
-      "orderStatus": "PENDING_PAYMENT",
+      "orderStatus": "CANCELLED",
       "reservationExpiresAt": "2026-10-08T14:56:46.871Z",
       "items": [
         {
@@ -2008,11 +2053,16 @@
           "timestamp": "2026-10-08T14:26:46.871Z",
           "status": "PENDING_PAYMENT",
           "note": "Order created, awaiting payment confirmation."
+        },
+        {
+          "timestamp": "2026-10-17T19:39:45.372Z",
+          "status": "CANCELLED",
+          "note": "Order auto-cancelled due to checkout timeout / reservation expiry"
         }
       ],
       "idempotencyKey": "test-idem-1791469606866",
       "createdAt": "2026-10-08T14:26:46.871Z",
-      "updatedAt": "2026-10-08T14:26:46.871Z"
+      "updatedAt": "2026-10-17T19:39:45.372Z"
     },
     {
       "id": "ord-310d54f8-b1a4-4333-b3d8-464e5b6a1482",
@@ -2031,7 +2081,7 @@
       "totalKobo": 650000,
       "paymentMethod": "BANK_TRANSFER",
       "paymentStatus": "PENDING",
-      "orderStatus": "PENDING_PAYMENT",
+      "orderStatus": "CANCELLED",
       "reservationExpiresAt": "2026-10-08T14:56:46.898Z",
       "items": [
         {
@@ -2047,11 +2097,16 @@
           "timestamp": "2026-10-08T14:26:46.898Z",
           "status": "PENDING_PAYMENT",
           "note": "Order created, awaiting payment confirmation."
+        },
+        {
+          "timestamp": "2026-10-17T19:39:45.374Z",
+          "status": "CANCELLED",
+          "note": "Order auto-cancelled due to checkout timeout / reservation expiry"
         }
       ],
       "idempotencyKey": "batch-order-1791469606896-1",
       "createdAt": "2026-10-08T14:26:46.898Z",
-      "updatedAt": "2026-10-08T14:26:46.898Z"
+      "updatedAt": "2026-10-17T19:39:45.374Z"
     },
     {
       "id": "ord-b307c653-c33d-42eb-bc18-5a800cc01e1c",
@@ -2070,7 +2125,7 @@
       "totalKobo": 650000,
       "paymentMethod": "BANK_TRANSFER",
       "paymentStatus": "PENDING",
-      "orderStatus": "PENDING_PAYMENT",
+      "orderStatus": "CANCELLED",
       "reservationExpiresAt": "2026-10-08T14:56:46.902Z",
       "items": [
         {
@@ -2086,11 +2141,16 @@
           "timestamp": "2026-10-08T14:26:46.902Z",
           "status": "PENDING_PAYMENT",
           "note": "Order created, awaiting payment confirmation."
+        },
+        {
+          "timestamp": "2026-10-17T19:39:45.376Z",
+          "status": "CANCELLED",
+          "note": "Order auto-cancelled due to checkout timeout / reservation expiry"
         }
       ],
       "idempotencyKey": "batch-order-1791469606900-2",
       "createdAt": "2026-10-08T14:26:46.902Z",
-      "updatedAt": "2026-10-08T14:26:46.902Z"
+      "updatedAt": "2026-10-17T19:39:45.376Z"
     },
     {
       "id": "ord-3379ba14-2c0e-4497-b71c-a7fb9b70a13e",
@@ -2109,7 +2169,7 @@
       "totalKobo": 650000,
       "paymentMethod": "BANK_TRANSFER",
       "paymentStatus": "PENDING",
-      "orderStatus": "PENDING_PAYMENT",
+      "orderStatus": "CANCELLED",
       "reservationExpiresAt": "2026-10-08T14:56:46.904Z",
       "items": [
         {
@@ -2125,11 +2185,16 @@
           "timestamp": "2026-10-08T14:26:46.904Z",
           "status": "PENDING_PAYMENT",
           "note": "Order created, awaiting payment confirmation."
+        },
+        {
+          "timestamp": "2026-10-17T19:39:45.378Z",
+          "status": "CANCELLED",
+          "note": "Order auto-cancelled due to checkout timeout / reservation expiry"
         }
       ],
       "idempotencyKey": "batch-order-1791469606903-3",
       "createdAt": "2026-10-08T14:26:46.904Z",
-      "updatedAt": "2026-10-08T14:26:46.904Z"
+      "updatedAt": "2026-10-17T19:39:45.378Z"
     },
     {
       "id": "ord-a75f8095-ea21-4bfa-9b94-3de9173a80e6",
@@ -2148,7 +2213,7 @@
       "totalKobo": 650000,
       "paymentMethod": "BANK_TRANSFER",
       "paymentStatus": "PENDING",
-      "orderStatus": "PENDING_PAYMENT",
+      "orderStatus": "CANCELLED",
       "reservationExpiresAt": "2026-10-08T14:56:46.909Z",
       "items": [
         {
@@ -2164,11 +2229,16 @@
           "timestamp": "2026-10-08T14:26:46.909Z",
           "status": "PENDING_PAYMENT",
           "note": "Order created, awaiting payment confirmation."
+        },
+        {
+          "timestamp": "2026-10-17T19:39:45.380Z",
+          "status": "CANCELLED",
+          "note": "Order auto-cancelled due to checkout timeout / reservation expiry"
         }
       ],
       "idempotencyKey": "batch-order-1791469606906-4",
       "createdAt": "2026-10-08T14:26:46.909Z",
-      "updatedAt": "2026-10-08T14:26:46.909Z"
+      "updatedAt": "2026-10-17T19:39:45.381Z"
     },
     {
       "id": "ord-1291b8ba-939c-4817-80e4-62658b783569",
@@ -2187,7 +2257,7 @@
       "totalKobo": 650000,
       "paymentMethod": "BANK_TRANSFER",
       "paymentStatus": "PENDING",
-      "orderStatus": "PENDING_PAYMENT",
+      "orderStatus": "CANCELLED",
       "reservationExpiresAt": "2026-10-08T14:56:46.914Z",
       "items": [
         {
@@ -2203,11 +2273,16 @@
           "timestamp": "2026-10-08T14:26:46.914Z",
           "status": "PENDING_PAYMENT",
           "note": "Order created, awaiting payment confirmation."
+        },
+        {
+          "timestamp": "2026-10-17T19:39:45.384Z",
+          "status": "CANCELLED",
+          "note": "Order auto-cancelled due to checkout timeout / reservation expiry"
         }
       ],
       "idempotencyKey": "batch-order-1791469606911-5",
       "createdAt": "2026-10-08T14:26:46.914Z",
-      "updatedAt": "2026-10-08T14:26:46.914Z"
+      "updatedAt": "2026-10-17T19:39:45.384Z"
     },
     {
       "id": "ord-14d2d140-b04d-43c3-9367-0ff136286e68",
@@ -2226,7 +2301,7 @@
       "totalKobo": 650000,
       "paymentMethod": "BANK_TRANSFER",
       "paymentStatus": "PENDING",
-      "orderStatus": "PENDING_PAYMENT",
+      "orderStatus": "CANCELLED",
       "reservationExpiresAt": "2026-10-08T14:56:46.919Z",
       "items": [
         {
@@ -2242,11 +2317,16 @@
           "timestamp": "2026-10-08T14:26:46.919Z",
           "status": "PENDING_PAYMENT",
           "note": "Order created, awaiting payment confirmation."
+        },
+        {
+          "timestamp": "2026-10-17T19:39:45.387Z",
+          "status": "CANCELLED",
+          "note": "Order auto-cancelled due to checkout timeout / reservation expiry"
         }
       ],
       "idempotencyKey": "batch-order-1791469606916-6",
       "createdAt": "2026-10-08T14:26:46.919Z",
-      "updatedAt": "2026-10-08T14:26:46.919Z"
+      "updatedAt": "2026-10-17T19:39:45.387Z"
     },
     {
       "id": "ord-98caf284-ddac-42ac-86cd-fed7c18c6276",
@@ -2265,7 +2345,7 @@
       "totalKobo": 650000,
       "paymentMethod": "BANK_TRANSFER",
       "paymentStatus": "PENDING",
-      "orderStatus": "PENDING_PAYMENT",
+      "orderStatus": "CANCELLED",
       "reservationExpiresAt": "2026-10-08T14:56:46.928Z",
       "items": [
         {
@@ -2281,11 +2361,16 @@
           "timestamp": "2026-10-08T14:26:46.928Z",
           "status": "PENDING_PAYMENT",
           "note": "Order created, awaiting payment confirmation."
+        },
+        {
+          "timestamp": "2026-10-17T19:39:45.389Z",
+          "status": "CANCELLED",
+          "note": "Order auto-cancelled due to checkout timeout / reservation expiry"
         }
       ],
       "idempotencyKey": "batch-order-1791469606920-7",
       "createdAt": "2026-10-08T14:26:46.928Z",
-      "updatedAt": "2026-10-08T14:26:46.928Z"
+      "updatedAt": "2026-10-17T19:39:45.389Z"
     },
     {
       "id": "ord-b372384d-9f23-4430-ad6c-0c09904082d3",
@@ -2304,7 +2389,7 @@
       "totalKobo": 650000,
       "paymentMethod": "BANK_TRANSFER",
       "paymentStatus": "PENDING",
-      "orderStatus": "PENDING_PAYMENT",
+      "orderStatus": "CANCELLED",
       "reservationExpiresAt": "2026-10-08T14:56:46.934Z",
       "items": [
         {
@@ -2320,11 +2405,16 @@
           "timestamp": "2026-10-08T14:26:46.934Z",
           "status": "PENDING_PAYMENT",
           "note": "Order created, awaiting payment confirmation."
+        },
+        {
+          "timestamp": "2026-10-17T19:39:45.391Z",
+          "status": "CANCELLED",
+          "note": "Order auto-cancelled due to checkout timeout / reservation expiry"
         }
       ],
       "idempotencyKey": "batch-order-1791469606930-8",
       "createdAt": "2026-10-08T14:26:46.934Z",
-      "updatedAt": "2026-10-08T14:26:46.934Z"
+      "updatedAt": "2026-10-17T19:39:45.391Z"
     },
     {
       "id": "ord-28aca404-bb53-42fa-81f3-7b20ac6d4ab5",
@@ -2343,7 +2433,7 @@
       "totalKobo": 650000,
       "paymentMethod": "BANK_TRANSFER",
       "paymentStatus": "PENDING",
-      "orderStatus": "PENDING_PAYMENT",
+      "orderStatus": "CANCELLED",
       "reservationExpiresAt": "2026-10-08T14:57:10.792Z",
       "items": [
         {
@@ -2359,11 +2449,16 @@
           "timestamp": "2026-10-08T14:27:10.792Z",
           "status": "PENDING_PAYMENT",
           "note": "Order created, awaiting payment confirmation."
+        },
+        {
+          "timestamp": "2026-10-17T19:39:45.393Z",
+          "status": "CANCELLED",
+          "note": "Order auto-cancelled due to checkout timeout / reservation expiry"
         }
       ],
       "idempotencyKey": "test-idem-1791469630782",
       "createdAt": "2026-10-08T14:27:10.793Z",
-      "updatedAt": "2026-10-08T14:27:10.793Z"
+      "updatedAt": "2026-10-17T19:39:45.393Z"
     },
     {
       "id": "ord-2af7725c-7441-4c5f-b7ab-877f80766b6d",
@@ -2382,7 +2477,7 @@
       "totalKobo": 650000,
       "paymentMethod": "BANK_TRANSFER",
       "paymentStatus": "PENDING",
-      "orderStatus": "PENDING_PAYMENT",
+      "orderStatus": "CANCELLED",
       "reservationExpiresAt": "2026-10-08T14:57:10.910Z",
       "items": [
         {
@@ -2398,11 +2493,16 @@
           "timestamp": "2026-10-08T14:27:10.910Z",
           "status": "PENDING_PAYMENT",
           "note": "Order created, awaiting payment confirmation."
+        },
+        {
+          "timestamp": "2026-10-17T19:39:45.395Z",
+          "status": "CANCELLED",
+          "note": "Order auto-cancelled due to checkout timeout / reservation expiry"
         }
       ],
       "idempotencyKey": "batch-order-1791469630895-1",
       "createdAt": "2026-10-08T14:27:10.910Z",
-      "updatedAt": "2026-10-08T14:27:10.910Z"
+      "updatedAt": "2026-10-17T19:39:45.395Z"
     },
     {
       "id": "ord-c76ed7bc-e324-43d6-8fe0-7b65c6bbb093",
@@ -2421,7 +2521,7 @@
       "totalKobo": 650000,
       "paymentMethod": "BANK_TRANSFER",
       "paymentStatus": "PENDING",
-      "orderStatus": "PENDING_PAYMENT",
+      "orderStatus": "CANCELLED",
       "reservationExpiresAt": "2026-10-08T14:57:10.914Z",
       "items": [
         {
@@ -2437,11 +2537,16 @@
           "timestamp": "2026-10-08T14:27:10.914Z",
           "status": "PENDING_PAYMENT",
           "note": "Order created, awaiting payment confirmation."
+        },
+        {
+          "timestamp": "2026-10-17T19:39:45.397Z",
+          "status": "CANCELLED",
+          "note": "Order auto-cancelled due to checkout timeout / reservation expiry"
         }
       ],
       "idempotencyKey": "batch-order-1791469630911-2",
       "createdAt": "2026-10-08T14:27:10.914Z",
-      "updatedAt": "2026-10-08T14:27:10.914Z"
+      "updatedAt": "2026-10-17T19:39:45.397Z"
     },
     {
       "id": "ord-df6d6a3f-a135-4862-8a13-a68922232806",
@@ -2460,7 +2565,7 @@
       "totalKobo": 650000,
       "paymentMethod": "BANK_TRANSFER",
       "paymentStatus": "PENDING",
-      "orderStatus": "PENDING_PAYMENT",
+      "orderStatus": "CANCELLED",
       "reservationExpiresAt": "2026-10-08T14:57:10.919Z",
       "items": [
         {
@@ -2476,11 +2581,16 @@
           "timestamp": "2026-10-08T14:27:10.919Z",
           "status": "PENDING_PAYMENT",
           "note": "Order created, awaiting payment confirmation."
+        },
+        {
+          "timestamp": "2026-10-17T19:39:45.400Z",
+          "status": "CANCELLED",
+          "note": "Order auto-cancelled due to checkout timeout / reservation expiry"
         }
       ],
       "idempotencyKey": "batch-order-1791469630917-3",
       "createdAt": "2026-10-08T14:27:10.919Z",
-      "updatedAt": "2026-10-08T14:27:10.919Z"
+      "updatedAt": "2026-10-17T19:39:45.400Z"
     },
     {
       "id": "ord-aa0a9478-8df9-457f-8693-bc641f3cf7ef",
@@ -2499,7 +2609,7 @@
       "totalKobo": 650000,
       "paymentMethod": "BANK_TRANSFER",
       "paymentStatus": "PENDING",
-      "orderStatus": "PENDING_PAYMENT",
+      "orderStatus": "CANCELLED",
       "reservationExpiresAt": "2026-10-08T14:57:10.942Z",
       "items": [
         {
@@ -2515,11 +2625,16 @@
           "timestamp": "2026-10-08T14:27:10.942Z",
           "status": "PENDING_PAYMENT",
           "note": "Order created, awaiting payment confirmation."
+        },
+        {
+          "timestamp": "2026-10-17T19:39:45.402Z",
+          "status": "CANCELLED",
+          "note": "Order auto-cancelled due to checkout timeout / reservation expiry"
         }
       ],
       "idempotencyKey": "batch-order-1791469630922-4",
       "createdAt": "2026-10-08T14:27:10.942Z",
-      "updatedAt": "2026-10-08T14:27:10.942Z"
+      "updatedAt": "2026-10-17T19:39:45.402Z"
     },
     {
       "id": "ord-d8966593-4113-4881-84c8-d7606116d8c7",
@@ -2538,7 +2653,7 @@
       "totalKobo": 650000,
       "paymentMethod": "BANK_TRANSFER",
       "paymentStatus": "PENDING",
-      "orderStatus": "PENDING_PAYMENT",
+      "orderStatus": "CANCELLED",
       "reservationExpiresAt": "2026-10-08T14:57:10.951Z",
       "items": [
         {
@@ -2554,11 +2669,16 @@
           "timestamp": "2026-10-08T14:27:10.951Z",
           "status": "PENDING_PAYMENT",
           "note": "Order created, awaiting payment confirmation."
+        },
+        {
+          "timestamp": "2026-10-17T19:39:45.404Z",
+          "status": "CANCELLED",
+          "note": "Order auto-cancelled due to checkout timeout / reservation expiry"
         }
       ],
       "idempotencyKey": "batch-order-1791469630947-5",
       "createdAt": "2026-10-08T14:27:10.951Z",
-      "updatedAt": "2026-10-08T14:27:10.951Z"
+      "updatedAt": "2026-10-17T19:39:45.404Z"
     },
     {
       "id": "ord-efc69113-8189-45d2-9d88-85337c6786e1",
@@ -2577,7 +2697,7 @@
       "totalKobo": 650000,
       "paymentMethod": "BANK_TRANSFER",
       "paymentStatus": "PENDING",
-      "orderStatus": "PENDING_PAYMENT",
+      "orderStatus": "CANCELLED",
       "reservationExpiresAt": "2026-10-08T14:57:10.956Z",
       "items": [
         {
@@ -2593,11 +2713,16 @@
           "timestamp": "2026-10-08T14:27:10.956Z",
           "status": "PENDING_PAYMENT",
           "note": "Order created, awaiting payment confirmation."
+        },
+        {
+          "timestamp": "2026-10-17T19:39:45.406Z",
+          "status": "CANCELLED",
+          "note": "Order auto-cancelled due to checkout timeout / reservation expiry"
         }
       ],
       "idempotencyKey": "batch-order-1791469630954-6",
       "createdAt": "2026-10-08T14:27:10.956Z",
-      "updatedAt": "2026-10-08T14:27:10.956Z"
+      "updatedAt": "2026-10-17T19:39:45.406Z"
     },
     {
       "id": "ord-dd702bd4-5f21-4987-a03d-40df4fe7f43c",
@@ -2616,7 +2741,7 @@
       "totalKobo": 650000,
       "paymentMethod": "BANK_TRANSFER",
       "paymentStatus": "PENDING",
-      "orderStatus": "PENDING_PAYMENT",
+      "orderStatus": "CANCELLED",
       "reservationExpiresAt": "2026-10-08T14:57:10.959Z",
       "items": [
         {
@@ -2632,11 +2757,16 @@
           "timestamp": "2026-10-08T14:27:10.959Z",
           "status": "PENDING_PAYMENT",
           "note": "Order created, awaiting payment confirmation."
+        },
+        {
+          "timestamp": "2026-10-17T19:39:45.408Z",
+          "status": "CANCELLED",
+          "note": "Order auto-cancelled due to checkout timeout / reservation expiry"
         }
       ],
       "idempotencyKey": "batch-order-1791469630957-7",
       "createdAt": "2026-10-08T14:27:10.959Z",
-      "updatedAt": "2026-10-08T14:27:10.959Z"
+      "updatedAt": "2026-10-17T19:39:45.408Z"
     },
     {
       "id": "ord-d18020e8-a8a2-4603-929e-baf10c3ca8fc",
@@ -2655,7 +2785,7 @@
       "totalKobo": 650000,
       "paymentMethod": "BANK_TRANSFER",
       "paymentStatus": "PENDING",
-      "orderStatus": "PENDING_PAYMENT",
+      "orderStatus": "CANCELLED",
       "reservationExpiresAt": "2026-10-08T14:57:10.965Z",
       "items": [
         {
@@ -2671,14 +2801,514 @@
           "timestamp": "2026-10-08T14:27:10.965Z",
           "status": "PENDING_PAYMENT",
           "note": "Order created, awaiting payment confirmation."
+        },
+        {
+          "timestamp": "2026-10-17T19:39:45.411Z",
+          "status": "CANCELLED",
+          "note": "Order auto-cancelled due to checkout timeout / reservation expiry"
         }
       ],
       "idempotencyKey": "batch-order-1791469630962-8",
       "createdAt": "2026-10-08T14:27:10.965Z",
-      "updatedAt": "2026-10-08T14:27:10.965Z"
+      "updatedAt": "2026-10-17T19:39:45.411Z"
+    },
+    {
+      "id": "ord-89fd5a8f-8ed3-4cc3-bbc0-91ec5c9b3c8d",
+      "orderNumber": "MOB-2026-3023",
+      "trackingToken": "b636a17cfed8d3b373d14b8e0268470f",
+      "customerName": "Amina Babatunde",
+      "customerEmail": "amina.babatunde@example.com",
+      "customerPhone": "08023456789",
+      "deliveryZone": "LAGOS",
+      "deliveryState": "Lagos",
+      "deliveryCity": "Yaba",
+      "deliveryAddress": "Plot 14, Commercial Avenue, Sabo Yaba, Lagos",
+      "deliveryNotes": "Please call before arrival",
+      "subtotalKobo": 450000,
+      "discountKobo": 0,
+      "deliveryFeeKobo": 200000,
+      "totalKobo": 650000,
+      "paymentMethod": "BANK_TRANSFER",
+      "paymentStatus": "PENDING",
+      "orderStatus": "CANCELLED",
+      "reservationExpiresAt": "2026-10-17T20:09:57.936Z",
+      "items": [
+        {
+          "productId": "prd-hdl-01",
+          "productName": "Luxury Black & Gold Geometric Cabinet Pull Handle",
+          "sku": "HDL-BLK-GLD-GEO",
+          "unitPriceKobo": 450000,
+          "quantity": 1
+        }
+      ],
+      "trackingNotes": [
+        {
+          "timestamp": "2026-10-17T19:39:57.936Z",
+          "status": "PENDING_PAYMENT",
+          "note": "Order created, awaiting payment confirmation."
+        },
+        {
+          "timestamp": "2026-10-17T19:39:57.963Z",
+          "status": "CANCELLED",
+          "note": "Order cancelled by customer"
+        }
+      ],
+      "createdAt": "2026-10-17T19:39:57.936Z",
+      "updatedAt": "2026-10-17T19:39:57.963Z"
+    },
+    {
+      "id": "ord-88d6aa08-c716-4350-b1c4-ac4660823fd5",
+      "orderNumber": "MOB-2026-9050",
+      "trackingToken": "0d0d2be2de82fdbefa91cdebebc6e6ce",
+      "customerName": "Amina Babatunde",
+      "customerEmail": "amina.babatunde@example.com",
+      "customerPhone": "08023456789",
+      "deliveryZone": "LAGOS",
+      "deliveryState": "Lagos",
+      "deliveryCity": "Yaba",
+      "deliveryAddress": "Plot 14, Commercial Avenue, Sabo Yaba, Lagos",
+      "deliveryNotes": "Please call before arrival",
+      "subtotalKobo": 450000,
+      "discountKobo": 0,
+      "deliveryFeeKobo": 200000,
+      "totalKobo": 650000,
+      "paymentMethod": "BANK_TRANSFER",
+      "paymentStatus": "PENDING",
+      "orderStatus": "CANCELLED",
+      "reservationExpiresAt": "2026-10-17T20:10:10.207Z",
+      "items": [
+        {
+          "productId": "prd-hdl-01",
+          "productName": "Luxury Black & Gold Geometric Cabinet Pull Handle",
+          "sku": "HDL-BLK-GLD-GEO",
+          "unitPriceKobo": 450000,
+          "quantity": 1
+        }
+      ],
+      "trackingNotes": [
+        {
+          "timestamp": "2026-10-17T19:40:10.207Z",
+          "status": "PENDING_PAYMENT",
+          "note": "Order created, awaiting payment confirmation."
+        },
+        {
+          "timestamp": "2026-10-17T19:40:10.222Z",
+          "status": "CANCELLED",
+          "note": "Order cancelled by customer"
+        }
+      ],
+      "createdAt": "2026-10-17T19:40:10.207Z",
+      "updatedAt": "2026-10-17T19:40:10.222Z"
     }
   ],
-  "movements": [],
+  "movements": [
+    {
+      "id": "mov-c2fb3aa7-8d0b-4102-a225-5eefd593f5b1",
+      "productId": "prd-hdl-01",
+      "productName": "Luxury Black & Gold Geometric Cabinet Pull Handle",
+      "sku": "HDL-BLK-GLD-GEO",
+      "type": "RELEASE",
+      "quantityChange": 1,
+      "previousStock": 150,
+      "newStock": 150,
+      "referenceType": "ORDER",
+      "referenceId": "ord-88d6aa08-c716-4350-b1c4-ac4660823fd5",
+      "reason": "Order cancelled by staff or user",
+      "createdAt": "2026-10-17T19:40:10.221Z"
+    },
+    {
+      "id": "mov-c9555ac1-f1c0-4ae1-a643-4aa0f325ce8c",
+      "productId": "prd-hdl-01",
+      "productName": "Luxury Black & Gold Geometric Cabinet Pull Handle",
+      "sku": "HDL-BLK-GLD-GEO",
+      "type": "RELEASE",
+      "quantityChange": 1,
+      "previousStock": 150,
+      "newStock": 150,
+      "referenceType": "ORDER",
+      "referenceId": "ord-89fd5a8f-8ed3-4cc3-bbc0-91ec5c9b3c8d",
+      "reason": "Order cancelled by staff or user",
+      "createdAt": "2026-10-17T19:39:57.962Z"
+    },
+    {
+      "id": "mov-ec61cf6b-9f3c-499f-96a7-7f9a3c2cefea",
+      "productId": "prd-hdl-01",
+      "productName": "Luxury Black & Gold Geometric Cabinet Pull Handle",
+      "sku": "HDL-BLK-GLD-GEO",
+      "type": "RELEASE",
+      "quantityChange": 1,
+      "previousStock": 150,
+      "newStock": 150,
+      "referenceType": "ORDER",
+      "referenceId": "ord-d18020e8-a8a2-4603-929e-baf10c3ca8fc",
+      "reason": "Checkout reservation expired after 30 minutes",
+      "createdAt": "2026-10-17T19:39:45.410Z"
+    },
+    {
+      "id": "mov-2660eb96-1f7f-48df-9ba1-21c025f9e608",
+      "productId": "prd-hdl-01",
+      "productName": "Luxury Black & Gold Geometric Cabinet Pull Handle",
+      "sku": "HDL-BLK-GLD-GEO",
+      "type": "RELEASE",
+      "quantityChange": 1,
+      "previousStock": 150,
+      "newStock": 150,
+      "referenceType": "ORDER",
+      "referenceId": "ord-dd702bd4-5f21-4987-a03d-40df4fe7f43c",
+      "reason": "Checkout reservation expired after 30 minutes",
+      "createdAt": "2026-10-17T19:39:45.407Z"
+    },
+    {
+      "id": "mov-bce95e8d-e59b-4e11-b8fa-828ac4cf1d85",
+      "productId": "prd-hdl-01",
+      "productName": "Luxury Black & Gold Geometric Cabinet Pull Handle",
+      "sku": "HDL-BLK-GLD-GEO",
+      "type": "RELEASE",
+      "quantityChange": 1,
+      "previousStock": 150,
+      "newStock": 150,
+      "referenceType": "ORDER",
+      "referenceId": "ord-efc69113-8189-45d2-9d88-85337c6786e1",
+      "reason": "Checkout reservation expired after 30 minutes",
+      "createdAt": "2026-10-17T19:39:45.405Z"
+    },
+    {
+      "id": "mov-53887fa0-2675-496b-b22e-1e7c80a2fb61",
+      "productId": "prd-hdl-01",
+      "productName": "Luxury Black & Gold Geometric Cabinet Pull Handle",
+      "sku": "HDL-BLK-GLD-GEO",
+      "type": "RELEASE",
+      "quantityChange": 1,
+      "previousStock": 150,
+      "newStock": 150,
+      "referenceType": "ORDER",
+      "referenceId": "ord-d8966593-4113-4881-84c8-d7606116d8c7",
+      "reason": "Checkout reservation expired after 30 minutes",
+      "createdAt": "2026-10-17T19:39:45.403Z"
+    },
+    {
+      "id": "mov-927681c1-8d6a-44ed-b16f-39d9fe3ec1d6",
+      "productId": "prd-hdl-01",
+      "productName": "Luxury Black & Gold Geometric Cabinet Pull Handle",
+      "sku": "HDL-BLK-GLD-GEO",
+      "type": "RELEASE",
+      "quantityChange": 1,
+      "previousStock": 150,
+      "newStock": 150,
+      "referenceType": "ORDER",
+      "referenceId": "ord-aa0a9478-8df9-457f-8693-bc641f3cf7ef",
+      "reason": "Checkout reservation expired after 30 minutes",
+      "createdAt": "2026-10-17T19:39:45.401Z"
+    },
+    {
+      "id": "mov-408c7517-78d0-4cb1-93e5-8e5b10e8b570",
+      "productId": "prd-hdl-01",
+      "productName": "Luxury Black & Gold Geometric Cabinet Pull Handle",
+      "sku": "HDL-BLK-GLD-GEO",
+      "type": "RELEASE",
+      "quantityChange": 1,
+      "previousStock": 150,
+      "newStock": 150,
+      "referenceType": "ORDER",
+      "referenceId": "ord-df6d6a3f-a135-4862-8a13-a68922232806",
+      "reason": "Checkout reservation expired after 30 minutes",
+      "createdAt": "2026-10-17T19:39:45.399Z"
+    },
+    {
+      "id": "mov-5c29c7f6-93b8-44b3-8ebe-4e5979446acb",
+      "productId": "prd-hdl-01",
+      "productName": "Luxury Black & Gold Geometric Cabinet Pull Handle",
+      "sku": "HDL-BLK-GLD-GEO",
+      "type": "RELEASE",
+      "quantityChange": 1,
+      "previousStock": 150,
+      "newStock": 150,
+      "referenceType": "ORDER",
+      "referenceId": "ord-c76ed7bc-e324-43d6-8fe0-7b65c6bbb093",
+      "reason": "Checkout reservation expired after 30 minutes",
+      "createdAt": "2026-10-17T19:39:45.396Z"
+    },
+    {
+      "id": "mov-712bf5a1-46ce-4593-a3e9-ca8f38c6ff92",
+      "productId": "prd-hdl-01",
+      "productName": "Luxury Black & Gold Geometric Cabinet Pull Handle",
+      "sku": "HDL-BLK-GLD-GEO",
+      "type": "RELEASE",
+      "quantityChange": 1,
+      "previousStock": 150,
+      "newStock": 150,
+      "referenceType": "ORDER",
+      "referenceId": "ord-2af7725c-7441-4c5f-b7ab-877f80766b6d",
+      "reason": "Checkout reservation expired after 30 minutes",
+      "createdAt": "2026-10-17T19:39:45.394Z"
+    },
+    {
+      "id": "mov-99998a47-0b49-424d-abd6-eba8eed70458",
+      "productId": "prd-hdl-01",
+      "productName": "Luxury Black & Gold Geometric Cabinet Pull Handle",
+      "sku": "HDL-BLK-GLD-GEO",
+      "type": "RELEASE",
+      "quantityChange": 1,
+      "previousStock": 150,
+      "newStock": 150,
+      "referenceType": "ORDER",
+      "referenceId": "ord-28aca404-bb53-42fa-81f3-7b20ac6d4ab5",
+      "reason": "Checkout reservation expired after 30 minutes",
+      "createdAt": "2026-10-17T19:39:45.392Z"
+    },
+    {
+      "id": "mov-fd124788-1abd-4089-a53d-258f9296d32a",
+      "productId": "prd-hdl-01",
+      "productName": "Luxury Black & Gold Geometric Cabinet Pull Handle",
+      "sku": "HDL-BLK-GLD-GEO",
+      "type": "RELEASE",
+      "quantityChange": 1,
+      "previousStock": 150,
+      "newStock": 150,
+      "referenceType": "ORDER",
+      "referenceId": "ord-b372384d-9f23-4430-ad6c-0c09904082d3",
+      "reason": "Checkout reservation expired after 30 minutes",
+      "createdAt": "2026-10-17T19:39:45.390Z"
+    },
+    {
+      "id": "mov-dcd93f16-ed20-4b8b-b546-ccc14abb82cd",
+      "productId": "prd-hdl-01",
+      "productName": "Luxury Black & Gold Geometric Cabinet Pull Handle",
+      "sku": "HDL-BLK-GLD-GEO",
+      "type": "RELEASE",
+      "quantityChange": 1,
+      "previousStock": 150,
+      "newStock": 150,
+      "referenceType": "ORDER",
+      "referenceId": "ord-98caf284-ddac-42ac-86cd-fed7c18c6276",
+      "reason": "Checkout reservation expired after 30 minutes",
+      "createdAt": "2026-10-17T19:39:45.388Z"
+    },
+    {
+      "id": "mov-e350d1a6-bf3e-4cd5-95a2-2b4cc9bcf1c1",
+      "productId": "prd-hdl-01",
+      "productName": "Luxury Black & Gold Geometric Cabinet Pull Handle",
+      "sku": "HDL-BLK-GLD-GEO",
+      "type": "RELEASE",
+      "quantityChange": 1,
+      "previousStock": 150,
+      "newStock": 150,
+      "referenceType": "ORDER",
+      "referenceId": "ord-14d2d140-b04d-43c3-9367-0ff136286e68",
+      "reason": "Checkout reservation expired after 30 minutes",
+      "createdAt": "2026-10-17T19:39:45.386Z"
+    },
+    {
+      "id": "mov-c056a303-a97d-47eb-b168-2c9dd81f622e",
+      "productId": "prd-hdl-01",
+      "productName": "Luxury Black & Gold Geometric Cabinet Pull Handle",
+      "sku": "HDL-BLK-GLD-GEO",
+      "type": "RELEASE",
+      "quantityChange": 1,
+      "previousStock": 150,
+      "newStock": 150,
+      "referenceType": "ORDER",
+      "referenceId": "ord-1291b8ba-939c-4817-80e4-62658b783569",
+      "reason": "Checkout reservation expired after 30 minutes",
+      "createdAt": "2026-10-17T19:39:45.383Z"
+    },
+    {
+      "id": "mov-0ef86b4a-105b-4df9-bceb-8b13c0d86da7",
+      "productId": "prd-hdl-01",
+      "productName": "Luxury Black & Gold Geometric Cabinet Pull Handle",
+      "sku": "HDL-BLK-GLD-GEO",
+      "type": "RELEASE",
+      "quantityChange": 1,
+      "previousStock": 150,
+      "newStock": 150,
+      "referenceType": "ORDER",
+      "referenceId": "ord-a75f8095-ea21-4bfa-9b94-3de9173a80e6",
+      "reason": "Checkout reservation expired after 30 minutes",
+      "createdAt": "2026-10-17T19:39:45.380Z"
+    },
+    {
+      "id": "mov-c97d2e84-a67c-45cd-b48a-b372950f2b62",
+      "productId": "prd-hdl-01",
+      "productName": "Luxury Black & Gold Geometric Cabinet Pull Handle",
+      "sku": "HDL-BLK-GLD-GEO",
+      "type": "RELEASE",
+      "quantityChange": 1,
+      "previousStock": 150,
+      "newStock": 150,
+      "referenceType": "ORDER",
+      "referenceId": "ord-3379ba14-2c0e-4497-b71c-a7fb9b70a13e",
+      "reason": "Checkout reservation expired after 30 minutes",
+      "createdAt": "2026-10-17T19:39:45.377Z"
+    },
+    {
+      "id": "mov-fa1292e1-2cde-47a2-924a-6eaa6177abb3",
+      "productId": "prd-hdl-01",
+      "productName": "Luxury Black & Gold Geometric Cabinet Pull Handle",
+      "sku": "HDL-BLK-GLD-GEO",
+      "type": "RELEASE",
+      "quantityChange": 1,
+      "previousStock": 150,
+      "newStock": 150,
+      "referenceType": "ORDER",
+      "referenceId": "ord-b307c653-c33d-42eb-bc18-5a800cc01e1c",
+      "reason": "Checkout reservation expired after 30 minutes",
+      "createdAt": "2026-10-17T19:39:45.375Z"
+    },
+    {
+      "id": "mov-bb775a3f-34bc-4ae4-82b7-d3ae8f75c95a",
+      "productId": "prd-hdl-01",
+      "productName": "Luxury Black & Gold Geometric Cabinet Pull Handle",
+      "sku": "HDL-BLK-GLD-GEO",
+      "type": "RELEASE",
+      "quantityChange": 1,
+      "previousStock": 150,
+      "newStock": 150,
+      "referenceType": "ORDER",
+      "referenceId": "ord-310d54f8-b1a4-4333-b3d8-464e5b6a1482",
+      "reason": "Checkout reservation expired after 30 minutes",
+      "createdAt": "2026-10-17T19:39:45.373Z"
+    },
+    {
+      "id": "mov-6745b5dd-2aa3-4747-adc5-b63a045b3a93",
+      "productId": "prd-hdl-01",
+      "productName": "Luxury Black & Gold Geometric Cabinet Pull Handle",
+      "sku": "HDL-BLK-GLD-GEO",
+      "type": "RELEASE",
+      "quantityChange": 1,
+      "previousStock": 150,
+      "newStock": 150,
+      "referenceType": "ORDER",
+      "referenceId": "ord-adddb9e5-12f2-48d4-ac82-09bf46a3d6ef",
+      "reason": "Checkout reservation expired after 30 minutes",
+      "createdAt": "2026-10-17T19:39:45.371Z"
+    },
+    {
+      "id": "mov-a7c31423-053f-4d47-8f50-59d79d8bf8a0",
+      "productId": "prd-hdl-01",
+      "productName": "Luxury Black & Gold Geometric Cabinet Pull Handle",
+      "sku": "HDL-BLK-GLD-GEO",
+      "type": "RELEASE",
+      "quantityChange": 1,
+      "previousStock": 150,
+      "newStock": 150,
+      "referenceType": "ORDER",
+      "referenceId": "ord-a9c1b038-884e-420d-8016-2f8a0d53f009",
+      "reason": "Checkout reservation expired after 30 minutes",
+      "createdAt": "2026-10-17T19:39:45.369Z"
+    },
+    {
+      "id": "mov-4667368f-dbfc-41e1-8a37-7b3d8d8138f0",
+      "productId": "prd-hdl-01",
+      "productName": "Luxury Black & Gold Geometric Cabinet Pull Handle",
+      "sku": "HDL-BLK-GLD-GEO",
+      "type": "RELEASE",
+      "quantityChange": 1,
+      "previousStock": 150,
+      "newStock": 150,
+      "referenceType": "ORDER",
+      "referenceId": "ord-1637ad02-e814-4d2f-b1aa-0c1ba3af3b75",
+      "reason": "Checkout reservation expired after 30 minutes",
+      "createdAt": "2026-10-17T19:39:45.366Z"
+    },
+    {
+      "id": "mov-fb48c1a3-50c2-48a4-95bb-6ef0f7aef986",
+      "productId": "prd-hdl-01",
+      "productName": "Luxury Black & Gold Geometric Cabinet Pull Handle",
+      "sku": "HDL-BLK-GLD-GEO",
+      "type": "RELEASE",
+      "quantityChange": 1,
+      "previousStock": 150,
+      "newStock": 150,
+      "referenceType": "ORDER",
+      "referenceId": "ord-ca30e05a-f099-4f62-adeb-49eb3748574d",
+      "reason": "Checkout reservation expired after 30 minutes",
+      "createdAt": "2026-10-17T19:39:45.363Z"
+    },
+    {
+      "id": "mov-3423fc19-fd76-436d-afa3-f1d43a303743",
+      "productId": "prd-hdl-01",
+      "productName": "Luxury Black & Gold Geometric Cabinet Pull Handle",
+      "sku": "HDL-BLK-GLD-GEO",
+      "type": "RELEASE",
+      "quantityChange": 1,
+      "previousStock": 150,
+      "newStock": 150,
+      "referenceType": "ORDER",
+      "referenceId": "ord-afc21854-1b68-46c7-8ad9-1498cfaf428a",
+      "reason": "Checkout reservation expired after 30 minutes",
+      "createdAt": "2026-10-17T19:39:45.361Z"
+    },
+    {
+      "id": "mov-998b9dda-6ac7-4a4a-a226-9cb279a2f5a1",
+      "productId": "prd-hdl-01",
+      "productName": "Luxury Black & Gold Geometric Cabinet Pull Handle",
+      "sku": "HDL-BLK-GLD-GEO",
+      "type": "RELEASE",
+      "quantityChange": 1,
+      "previousStock": 150,
+      "newStock": 150,
+      "referenceType": "ORDER",
+      "referenceId": "ord-20cb414e-c506-486b-a91b-d36a8d3aaebd",
+      "reason": "Checkout reservation expired after 30 minutes",
+      "createdAt": "2026-10-17T19:39:45.359Z"
+    },
+    {
+      "id": "mov-589f2fd9-0f88-424d-98c2-73b6150f8469",
+      "productId": "prd-hdl-01",
+      "productName": "Luxury Black & Gold Geometric Cabinet Pull Handle",
+      "sku": "HDL-BLK-GLD-GEO",
+      "type": "RELEASE",
+      "quantityChange": 1,
+      "previousStock": 150,
+      "newStock": 150,
+      "referenceType": "ORDER",
+      "referenceId": "ord-9c6713fc-f52d-4b8f-acd6-b79f444c856e",
+      "reason": "Checkout reservation expired after 30 minutes",
+      "createdAt": "2026-10-17T19:39:45.357Z"
+    },
+    {
+      "id": "mov-b7e8bd66-eef7-4bc9-b156-6dbfabf051bd",
+      "productId": "prd-hdl-01",
+      "productName": "Luxury Black & Gold Geometric Cabinet Pull Handle",
+      "sku": "HDL-BLK-GLD-GEO",
+      "type": "RELEASE",
+      "quantityChange": 1,
+      "previousStock": 150,
+      "newStock": 150,
+      "referenceType": "ORDER",
+      "referenceId": "ord-a69393c1-7074-4b4a-869f-eab942f9e544",
+      "reason": "Checkout reservation expired after 30 minutes",
+      "createdAt": "2026-10-17T19:39:45.355Z"
+    },
+    {
+      "id": "mov-458f695c-00ad-42ef-a516-84d6a1aac8db",
+      "productId": "prd-hdl-01",
+      "productName": "Luxury Black & Gold Geometric Cabinet Pull Handle",
+      "sku": "HDL-BLK-GLD-GEO",
+      "type": "RELEASE",
+      "quantityChange": 1,
+      "previousStock": 150,
+      "newStock": 150,
+      "referenceType": "ORDER",
+      "referenceId": "ord-8e9ca6c8-dd01-4263-acf9-af3366a5e67c",
+      "reason": "Checkout reservation expired after 30 minutes",
+      "createdAt": "2026-10-17T19:39:45.352Z"
+    },
+    {
+      "id": "mov-e7b8ef2f-70d1-44ae-8425-29645a65951e",
+      "productId": "prd-hdl-01",
+      "productName": "Luxury Black & Gold Geometric Cabinet Pull Handle",
+      "sku": "HDL-BLK-GLD-GEO",
+      "type": "RELEASE",
+      "quantityChange": 1,
+      "previousStock": 150,
+      "newStock": 150,
+      "referenceType": "ORDER",
+      "referenceId": "ord-70f251ac-3c6e-4584-9289-87a3e8b98f0b",
+      "reason": "Checkout reservation expired after 30 minutes",
+      "createdAt": "2026-10-17T19:39:45.349Z"
+    }
+  ],
   "payments": [],
   "auditLogs": [],
   "settings": {

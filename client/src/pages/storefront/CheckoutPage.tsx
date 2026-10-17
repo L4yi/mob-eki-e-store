@@ -1,9 +1,20 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useCart } from '../../context/CartContext';
 import { useAuth } from '../../context/AuthContext';
 import { api } from '../../lib/api';
-import { CheckCircle2, ChevronRight, Lock } from 'lucide-react';
+import {
+  CheckCircle2,
+  ChevronRight,
+  Lock,
+  Copy,
+  Check,
+  Building2,
+  Clock,
+  AlertCircle,
+  MessageCircle,
+  ArrowRight,
+} from 'lucide-react';
 
 const nigerianStates =
   'Abia.Adamawa.Akwa Ibom.Anambra.Bauchi.Bayelsa.Benue.Borno.Cross River.Delta.Ebonyi.Edo.Ekiti.Enugu.FCT Abuja.Gombe.Imo.Jigawa.Kaduna.Kano.Katsina.Kebbi.Kogi.Kwara.Lagos.Nasarawa.Niger.Ogun.Ondo.Osun.Oyo.Plateau.Rivers.Sokoto.Taraba.Yobe.Zamfara'.split(
@@ -30,9 +41,21 @@ export default function CheckoutPage() {
 
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [submitted, setSubmitted] = useState(false);
+  const [createdOrder, setCreatedOrder] = useState<any>(null);
   const [createdOrderNumber, setCreatedOrderNumber] = useState('');
+  const [settings, setSettings] = useState<any>(null);
+  const [copied, setCopied] = useState(false);
   const [loading, setLoading] = useState(false);
-  const [idempotencyKey] = useState(() => 'mob-idem-' + Math.random().toString(36).substring(2) + '-' + Date.now());
+  const [idempotencyKey] = useState(
+    () => 'mob-idem-' + Math.random().toString(36).substring(2) + '-' + Date.now()
+  );
+
+  useEffect(() => {
+    api
+      .getSettings()
+      .then((data) => setSettings(data.settings))
+      .catch(() => {});
+  }, []);
 
   const isPickup = form.delivery === 'pickup';
   const isLagos = form.state === 'Lagos';
@@ -41,10 +64,16 @@ export default function CheckoutPage() {
   const deliveryCost = isPickup
     ? 0
     : isLagos
-    ? (form.delivery === 'express' ? 4500 : 2000)
+    ? form.delivery === 'express'
+      ? 4500
+      : 2000
     : isSouthWest
-    ? (form.delivery === 'express' ? 6000 : 3500)
-    : (form.delivery === 'express' ? 8000 : 5000);
+    ? form.delivery === 'express'
+      ? 6000
+      : 3500
+    : form.delivery === 'express'
+    ? 8000
+    : 5000;
 
   const grandTotal = total + (items.length > 0 ? deliveryCost : 0);
 
@@ -111,6 +140,7 @@ export default function CheckoutPage() {
       };
 
       const result = await api.createOrder(orderData, idempotencyKey);
+      setCreatedOrder(result);
       setCreatedOrderNumber(result.orderNumber);
       setSubmitted(true);
       clearCart();
@@ -121,54 +151,127 @@ export default function CheckoutPage() {
     }
   };
 
-  if (submitted) {
+  const copyAccountNumber = (accNo: string) => {
+    navigator.clipboard.writeText(accNo);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2500);
+  };
+
+  if (submitted && createdOrder) {
+    const bankName = settings?.bankName || 'Access Bank';
+    const bankAccountName = settings?.bankAccountName || 'M.O.B EKI VENTURES';
+    const bankAccountNumber = settings?.bankAccountNumber || '1234567890';
+    const totalPayable = createdOrder.totalAmount || createdOrder.totalKobo / 100 || grandTotal;
+
     const whatsappMsg = encodeURIComponent(
-      `Hello M.O.B EKI VENTURES, I have placed Order ${createdOrderNumber}. Customer: ${form.fullName}. Please confirm delivery!`
+      `Hello M.O.B EKI VENTURES, I have placed Order ${createdOrder.orderNumber}.\nCustomer: ${createdOrder.customerName}\nAmount: ₦${totalPayable.toLocaleString()}\nPayment Method: ${createdOrder.paymentMethod}\nI am sending my transfer receipt for confirmation.`
     );
 
+    const trackingLink = `/orders/${createdOrder.orderNumber}?token=${createdOrder.trackingToken}`;
+
     return (
-      <div className="max-w-lg mx-auto px-4 sm:px-6 py-20 text-center">
-        <div className="w-16 h-16 bg-emerald-50 rounded-full flex items-center justify-center mx-auto mb-5 shadow-xs">
-          <CheckCircle2 size={32} className="text-emerald-600" />
-        </div>
-        <h2 className="font-serif text-2xl sm:text-3xl text-[#0B1F3A] font-semibold mb-2">
-          Order Placed Successfully
-        </h2>
-        {createdOrderNumber && (
-          <p className="text-sm font-mono font-bold text-[#C9A227] mb-3">
-            Order Reference: {createdOrderNumber}
-          </p>
-        )}
-        <p className="text-[#6B7280] text-sm leading-relaxed mb-6">
-          Thank you for choosing M.O.B EKI VENTURES. Your order has been registered in our Mushin Market showroom fulfillment queue.
-        </p>
+      <div className="max-w-2xl mx-auto px-4 sm:px-6 py-12">
+        <div className="bg-white border border-[#E5E7EB] rounded-2xl p-6 sm:p-10 shadow-sm space-y-6">
+          <div className="text-center space-y-2">
+            <div className="w-16 h-16 bg-emerald-50 text-emerald-600 rounded-full flex items-center justify-center mx-auto shadow-xs">
+              <CheckCircle2 size={36} />
+            </div>
+            <h1 className="font-serif text-2xl sm:text-3xl text-[#0B1F3A] font-bold">
+              Order Registered Successfully!
+            </h1>
+            <p className="text-sm font-mono font-bold text-[#C9A227]">
+              Reference: {createdOrder.orderNumber}
+            </p>
+          </div>
 
-        <div className="flex flex-col sm:flex-row justify-center gap-3 mb-6">
-          <a
-            href={`https://wa.me/2348108725967?text=${whatsappMsg}`}
-            target="_blank"
-            rel="noreferrer"
-            className="inline-flex items-center justify-center gap-2 bg-[#25D366] text-white font-semibold text-sm px-6 py-3 hover:bg-[#1EBE5D] transition-colors"
-          >
-            Confirm on WhatsApp →
-          </a>
-          {createdOrderNumber && (
-            <Link
-              to={`/orders/${createdOrderNumber}`}
-              className="inline-flex items-center justify-center gap-2 bg-[#0B1F3A] text-white font-semibold text-sm px-6 py-3 hover:bg-[#164A7A] transition-colors"
-            >
-              Track Order Status
-            </Link>
+          {/* Payment Status Notice */}
+          <div className="p-4 rounded-xl bg-amber-50/80 border border-amber-200 text-xs text-amber-900 space-y-1">
+            <div className="flex items-center gap-2 font-bold text-amber-800">
+              <AlertCircle size={16} className="shrink-0" />
+              <span>Status: PENDING PAYMENT (Unpaid Order)</span>
+            </div>
+            <p className="text-[11px] leading-relaxed text-amber-800/90 pl-6">
+              Your items are temporarily reserved in our showroom fulfillment queue. To avoid cancellation, please transfer the exact total amount below and notify our team.
+            </p>
+          </div>
+
+          {/* Official Bank Transfer Details */}
+          {createdOrder.paymentMethod === 'BANK_TRANSFER' && (
+            <div className="rounded-xl border border-blue-200 bg-gradient-to-b from-blue-50/60 to-white p-5 space-y-4">
+              <div className="flex items-center justify-between border-b border-blue-100 pb-3">
+                <div className="flex items-center gap-2">
+                  <Building2 size={18} className="text-[#0B1F3A]" />
+                  <span className="font-serif font-bold text-sm text-[#0B1F3A]">
+                    Official Showroom Bank Details
+                  </span>
+                </div>
+                <div className="flex items-center gap-1 text-[11px] font-semibold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200">
+                  <Clock size={12} />
+                  <span>30 Min Reservation</span>
+                </div>
+              </div>
+
+              <div className="grid sm:grid-cols-2 gap-3 text-xs">
+                <div className="p-3 bg-white rounded-lg border border-gray-200">
+                  <span className="text-[10px] text-gray-500 uppercase font-semibold block">Bank</span>
+                  <span className="font-bold text-[#0B1F3A] text-sm">{bankName}</span>
+                </div>
+                <div className="p-3 bg-white rounded-lg border border-gray-200">
+                  <span className="text-[10px] text-gray-500 uppercase font-semibold block">Account Name</span>
+                  <span className="font-bold text-[#0B1F3A] text-sm truncate block">{bankAccountName}</span>
+                </div>
+                <div className="p-3 bg-white rounded-lg border border-gray-200 sm:col-span-2 flex items-center justify-between">
+                  <div>
+                    <span className="text-[10px] text-gray-500 uppercase font-semibold block">Account Number</span>
+                    <span className="font-mono font-bold text-base text-[#0B1F3A] tracking-wider">
+                      {bankAccountNumber}
+                    </span>
+                  </div>
+                  <button
+                    type="button"
+                    onClick={() => copyAccountNumber(bankAccountNumber)}
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-[#0B1F3A] text-white text-xs font-semibold rounded-md hover:bg-[#164A7A] transition"
+                  >
+                    {copied ? <Check size={13} className="text-[#C9A227]" /> : <Copy size={13} />}
+                    <span>{copied ? 'Copied!' : 'Copy'}</span>
+                  </button>
+                </div>
+                <div className="p-3 bg-white rounded-lg border border-gray-200 sm:col-span-2 flex items-center justify-between">
+                  <span className="text-xs text-gray-600 font-medium">Exact Amount to Transfer:</span>
+                  <span className="font-bold text-base text-[#0B1F3A]">₦{totalPayable.toLocaleString()}</span>
+                </div>
+              </div>
+            </div>
           )}
-        </div>
 
-        <div>
-          <Link
-            to="/shop"
-            className="text-xs text-[#6B7280] hover:text-[#0B1F3A] underline transition-colors"
-          >
-            Continue Shopping
-          </Link>
+          {/* Action CTAs */}
+          <div className="space-y-3 pt-2">
+            <a
+              href={`https://wa.me/2348108725967?text=${whatsappMsg}`}
+              target="_blank"
+              rel="noreferrer"
+              className="w-full py-3.5 px-6 rounded-xl bg-[#25D366] text-white font-bold text-xs hover:bg-[#1EBE5D] transition flex items-center justify-center gap-2 shadow-sm"
+            >
+              <MessageCircle size={16} />
+              <span>Send Transfer Receipt on WhatsApp</span>
+            </a>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <Link
+                to={trackingLink}
+                className="py-3 px-4 rounded-xl bg-[#0B1F3A] text-white font-bold text-xs hover:bg-[#164A7A] transition flex items-center justify-center gap-2 text-center"
+              >
+                <span>Track Order (Secure Token)</span>
+                <ArrowRight size={14} className="text-[#C9A227]" />
+              </Link>
+              <Link
+                to="/shop"
+                className="py-3 px-4 rounded-xl border border-gray-300 text-gray-700 font-bold text-xs hover:bg-gray-50 transition flex items-center justify-center text-center"
+              >
+                <span>Continue Shopping</span>
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
     );
