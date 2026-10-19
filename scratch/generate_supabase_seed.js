@@ -42,12 +42,12 @@ async function buildSql() {
   sql += `INSERT INTO products (id, slug, name, sku, category_id, category_name, category_slug, description, price_kobo, wholesale_price_kobo, wholesale_min_qty, wholesale_enabled, retail_enabled, images, stock_quantity, reserved_quantity, low_stock_threshold, specs, active, featured) VALUES\n${prodValues}\n`;
   sql += `ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, sku = EXCLUDED.sku, price_kobo = EXCLUDED.price_kobo, wholesale_price_kobo = EXCLUDED.wholesale_price_kobo, images = EXCLUDED.images, specs = EXCLUDED.specs, stock_quantity = EXCLUDED.stock_quantity;\n\n`;
 
-  // 4. Update Business Settings with Moniepoint
-  sql += '-- 4. BUSINESS SETTINGS (Moniepoint MFB)\n';
+  // 4. Update Business Settings with OPay (No Pay on Delivery)
+  sql += '-- 4. BUSINESS SETTINGS (OPay - No Pay on Delivery)\n';
   sql += `UPDATE business_settings SET
-    bank_name = 'Moniepoint Microfinance Bank',
-    bank_account_name = 'M.O.B EKI VENTURES',
-    bank_account_number = '8108725967',
+    bank_name = 'OPay',
+    bank_account_name = 'Olaide Oladejo',
+    bank_account_number = '8025262598',
     delivery_lagos_kobo = 200000,
     delivery_south_west_kobo = 350000,
     delivery_nationwide_kobo = 500000

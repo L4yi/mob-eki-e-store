@@ -124,12 +124,7 @@ export default function CheckoutPage() {
         deliveryAddress: isPickup
           ? 'Store Pickup: 2, Amu Street, Mushin Market, Lagos'
           : form.address.trim(),
-        paymentMethod:
-          form.payment === 'paystack'
-            ? 'PAYSTACK'
-            : form.payment === 'pod'
-            ? 'PAY_ON_DELIVERY'
-            : 'BANK_TRANSFER',
+        paymentMethod: 'BANK_TRANSFER',
         items: items.map((i) => ({
           productId: i.product.id,
           productName: i.product.name,
@@ -151,6 +146,17 @@ export default function CheckoutPage() {
     }
   };
 
+  const bankName =
+    settings?.bankName && settings.bankName !== 'Access Bank' ? settings.bankName : 'OPay';
+  const bankAccountName =
+    settings?.bankAccountName && settings.bankAccountName !== 'M.O.B EKI VENTURES'
+      ? settings.bankAccountName
+      : 'Olaide Oladejo';
+  const bankAccountNumber =
+    settings?.bankAccountNumber && settings.bankAccountNumber !== '1234567890'
+      ? settings.bankAccountNumber
+      : '8025262598';
+
   const copyAccountNumber = (accNo: string) => {
     navigator.clipboard.writeText(accNo);
     setCopied(true);
@@ -158,13 +164,10 @@ export default function CheckoutPage() {
   };
 
   if (submitted && createdOrder) {
-    const bankName = settings?.bankName || 'Access Bank';
-    const bankAccountName = settings?.bankAccountName || 'M.O.B EKI VENTURES';
-    const bankAccountNumber = settings?.bankAccountNumber || '1234567890';
     const totalPayable = createdOrder.totalAmount || createdOrder.totalKobo / 100 || grandTotal;
 
     const whatsappMsg = encodeURIComponent(
-      `Hello M.O.B EKI VENTURES, I have placed Order ${createdOrder.orderNumber}.\nCustomer: ${createdOrder.customerName}\nAmount: ₦${totalPayable.toLocaleString()}\nPayment Method: ${createdOrder.paymentMethod}\nI am sending my transfer receipt for confirmation.`
+      `Hello M.O.B EKI VENTURES, I have placed Order ${createdOrder.orderNumber}.\nCustomer: ${createdOrder.customerName}\nAmount: ₦${totalPayable.toLocaleString()}\nBank Paid To: ${bankName} (${bankAccountNumber} - ${bankAccountName})\nI am sending my transfer receipt for confirmation.`
     );
 
     const trackingLink = `/orders/${createdOrder.orderNumber}?token=${createdOrder.trackingToken}`;
@@ -467,50 +470,82 @@ export default function CheckoutPage() {
           </div>
 
           {/* Payment Method */}
-          <div className="bg-white border border-[#E5E7EB] p-6">
-            <h2 className="font-serif text-base text-[#0B1F3A] font-semibold mb-4">
-              Payment Method
-            </h2>
-            <div className="space-y-3">
-              {[
-                {
-                  id: 'transfer',
-                  title: 'Direct Bank Transfer / POS',
-                  desc: 'Transfer directly to our M.O.B EKI VENTURES bank account. Order confirmed immediately after payment.',
-                },
-                {
-                  id: 'paystack',
-                  title: 'Debit Card / Paystack',
-                  desc: 'Secure instant checkout via Mastercard, Visa, Verve or USSD.',
-                },
-                {
-                  id: 'pod',
-                  title: 'Pay on Delivery (Lagos Only)',
-                  desc: 'Cash or POS on delivery for Lagos mainland & island orders.',
-                },
-              ].map((opt) => (
-                <label
-                  key={opt.id}
-                  className={`flex items-start gap-3 p-3.5 border cursor-pointer transition-colors ${
-                    form.payment === opt.id
-                      ? 'border-[#0B1F3A] bg-[#0B1F3A]/5'
-                      : 'border-[#E5E7EB] hover:border-gray-300'
-                  }`}
-                >
-                  <input
-                    type="radio"
-                    name="payment"
-                    value={opt.id}
-                    checked={form.payment === opt.id}
-                    onChange={() => handleChange('payment', opt.id)}
-                    className="accent-[#0B1F3A] mt-1"
-                  />
-                  <div>
-                    <p className="text-sm font-medium text-[#171A1F]">{opt.title}</p>
-                    <p className="text-xs text-[#6B7280] mt-0.5">{opt.desc}</p>
+          <div className="bg-white border border-[#E5E7EB] p-6 space-y-4">
+            <div className="flex flex-wrap items-center justify-between gap-2">
+              <h2 className="font-serif text-base text-[#0B1F3A] font-semibold">
+                Payment Method
+              </h2>
+              <span className="inline-flex items-center gap-1.5 px-2.5 py-1 bg-rose-50 border border-rose-200 text-rose-700 text-[11px] font-bold uppercase tracking-wider rounded-full">
+                <AlertCircle size={12} />
+                No Pay on Delivery
+              </span>
+            </div>
+
+            <div className="p-4 border border-[#0B1F3A] bg-[#0B1F3A]/[0.03] rounded-lg space-y-4">
+              <div className="flex items-start gap-3">
+                <input
+                  type="radio"
+                  name="payment"
+                  value="transfer"
+                  checked
+                  readOnly
+                  className="accent-[#0B1F3A] mt-1"
+                />
+                <div className="flex-1">
+                  <p className="text-sm font-semibold text-[#0B1F3A]">
+                    Direct Bank Transfer (Prepayment Required)
+                  </p>
+                  <p className="text-xs text-[#6B7280] mt-0.5 leading-relaxed">
+                    We do <strong>not</strong> offer Pay on Delivery. Place your order and transfer the total payable amount to the official account below to validate your dispatch.
+                  </p>
+                </div>
+              </div>
+
+              {/* Official OPay Bank Card */}
+              <div className="bg-white border border-[#E5E7EB] rounded-lg p-4 space-y-3 shadow-2xs">
+                <div className="flex items-center justify-between border-b border-gray-100 pb-2.5">
+                  <div className="flex items-center gap-2 text-xs font-bold text-[#0B1F3A] uppercase tracking-wider">
+                    <Building2 size={15} className="text-[#C9A227]" />
+                    <span>Official Payment Account</span>
                   </div>
-                </label>
-              ))}
+                  <span className="text-[11px] font-semibold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">
+                    Instant Verification
+                  </span>
+                </div>
+
+                <div className="grid sm:grid-cols-2 gap-3 text-xs">
+                  <div className="p-2.5 bg-[#F7F6F2] rounded border border-gray-200">
+                    <span className="text-[10px] text-gray-500 uppercase font-semibold block">
+                      Bank / Institution
+                    </span>
+                    <span className="font-bold text-[#0B1F3A] text-sm">{bankName}</span>
+                  </div>
+                  <div className="p-2.5 bg-[#F7F6F2] rounded border border-gray-200">
+                    <span className="text-[10px] text-gray-500 uppercase font-semibold block">
+                      Account Name
+                    </span>
+                    <span className="font-bold text-[#0B1F3A] text-sm">{bankAccountName}</span>
+                  </div>
+                  <div className="p-3 bg-[#F7F6F2] rounded border border-gray-200 sm:col-span-2 flex items-center justify-between">
+                    <div>
+                      <span className="text-[10px] text-gray-500 uppercase font-semibold block">
+                        Account Number
+                      </span>
+                      <span className="font-mono font-bold text-base text-[#0B1F3A] tracking-wider">
+                        {bankAccountNumber}
+                      </span>
+                    </div>
+                    <button
+                      type="button"
+                      onClick={() => copyAccountNumber(bankAccountNumber)}
+                      className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-[#0B1F3A] text-white text-xs font-semibold rounded hover:bg-[#164A7A] transition"
+                    >
+                      {copied ? <Check size={13} className="text-[#C9A227]" /> : <Copy size={13} />}
+                      <span>{copied ? 'Copied!' : 'Copy Account No.'}</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>

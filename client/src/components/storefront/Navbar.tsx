@@ -3,6 +3,7 @@ import { Link, NavLink, useNavigate } from 'react-router-dom';
 import { Search, User as UserIcon, ShoppingCart, Menu, X, Shield, LogOut } from 'lucide-react';
 import { useCart } from '../../context/CartContext';
 import { useAuth } from '../../context/AuthContext';
+import BrandLogo from '../common/BrandLogo';
 
 export default function Navbar() {
   const { count } = useCart();
@@ -30,16 +31,11 @@ export default function Navbar() {
   };
 
   return (
-    <header className="sticky top-0 z-50 bg-white border-b border-[#E5E7EB]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-6">
+    <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-[#E5E7EB]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 h-18 py-2.5 flex items-center justify-between gap-6">
         {/* Brand Logo */}
-        <Link to="/" className="flex flex-col leading-none shrink-0">
-          <span className="font-serif text-base font-semibold text-[#0B1F3A] tracking-wide uppercase">
-            M.O.B EKI VENTURES
-          </span>
-          <span className="text-[10px] text-[#6B7280] tracking-widest uppercase mt-0.5">
-            Furniture Accessories
-          </span>
+        <Link to="/" className="shrink-0">
+          <BrandLogo variant="dark" size="md" />
         </Link>
 
         {/* Desktop Navigation Links */}

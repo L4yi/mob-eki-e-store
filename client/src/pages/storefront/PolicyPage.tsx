@@ -245,15 +245,15 @@ export default function PolicyPage({ initialTab }: PolicyPageProps) {
               </div>
 
               <div className="space-y-4">
-                <h3 className="text-lg font-bold text-[#0B1F3A]">1. Accepted Payment Channels</h3>
+                <h3 className="text-lg font-bold text-[#0B1F3A]">1. Accepted Payment Channels (No Pay on Delivery)</h3>
                 <p className="text-sm">
-                  M.O.B EKI VENTURES currently conducts transactions via direct commercial bank transfer, POS counter transfer at our Mushin showroom, or cash on showroom pickup. Online card processing (Paystack) will be introduced in an upcoming upgrade.
+                  M.O.B EKI VENTURES operates a strict <strong>No Pay on Delivery</strong> policy. All online and dispatch orders require prepayment via direct bank transfer to our official account below before goods leave our Mushin warehouse (or payment at our Mushin showroom counter for in-store pickup).
                 </p>
                 <div className="bg-gray-50 border border-gray-200 p-4 rounded-xl text-sm font-mono text-gray-800 space-y-1">
-                  <div><strong>Bank:</strong> Moniepoint Microfinance Bank</div>
-                  <div><strong>Account Name:</strong> M.O.B EKI VENTURES</div>
-                  <div><strong>Account Number:</strong> 8108725967</div>
-                  <div><strong>Showroom Address:</strong> Shop 8, Alhaja Abibatu Mogaji Modern Market, Mushin, Lagos</div>
+                  <div><strong>Bank:</strong> OPay</div>
+                  <div><strong>Account Name:</strong> Olaide Oladejo</div>
+                  <div><strong>Account Number:</strong> 8025262598</div>
+                  <div><strong>Showroom Address:</strong> 2, Amu Street, Mushin Market (Shop 8, Alhaja Abibatu Mogaji Modern Market), Lagos</div>
                 </div>
               </div>
 

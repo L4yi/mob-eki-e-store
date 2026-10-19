@@ -4,8 +4,8 @@
 
 -- 1. SUPER ADMIN ACCOUNTS
 INSERT INTO users (id, name, email, phone, password_hash, role) VALUES
-('usr-admin-02', 'Oladejo Muhaz', 'muhazoladejo@gmail.com', '08108725967', '$2b$10$6dU.K4Q63iADmSdaypA7JuwbKgQILhleyXvW1ODgJqcPH56voom8K', 'SUPER_ADMIN'),
-('usr-admin-03', 'Oladejo Muhaz Olayiwola', 'muhazoladejo48@gmail.com', '08108725967', '$2b$10$6dU.K4Q63iADmSdaypA7JuwbKgQILhleyXvW1ODgJqcPH56voom8K', 'SUPER_ADMIN')
+('usr-admin-02', 'Oladejo Muhaz', 'muhazoladejo@gmail.com', '08108725967', '$2b$10$.XrwkCRwWtaWCcnp928A.ukfXz9EMAmO9j02i/otTw49.xbxH5LMq', 'SUPER_ADMIN'),
+('usr-admin-03', 'Oladejo Muhaz Olayiwola', 'muhazoladejo48@gmail.com', '08108725967', '$2b$10$.XrwkCRwWtaWCcnp928A.ukfXz9EMAmO9j02i/otTw49.xbxH5LMq', 'SUPER_ADMIN')
 ON CONFLICT (email) DO UPDATE SET password_hash = EXCLUDED.password_hash, role = 'SUPER_ADMIN';
 
 -- 2. ALL 8 PRODUCT CATEGORIES
@@ -60,11 +60,11 @@ INSERT INTO products (id, slug, name, sku, category_id, category_name, category_
 ('prd-door-12', 'grand-luxury-armored-bulletproof-vertical-groove-teak-door', 'Grand Luxury Armored Bulletproof Vertical-Groove Teak Entrance Door', 'BLT-GLD-VRT12', 'cat-doors', 'Doors & Security Doors', 'doors', 'Premier bulletproof armored entrance door featuring a high-impact ballistic core encased in seasoned vertical fluted golden teak timber. Outfitted with an oversized square stainless steel architectural pull handle, security optical viewer, multi-point lock cylinder, and high-strength reinforced sub-frame. Available in all standard and high-ceiling sizes.', 35000000, 31000000, 2, true, true, '["/products/architectural-golden-teak-vertical-door.jpg"]'::jsonb, 12, 0, 3, '[{"label":"Security Rating","value":"Heavy-Duty Armored Ballistic Steel Core (Bulletproof Grade)"},{"label":"Available Sizes","value":"800 x 2100mm, 800 x 2300mm, 900 x 2100mm, 900 x 2300mm, 1200 x 2100mm, 1200 x 2300mm"},{"label":"Timber Facing","value":"Seasoned Golden Teak Hardwood with Protective Clear Coat"},{"label":"Locking System","value":"Heavy-Duty Multi-Directional Security Deadbolts with Master Keys"},{"label":"Hardware","value":"Square-Profile Stainless Steel Pull Bar & Security Viewer Included"},{"label":"Frame & Casing","value":"Reinforced Anti-Intrusion Door Frame with Integrated Rubber Gasket"},{"label":"Application","value":"Grand Villa Entrance, Corporate Headquarters, Luxury Residence"}]'::jsonb, true, true)
 ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, sku = EXCLUDED.sku, price_kobo = EXCLUDED.price_kobo, wholesale_price_kobo = EXCLUDED.wholesale_price_kobo, images = EXCLUDED.images, specs = EXCLUDED.specs, stock_quantity = EXCLUDED.stock_quantity;
 
--- 4. BUSINESS SETTINGS (Moniepoint MFB)
+-- 4. BUSINESS SETTINGS (OPay - No Pay on Delivery)
 UPDATE business_settings SET
-    bank_name = 'Moniepoint Microfinance Bank',
-    bank_account_name = 'M.O.B EKI VENTURES',
-    bank_account_number = '8108725967',
+    bank_name = 'OPay',
+    bank_account_name = 'Olaide Oladejo',
+    bank_account_number = '8025262598',
     delivery_lagos_kobo = 200000,
     delivery_south_west_kobo = 350000,
     delivery_nationwide_kobo = 500000

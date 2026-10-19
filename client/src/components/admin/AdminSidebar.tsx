@@ -11,6 +11,7 @@ import {
   Store,
 } from 'lucide-react';
 import { useAuth } from '../../context/AuthContext';
+import BrandLogo from '../common/BrandLogo';
 
 export default function AdminSidebar() {
   const { user } = useAuth();
@@ -28,18 +29,8 @@ export default function AdminSidebar() {
     <aside className="w-64 h-screen sticky top-0 bg-[#0B1F3A] text-white flex flex-col justify-between border-r border-white/10 shrink-0 z-30 select-none">
       {/* Brand Header */}
       <div>
-        <div className="p-6 border-b border-white/10 flex items-center gap-3">
-          <div className="w-10 h-10 rounded-lg bg-[#C9A227] flex items-center justify-center text-[#0B1F3A] font-serif font-bold text-xl shadow-md">
-            M
-          </div>
-          <div>
-            <h2 className="font-serif font-bold text-sm text-white tracking-wide leading-tight">
-              M.O.B EKI ADMIN
-            </h2>
-            <span className="text-[10px] text-[#C9A227] uppercase tracking-wider font-semibold block">
-              MUSHIN MANAGEMENT
-            </span>
-          </div>
+        <div className="p-5 border-b border-white/10">
+          <BrandLogo variant="light" size="sm" />
         </div>
 
         {/* User Card */}

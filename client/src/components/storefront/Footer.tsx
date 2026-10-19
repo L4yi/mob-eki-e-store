@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { MessageCircle, Phone, Camera } from 'lucide-react';
 import { BusinessSettings } from '../../types';
+import BrandLogo from '../common/BrandLogo';
 
 export default function Footer({ settings }: { settings?: BusinessSettings }) {
   const rawWhatsApp = settings?.whatsapp || '08108725967';
@@ -18,14 +19,11 @@ export default function Footer({ settings }: { settings?: BusinessSettings }) {
     <footer className="bg-[#0B1F3A] text-white mt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-14 grid grid-cols-2 md:grid-cols-4 gap-10">
         <div>
-          <div className="font-serif font-semibold text-base tracking-wide uppercase mb-1">
-            M.O.B EKI VENTURES
-          </div>
-          <div className="text-[11px] text-[#C9A227] tracking-widest uppercase mb-4">
-            Furniture Accessories
-          </div>
+          <Link to="/" className="inline-block mb-4">
+            <BrandLogo variant="light" size="md" />
+          </Link>
           <p className="text-[#9CA3AF] text-sm leading-relaxed">
-            Quality furniture accessories, architectural hardware, and fittings for retail and wholesale customers across Nigeria.
+            Quality furniture accessories, luxury bulletproof &amp; architectural doors, and fittings for retail and wholesale customers across Nigeria.
           </p>
         </div>
         <div>
