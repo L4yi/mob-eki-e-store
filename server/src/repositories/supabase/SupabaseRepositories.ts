@@ -476,7 +476,7 @@ export class SupabaseInventoryRepository implements IInventoryRepository {
       new_stock: movement.newStock,
       reason: movement.reason,
       reference_id: movement.referenceId || null,
-      performed_by: movement.performedBy,
+      performed_by: movement.performedBy || 'System / Staff',
       created_at: movement.createdAt,
     };
     const { data, error } = await this.client.from('inventory_movements').insert(row).select().single();

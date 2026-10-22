@@ -26,7 +26,8 @@ export class InventoryService {
   public async releaseOrderStock(
     items: { productId: string; quantity: number }[],
     orderId: string,
-    reason = 'Order cancelled or payment expired'
+    reason = 'Order cancelled or payment expired',
+    performedBy = 'System / Cancellation'
   ): Promise<void> {
     for (const item of items) {
       await this.productRepo.releaseStock(item.productId, item.quantity);
@@ -44,6 +45,7 @@ export class InventoryService {
           referenceType: 'ORDER',
           referenceId: orderId,
           reason,
+          performedBy,
           createdAt: new Date().toISOString(),
         });
       }
@@ -53,7 +55,8 @@ export class InventoryService {
   public async commitOrderSale(
     items: { productId: string; quantity: number }[],
     orderId: string,
-    orderNumber: string
+    orderNumber: string,
+    performedBy = 'System / Payment Confirmation'
   ): Promise<void> {
     for (const item of items) {
       const product = await this.productRepo.findById(item.productId);
@@ -75,6 +78,7 @@ export class InventoryService {
           referenceType: 'ORDER',
           referenceId: orderNumber || orderId,
           reason: `Confirmed customer sale on order ${orderNumber}`,
+          performedBy,
           createdAt: new Date().toISOString(),
         });
       }

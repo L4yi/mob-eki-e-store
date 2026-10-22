@@ -8,12 +8,13 @@ import {
 } from '../types';
 import { deliveryService } from './DeliveryService';
 import { inventoryService } from './InventoryService';
+import { emailService } from './EmailService';
 import crypto from 'crypto';
 
 const VALID_TRANSITIONS: Record<OrderStatus, OrderStatus[]> = {
   PENDING_PAYMENT: ['CONFIRMED', 'CANCELLED'],
-  CONFIRMED: ['PROCESSING', 'CANCELLED'],
-  PROCESSING: ['DISPATCHED', 'CANCELLED'],
+  CONFIRMED: ['PROCESSING', 'DISPATCHED', 'OUT_FOR_DELIVERY', 'DELIVERED', 'CANCELLED'],
+  PROCESSING: ['DISPATCHED', 'OUT_FOR_DELIVERY', 'DELIVERED', 'CANCELLED'],
   DISPATCHED: ['OUT_FOR_DELIVERY', 'DELIVERED', 'CANCELLED'],
   OUT_FOR_DELIVERY: ['DELIVERED', 'CANCELLED'],
   DELIVERED: [],
@@ -223,7 +224,16 @@ export class OrderService {
       updates.paymentStatus = 'PAID';
     }
 
-    return this.orderRepo.update(order.id, updates);
+    const updatedOrder = await this.orderRepo.update(order.id, updates);
+
+    // Asynchronously dispatch transactional status notification email
+    if (updatedOrder) {
+      emailService.sendOrderStatusNotification(updatedOrder, newStatus, note).catch((err) => {
+        console.error(`Email dispatch error on status update for ${updatedOrder.orderNumber}:`, err);
+      });
+    }
+
+    return updatedOrder;
   }
 
   public async cancelOrder(
