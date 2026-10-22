@@ -6,6 +6,7 @@ import RetailWholesaleSection from '../../components/storefront/RetailWholesaleS
 import WhyChooseUs from '../../components/storefront/WhyChooseUs';
 import WhatsAppBanner from '../../components/storefront/WhatsAppBanner';
 import VisitStore from '../../components/storefront/VisitStore';
+import GoogleReviews from '../../components/storefront/GoogleReviews';
 import NewsletterSection from '../../components/storefront/NewsletterSection';
 import { api } from '../../lib/api';
 import { Product, Category, BusinessSettings } from '../../types';
@@ -47,6 +48,7 @@ export default function HomePage() {
       <RetailWholesaleSection />
       <WhyChooseUs />
       <WhatsAppBanner />
+      <GoogleReviews />
       <VisitStore settings={settings || undefined} />
       <NewsletterSection />
     </div>

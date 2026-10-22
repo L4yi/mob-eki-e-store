@@ -24,15 +24,18 @@ export default function Hero({ whatsappNumber = '2348108725967' }: HeroProps) {
 
       {/* Content */}
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 py-20 lg:py-28 max-w-2xl">
-        <p className="text-[#C9A227] text-xs tracking-[0.2em] uppercase font-medium mb-5">
-          M.O.B EKI VENTURES
-        </p>
-        <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl text-white font-semibold leading-tight mb-6">
-          Furniture accessories
-          <br className="hidden sm:block" /> for every space.
+        <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#C9A227]/15 border border-[#C9A227]/30 rounded-full mb-4">
+          <span className="w-2 h-2 rounded-full bg-[#C9A227] animate-pulse" />
+          <span className="text-[#C9A227] text-xs tracking-[0.2em] uppercase font-bold">
+            M.O.B EKI VENTURES &bull; 2, AMU STREET, MUSHIN
+          </span>
+        </div>
+        <h1 className="font-serif text-3xl sm:text-5xl lg:text-6xl text-white font-semibold leading-tight mb-6">
+          <span className="sr-only">M.O.B EKI VENTURES - </span>
+          Furniture accessories &amp; luxury doors for every space.
         </h1>
-        <p className="text-white/75 text-base sm:text-lg max-w-lg mb-10 leading-relaxed">
-          Quality furniture accessories and fittings available for retail and wholesale orders — delivered nationwide across Nigeria.
+        <p className="text-white/80 text-base sm:text-lg max-w-lg mb-10 leading-relaxed">
+          Official store of <strong>M.O.B EKI VENTURES</strong>. Premium armored bulletproof doors, architectural handles, mortise locks, and furniture fittings — wholesale &amp; retail with nationwide dispatch.
         </p>
         <div className="flex flex-wrap gap-3">
           <Link
