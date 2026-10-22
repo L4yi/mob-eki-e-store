@@ -21,6 +21,7 @@ out/
 *.txt
 !robots.txt
 !client/public/robots.txt
+!client/public/*.txt
 serviceAccountKey.json
 
 # Logs

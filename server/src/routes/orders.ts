@@ -1,6 +1,7 @@
 import { Router } from 'express';
 import { orderService } from '../services/OrderService';
 import { whatsAppService } from '../services/WhatsAppService';
+import { emailService } from '../services/EmailService';
 import { optionalAuth, requireAuth, requireAdmin } from '../middleware/auth';
 import { validate, idempotency } from '../middleware/validateAndErrors';
 import { createOrderSchema, updateOrderStatusSchema } from '../validation/schemas';
@@ -20,6 +21,11 @@ router.post('/', orderCreationLimiter, optionalAuth, idempotency, validate(creat
     });
 
     const whatsAppUrl = whatsAppService.generateWhatsAppDeepLink(order);
+
+    // Asynchronously send branded email confirmation and merchant alert
+    emailService.sendOrderConfirmation(order).catch((err) => {
+      console.error('Email dispatch error for order ' + order.orderNumber, err);
+    });
 
     return res.status(201).json({
       ...order,

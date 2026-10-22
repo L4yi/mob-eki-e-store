@@ -14,6 +14,8 @@ import {
   AlertCircle,
   MessageCircle,
   ArrowRight,
+  Printer,
+  FileText,
 } from 'lucide-react';
 
 const nigerianStates =
@@ -258,6 +260,15 @@ export default function CheckoutPage() {
               <MessageCircle size={16} />
               <span>Send Transfer Receipt on WhatsApp</span>
             </a>
+
+            <button
+              type="button"
+              onClick={() => window.print()}
+              className="w-full py-3 px-4 rounded-xl border border-gray-300 text-[#0B1F3A] font-bold text-xs hover:bg-gray-50 transition flex items-center justify-center gap-2"
+            >
+              <Printer size={15} className="text-[#C9A227]" />
+              <span>Print / Download Official Invoice (PDF)</span>
+            </button>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               <Link
