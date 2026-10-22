@@ -149,7 +149,17 @@ export default function AboutPage() {
               <div className="space-y-3 pt-2 text-xs text-gray-200">
                 <div className="flex items-start gap-2.5">
                   <MapPin className="w-4 h-4 text-[#C9A227] shrink-0 mt-0.5" />
-                  <span>Shop 8, Alhaja Abibatu Mogaji Modern Market, 2, Amu Street, Mushin, Lagos, Nigeria</span>
+                  <div>
+                    <strong className="text-white block">Main Retail Showroom:</strong>
+                    <span>Shop 8, Alhaja Abibatu Mogaji Modern Market, 2, Amu Street, Mushin, Lagos, Nigeria</span>
+                  </div>
+                </div>
+                <div className="flex items-start gap-2.5">
+                  <MapPin className="w-4 h-4 text-[#C9A227] shrink-0 mt-0.5" />
+                  <div>
+                    <strong className="text-white block">Central Warehouse &amp; Bulk Intake:</strong>
+                    <span>56, Palm Avenue, Mushin, Lagos, Nigeria</span>
+                  </div>
                 </div>
                 <div className="flex items-center gap-2.5">
                   <Clock className="w-4 h-4 text-[#C9A227] shrink-0" />

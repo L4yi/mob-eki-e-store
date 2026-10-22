@@ -4,8 +4,8 @@
 
 -- 1. SUPER ADMIN ACCOUNTS
 INSERT INTO users (id, name, email, phone, password_hash, role) VALUES
-('usr-admin-02', 'Oladejo Muhaz', 'muhazoladejo@gmail.com', '08108725967', '$2b$10$.XrwkCRwWtaWCcnp928A.ukfXz9EMAmO9j02i/otTw49.xbxH5LMq', 'SUPER_ADMIN'),
-('usr-admin-03', 'Oladejo Muhaz Olayiwola', 'muhazoladejo48@gmail.com', '08108725967', '$2b$10$.XrwkCRwWtaWCcnp928A.ukfXz9EMAmO9j02i/otTw49.xbxH5LMq', 'SUPER_ADMIN')
+('usr-admin-02', 'Oladejo Muhaz', 'muhazoladejo@gmail.com', '08108725967', '$2b$10$hHPBpH8FK01E4CCgG0MgU.OTydVGg3KojJyhTTn2xYYDGaVhE3NkS', 'SUPER_ADMIN'),
+('usr-admin-03', 'Oladejo Muhaz Olayiwola', 'muhazoladejo48@gmail.com', '08108725967', '$2b$10$hHPBpH8FK01E4CCgG0MgU.OTydVGg3KojJyhTTn2xYYDGaVhE3NkS', 'SUPER_ADMIN')
 ON CONFLICT (email) DO UPDATE SET password_hash = EXCLUDED.password_hash, role = 'SUPER_ADMIN';
 
 -- 2. ALL 8 PRODUCT CATEGORIES

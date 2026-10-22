@@ -1770,7 +1770,7 @@ export const initialSettings: BusinessSettings = {
   "id": "settings-01",
   "storeName": "M.O.B EKI VENTURES",
   "tagline": "Quality Furniture Accessories & Fittings",
-  "address": "2, Amu Street, Mushin Market (Shop 8, Alhaja Abibatu Mogaji Modern Market), Lagos",
+  "address": "Showroom: 2, Amu Street, Mushin Market | Warehouse: 56, Palm Avenue, Mushin, Lagos",
   "openingHours": "Mon - Sat: 8:00 AM - 6:00 PM",
   "phone1": "08108725967",
   "phone2": "08023841013",
@@ -1785,7 +1785,8 @@ export const initialSettings: BusinessSettings = {
   "aboutText": "M.O.B EKI VENTURES is a premier hardware supplier based in Mushin, Lagos, Nigeria. We specialize in luxury architectural handles, knobs, hydraulic hinges, precision locks, wardrobe accessories, and modern kitchen fittings.",
   "announcementText": "Showroom open Mon-Sat at 2, Amu Street, Mushin Market, Lagos. Same-day dispatch across Lagos & nationwide haulage available.",
   "createdAt": "2026-10-08T12:38:23.257Z",
-  "updatedAt": "2026-10-08T12:38:23.257Z"
+  "updatedAt": "2026-10-08T12:38:23.257Z",
+  "warehouseAddress": "56, Palm Avenue, Mushin, Lagos"
 };
 
 export const initialDeliveryZones: DeliveryZoneConfig[] = [

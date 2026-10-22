@@ -155,13 +155,16 @@ export class EmailService {
             </a>
           </div>
 
-          <!-- Showroom Footer -->
+          <!-- Showroom & Warehouse Footer -->
           <div style="border-top: 1px solid #E5E7EB; padding-top: 16px; font-size: 11px; color: #6B7280; text-align: center; line-height: 1.5;">
             <p style="margin: 0 0 4px 0; font-weight: bold; color: #0B1F3A;">
-              M.O.B EKI VENTURES Showroom &amp; Warehouse
+              M.O.B EKI VENTURES Showroom &amp; Central Warehouse
+            </p>
+            <p style="margin: 0 0 2px 0;">
+              <strong>Retail Showroom:</strong> Shop 8, Alhaja Abibatu Mogaji Modern Market, 2, Amu Street, Mushin, Lagos
             </p>
             <p style="margin: 0 0 4px 0;">
-              2, Amu Street, Mushin Market (Shop 8, Alhaja Abibatu Mogaji Modern Market), Lagos
+              <strong>Central Warehouse &amp; Bulk Intake:</strong> 56, Palm Avenue, Mushin, Lagos
             </p>
             <p style="margin: 0;">
               Direct Phone / WhatsApp: +234 810 872 5967 &bull; Email: sales@mobekiventures.com

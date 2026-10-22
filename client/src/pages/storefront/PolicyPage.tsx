@@ -216,7 +216,7 @@ export default function PolicyPage({ initialTab }: PolicyPageProps) {
                 <ol className="list-decimal pl-5 text-sm space-y-2 text-gray-600">
                   <li>Contact our customer care line on WhatsApp at <strong>+234 810 872 5967</strong> with your order ID and pictures of the item.</li>
                   <li>Our logistics team will verify return authorization and provide the dispatch address or showroom intake slip.</li>
-                  <li>Upon receipt and physical inspection at our Mushin warehouse, approved refunds are transferred directly to your bank account within <strong>3 business days</strong>.</li>
+                  <li>Upon receipt and physical inspection at our central warehouse (56, Palm Avenue, Mushin, Lagos), approved refunds are transferred directly to your bank account within <strong>3 business days</strong>.</li>
                 </ol>
               </div>
             </div>
@@ -253,7 +253,8 @@ export default function PolicyPage({ initialTab }: PolicyPageProps) {
                   <div><strong>Bank:</strong> OPay</div>
                   <div><strong>Account Name:</strong> Olaide Oladejo</div>
                   <div><strong>Account Number:</strong> 8025262598</div>
-                  <div><strong>Showroom Address:</strong> 2, Amu Street, Mushin Market (Shop 8, Alhaja Abibatu Mogaji Modern Market), Lagos</div>
+                  <div><strong>Showroom Address:</strong> Shop 8, Alhaja Abibatu Mogaji Modern Market, 2, Amu Street, Mushin, Lagos</div>
+                  <div><strong>Central Warehouse:</strong> 56, Palm Avenue, Mushin, Lagos</div>
                 </div>
               </div>
 

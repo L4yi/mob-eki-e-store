@@ -217,6 +217,7 @@ export interface BusinessSettings {
   storeName: string;
   tagline: string;
   address: string;
+  warehouseAddress?: string;
   openingHours: string;
   phone1: string;
   phone2?: string;

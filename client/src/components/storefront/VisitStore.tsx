@@ -15,8 +15,13 @@ export default function VisitStore({ settings }: { settings?: BusinessSettings }
 
   const storeInfo = [
     {
-      label: 'Location',
-      value: settings?.address || 'Shop 8, Alhaja Abibatu Mogaji Modern Market, 2, Amu Street, Mushin, Lagos',
+      label: 'Main Showroom',
+      value: 'Shop 8, Alhaja Abibatu Mogaji Modern Market, 2, Amu Street, Mushin, Lagos',
+      icon: MapPin,
+    },
+    {
+      label: 'Central Warehouse & Intake',
+      value: '56, Palm Avenue, Mushin, Lagos',
       icon: MapPin,
     },
     {

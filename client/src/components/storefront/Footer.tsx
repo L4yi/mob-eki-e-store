@@ -25,6 +25,10 @@ export default function Footer({ settings }: { settings?: BusinessSettings }) {
           <p className="text-[#9CA3AF] text-sm leading-relaxed">
             Quality furniture accessories, luxury bulletproof &amp; architectural doors, and fittings for retail and wholesale customers across Nigeria.
           </p>
+          <div className="mt-4 pt-4 border-t border-white/10 text-xs text-[#9CA3AF] space-y-1.5">
+            <p><strong className="text-white">Showroom:</strong> 2, Amu Street, Mushin, Lagos</p>
+            <p><strong className="text-white">Warehouse:</strong> 56, Palm Avenue, Mushin, Lagos</p>
+          </div>
         </div>
         <div>
           <h4 className="text-xs font-semibold tracking-widest uppercase text-[#C9A227] mb-4">
