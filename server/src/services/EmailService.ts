@@ -28,8 +28,11 @@ export class EmailService {
       } catch (err) {
         console.warn('⚠️ [EmailService] Failed to initialize SMTP transporter:', err);
       }
+    } else if (process.env.RESEND_API_KEY) {
+      this.isConfigured = true;
+      console.log('📧 [EmailService] Resend API Key configured for transactional email delivery.');
     } else {
-      console.log('ℹ️ [EmailService] No SMTP credentials provided. Running in simulation/logger mode.');
+      console.log('ℹ️ [EmailService] No SMTP/Resend credentials provided. Running in simulation/logger mode.');
     }
   }
 
@@ -37,7 +40,7 @@ export class EmailService {
     const totalPayable = order.totalKobo / 100;
     const subtotal = order.subtotalKobo / 100;
     const deliveryFee = order.deliveryFeeKobo / 100;
-    const adminEmail = process.env.ADMIN_NOTIFICATION_EMAIL || 'muhazoladejo@gmail.com';
+    const adminEmail = process.env.ADMIN_NOTIFICATION_EMAIL || 'muhazoladejo48@gmail.com';
 
     const itemsRows = order.items
       .map(
@@ -170,11 +173,55 @@ export class EmailService {
     </html>
     `;
 
+    // 1. Send via Resend REST API if RESEND_API_KEY is available
+    if (process.env.RESEND_API_KEY) {
+      try {
+        const fromAddress = process.env.RESEND_FROM || 'M.O.B EKI VENTURES <onboarding@resend.dev>';
+        
+        // Dispatch merchant alert
+        await fetch('https://api.resend.com/emails', {
+          method: 'POST',
+          headers: {
+            Authorization: `Bearer ${process.env.RESEND_API_KEY}`,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            from: fromAddress,
+            to: [adminEmail],
+            subject: `🚨 [New Order] ${order.orderNumber} - ₦${totalPayable.toLocaleString()} (${order.customerName})`,
+            html: htmlContent,
+          }),
+        }).catch((e) => console.error('Resend merchant alert error:', e));
+
+        // Dispatch customer confirmation
+        if (order.customerEmail) {
+          await fetch('https://api.resend.com/emails', {
+            method: 'POST',
+            headers: {
+              Authorization: `Bearer ${process.env.RESEND_API_KEY}`,
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              from: fromAddress,
+              to: [order.customerEmail],
+              subject: `Order Confirmation: ${order.orderNumber} - M.O.B EKI VENTURES`,
+              html: htmlContent,
+            }),
+          }).catch((e) => console.error('Resend customer email error:', e));
+        }
+
+        console.log(`✅ [EmailService:Resend] Dispatched order confirmation emails for ${order.orderNumber}`);
+        return true;
+      } catch (err) {
+        console.error(`❌ [EmailService:Resend] Error sending for ${order.orderNumber}:`, err);
+      }
+    }
+
+    // 2. Send via SMTP Transporter if configured
     if (this.isConfigured && this.transporter) {
       try {
         const fromAddress = process.env.SMTP_FROM || '"M.O.B EKI VENTURES" <sales@mobekiventures.com>';
         
-        // 1. Send to Customer
         await this.transporter.sendMail({
           from: fromAddress,
           to: order.customerEmail,
@@ -182,7 +229,6 @@ export class EmailService {
           html: htmlContent,
         });
 
-        // 2. Alert Merchant
         await this.transporter.sendMail({
           from: fromAddress,
           to: adminEmail,
@@ -190,16 +236,17 @@ export class EmailService {
           html: htmlContent,
         });
 
-        console.log(`✅ [EmailService] Dispatched order confirmation emails for ${order.orderNumber}`);
+        console.log(`✅ [EmailService:SMTP] Dispatched order confirmation emails for ${order.orderNumber}`);
         return true;
       } catch (err) {
-        console.error(`❌ [EmailService] Failed to send order email for ${order.orderNumber}:`, err);
+        console.error(`❌ [EmailService:SMTP] Failed to send order email for ${order.orderNumber}:`, err);
         return false;
       }
-    } else {
-      console.log(`📝 [EmailService] (Simulated) Order email generated for ${order.orderNumber} -> Customer: ${order.customerEmail}, Merchant: ${adminEmail}`);
-      return true;
     }
+
+    // 3. Fallback Logger
+    console.log(`📝 [EmailService] (Simulated) Order email generated for ${order.orderNumber} -> Customer: ${order.customerEmail}, Merchant: ${adminEmail}`);
+    return true;
   }
 }
 
