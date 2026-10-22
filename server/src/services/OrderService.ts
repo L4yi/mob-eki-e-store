@@ -143,7 +143,27 @@ export class OrderService {
       updatedAt: new Date().toISOString(),
     };
 
-    return this.orderRepo.create(newOrder);
+    const createdOrder = await this.orderRepo.create(newOrder);
+
+    // Automatically record initial transaction entry in payments table
+    try {
+      await repositories.paymentRepo.create({
+        id: `pay-${crypto.randomUUID()}`,
+        orderId: createdOrder.id,
+        provider: createdOrder.paymentMethod === 'PAYSTACK' ? 'PAYSTACK' : 'BANK_TRANSFER',
+        providerReference: createdOrder.orderNumber,
+        method: createdOrder.paymentMethod,
+        amountKobo: createdOrder.totalKobo,
+        currency: 'NGN',
+        status: 'PENDING',
+        createdAt: new Date().toISOString(),
+        updatedAt: new Date().toISOString(),
+      });
+    } catch (e) {
+      console.error('Failed to create initial payment record:', e);
+    }
+
+    return createdOrder;
   }
 
   public async getOrderByIdOrNumber(idOrNumber: string): Promise<Order | null> {
@@ -222,6 +242,40 @@ export class OrderService {
 
     if (newStatus === 'CONFIRMED' && order.paymentStatus === 'PENDING' && order.paymentMethod !== 'PAY_ON_DELIVERY') {
       updates.paymentStatus = 'PAID';
+
+      // Update or create payment audit record in payments table
+      try {
+        let payment = await repositories.paymentRepo.findByOrderId(order.id);
+        if (payment) {
+          await repositories.paymentRepo.update(payment.id, {
+            status: 'PAID',
+            paidAt: new Date().toISOString(),
+            verificationMethod: 'MANUAL_BANK_AUDIT',
+            verifiedBy: note || 'Admin (OPay 8025262598)',
+            verifiedAt: new Date().toISOString(),
+            providerReference: note || order.orderNumber,
+          });
+        } else {
+          await repositories.paymentRepo.create({
+            id: `pay-${crypto.randomUUID()}`,
+            orderId: order.id,
+            provider: 'BANK_TRANSFER',
+            providerReference: note || order.orderNumber,
+            method: order.paymentMethod,
+            amountKobo: order.totalKobo,
+            currency: 'NGN',
+            status: 'PAID',
+            verificationMethod: 'MANUAL_BANK_AUDIT',
+            verifiedBy: note || 'Admin (OPay 8025262598)',
+            verifiedAt: new Date().toISOString(),
+            paidAt: new Date().toISOString(),
+            createdAt: new Date().toISOString(),
+            updatedAt: new Date().toISOString(),
+          });
+        }
+      } catch (payErr) {
+        console.error('Failed to update payment record:', payErr);
+      }
     }
 
     const updatedOrder = await this.orderRepo.update(order.id, updates);

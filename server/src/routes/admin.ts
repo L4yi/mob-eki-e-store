@@ -257,10 +257,21 @@ router.get('/payments', async (req, res, next) => {
       page: page ? Number(page) : 1,
       limit: limit ? Number(limit) : 50,
     });
-    const enriched = result.payments.map((p) => ({
-      ...p,
-      amount: p.amountKobo / 100,
-    }));
+    const enriched = await Promise.all(
+      result.payments.map(async (p) => {
+        const order = await orderService.getOrderByIdOrNumber(p.orderId);
+        return {
+          ...p,
+          amount: p.amountKobo / 100,
+          orderNumber: order?.orderNumber || p.providerReference || 'N/A',
+          customerName: order?.customerName || 'Customer',
+          customerPhone: order?.customerPhone || '',
+          customerEmail: order?.customerEmail || '',
+          paymentMethod: p.method,
+          paymentStatus: p.status,
+        };
+      })
+    );
     return res.json({ payments: enriched, total: result.total });
   } catch (err) {
     next(err);
